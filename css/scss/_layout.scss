@@ -1,0 +1,63 @@
+html {
+	height: 100%;
+	font-size: 62.5%;
+}
+
+body {
+	height: 100%;
+	background: #FFF;
+	color: #646363;
+	@include font-size(15);
+	line-height: 1.5;
+	@include goudy;
+}
+
+#tortilla {
+
+}
+
+/* =============================================================================
+   Header Layouts
+   ========================================================================== */
+
+#header {
+	background: $dark-blue;
+	height: 125px;
+	position: relative;
+
+	.logo-container {
+		.logo {
+			color: #FFF;
+			@include font-size(18);
+		}
+	}
+}
+
+#footer {
+	background: $dark-blue;
+	padding: 3.5em 0;
+	text-align: center;
+	color: #FFF;
+	@include proxima;
+	@include font-size(14);
+	text-transform: uppercase;
+	letter-spacing: 2px;
+
+	.copyright {
+		@include inline-block;
+
+		@include device-width(5) {
+			display: block;
+		}
+	}
+
+	@include device-width(6) {
+		@include font-size(10);
+	}
+
+	span {
+		@include proxima-bold;
+		letter-spacing: 2px;
+		margin-right: 2em;
+	}
+}

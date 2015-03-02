@@ -1,0 +1,69 @@
+@mixin device-width($width){
+	@media only screen and (max-width: $width * 100px){
+		@content;
+	}
+}
+
+@mixin device-height($height){
+	@media only screen and (max-height: $height * 100px){
+		@content;
+	}
+}
+
+@mixin print(){
+	@media print {
+		@content;
+	}
+}
+
+@mixin font-size($size){
+	font-size: ($size) + px;
+	font-size: ($size / 10) + rem;
+}
+
+@mixin icon($icon){
+	@extend [class^="icon-"];
+	@extend .icon-#{$icon}:before !optional;
+}
+
+@function pxtoem($px){
+	@return $px * 0.06666em;
+}
+
+
+
+//          Automatically add vendor prefixes in one hit         //
+@mixin animate-prefixer($property, $value...) {
+    -webkit-#{$property}: unquote($value);
+    -moz-#{$property}: unquote($value);
+    -o-#{$property}: unquote($value);
+    #{$property}: unquote($value);
+}
+
+// Generate keyframes animations with vendor prefixes in one hit //
+
+@mixin animate-keyframe($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin vertical-align {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

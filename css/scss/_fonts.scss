@@ -1,0 +1,26 @@
+@mixin proxima {
+	font-family:'Proxima N W01 Reg';
+	font-weight: normal;
+}
+
+.proxima {
+	@include proxima;
+}
+
+@mixin proxima-bold {
+	font-family:'Proxima N W01 At Bold';
+	font-weight: normal;
+}
+
+.proxima-bold {
+	@include proxima-bold;
+}
+
+@mixin goudy {
+	font-family:'GoudyOldStyleBTW01-Roma';
+	font-weight: normal;
+}
+
+.goudy {
+	@include goudy;
+}

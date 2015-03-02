@@ -1,0 +1,86 @@
+@import url('//fast.fonts.net/cssapi/50464cb2-8cdc-4173-9dd4-112199df03a0.css');
+@import 'compass/css3';
+@import 'variables';
+@import 'mixins';
+@import 'normalize';
+@import 'variables';
+@import 'fonts';
+@import 'icons';
+@import 'typography';
+@import 'grid';
+@import 'forms';
+@import 'buttons';
+@import 'misc';
+
+html {
+	height: 100%;
+	font-size: 62.5%;
+}
+
+body {
+	padding: 10px;
+	background: #FFF;
+	color: #646363;
+	@include font-size(15);
+	line-height: 1.5;
+	min-width: 250px;
+	margin: 0 1.5em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+	@include goudy;
+	letter-spacing: 1px;
+}
+
+
+ol {
+	counter-reset: counter;
+
+	li {
+		padding: 0 0 0 2em;
+		position: relative;
+		line-height: 1.4;
+		margin: 1.5em 0;
+		&:before {
+			position: absolute;
+			left: 0;
+			font-size: 0.9em;
+			@include goudy;
+			content: counter(counter);
+			counter-increment: counter;
+		}
+	}
+}
+
+h6 {
+	@include font-size(13);
+}
+
+p {
+	margin: 1.5em 0;
+	@include font-size(17);
+	line-height: 1.5;
+	text-align: justify;				
+}
+
+.wp-caption-text {
+	padding-right: 10px;
+	@include goudy;
+	text-transform: initial !important;
+}
+
+
+.alignright {
+	
+	&.wp-caption {
+		.wp-caption-text {
+			text-align: left;
+		}
+	}					
+}
+
+.wp-caption-text {
+	margin: 0;
+	text-align: right;
+	@include font-size(10);
+}
