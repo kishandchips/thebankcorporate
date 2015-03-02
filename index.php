@@ -1,66 +1,51 @@
 <?php get_header(); ?>
-<section id="index" class="content-area container">
+<section id="index" class="content-area">
 
 	<header class="index-header">
-		<h2 class="index-title"><?php _e('Archive'); ?></h2>
-		<div class="index-name">
-			<span class="label"><?php _e('Viewing'); ?></span> 
-			<span class="value"><?php echo ( is_category() ) ? single_cat_title() : __("All", THEME_NAME); ?></span>
+		<h2 class="index-title"><?php _e('News'); ?></h2>
+		<div class="container">
+			<div class="filters">
+				<div class="span two-thirds category-selector">
+					</select><?php wp_dropdown_categories(array('class' => 'category', 'show_option_all' => __("ALL CATEGORIES", THEME_NAME), 'walker' => new Category_Dropdown_Url_Walker)); ?>					
+				</div>
+				<div class="span one-third search-field">
+					<?php get_search_form(); ?>	
+				</div>
+			</div>				
 		</div>
-		<div class="filters">
-			<?php get_search_form(); ?>
-			<select class="date">
-				<option value=""><?php _e("Select date", THEME_NAME); ?></option>
-				<?php wp_get_archives(array('format' => 'option')); ?>
-			</select><?php wp_dropdown_categories(array('class' => 'category', 'show_option_all' => __("All Categories", THEME_NAME), 'walker' => new Category_Dropdown_Url_Walker)); ?>
-		</div>				
 	</header>
-	
-	<?php if ( have_posts() ) : ?>
-	
-		<ul class="posts">
-		<?php 
-		$i = 0;
-		while ( have_posts() ) : the_post(); ?>
+	<div class="container">	
+		<?php if ( have_posts() ) : ?>
+			<ul class="posts">
 			<?php 
-				$image_size =  ($i == 0) ? array('width' => 500, 'height' => 300) : array('width' => 240, 'height' => 300);
-				$excerpt_length = ($i == 0) ? 200 : 110;
-				$author_id = get_the_author_meta('ID');
-				$category = get_post_category();
-			?>
-            <li>
-                <?php include_module('post-item', array(
-					'title' => get_the_title(),
-					'excerpt' => get_excerpt($excerpt_length),
-					'url' =>  get_permalink(),
-					'image_url' => get_post_thumbnail_src($image_size),
-					'author' => array(
-						'name' => 'Words by ' . get_the_author(),
-						'image_url' => get_avatar_url ($author_id, 40 ),
-						'url' => get_author_posts_url($author_id),
-					),							
-                    'category' => array(
-                    	'name' => $category->name,
-                    ),
-					'read_more' => true,
-					'date' => get_the_date(),
-				)); ?>
-            </li>								
-		<?php 
-		$i++; 
-		endwhile; // end of the loop. ?>
-		</ul>
+			$i = 1;
+			$array = array(1,8);
+			
+			while ( have_posts() ) : the_post(); ?>
+				<?php 
+					$image_size = (in_array($i, $array)) ?  array('width' => 780, 'height' => 635) : array('width' => 370, 'height' => 250);
+				?>
+	            <li>
+	                <?php include_module('post-item', array(
+						'title' => get_the_title(),
+						'url' =>  get_permalink(),
+						'image_url' => get_post_thumbnail_src($image_size),
+					)); ?>
+	            </li>								
+			<?php 
+			$i++; 
+			endwhile; // end of the loop. ?>
+			</ul>
 
-	<?php else: ?>
-		<div class="not-found">
-			<h3 class="title"><?php _e("No posts found", THEME_NAME); ?></h3>
+		<?php else: ?>
+			<div class="not-found">
+				<h3 class="title"><?php _e("No posts found", THEME_NAME); ?></h3>
+			</div>
+		<?php endif; ?>
+		<div id="navbelow">
+			<?php next_posts_link('Next &raquo;'); ?>			
 		</div>
-	<?php endif; ?>
-
-	<?php include_module('pagination'); ?>
-
-	<?php include_module('categories'); ?>
+		<a class="primary-btn" id="next"><?php _e('Load More'); ?></a>
+	</div>
 </section>
-	
-
 <?php get_footer(); ?>

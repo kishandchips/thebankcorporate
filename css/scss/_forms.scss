@@ -11,13 +11,12 @@ input[type=password],
 textarea,
 select {
 	@include box-sizing(border-box);
-	color: #a0a0a0;
+	color: #333;
 	border: none;
 	letter-spacing: 1px;
-	@include font-size(9);
-	@include goudy;
-	border: 1px solid #e3e3e3;
-	padding: 1em;
+	@include font-size(18);
+	@include brandon-black;
+	padding: .5em;
 	@include border-radius(0);
 	
 	&:focus {
@@ -49,10 +48,10 @@ select {
 	-webkit-appearance: none;
 	display: inline-block;
 	background: #FFF;
-	color: #797979;
 	position: relative;
+	width: 210px;
+	letter-spacing: 2px;
 	@media screen and (-webkit-min-device-pixel-ratio:0) {
-		padding-right: 40px;
 		background: #FFF url(../images/misc/dropdown.png) no-repeat center right;
 	}
 
@@ -60,6 +59,7 @@ select {
 		text-transform: none;
 		font-family: sans-serif;
 		padding: 0.5em;
+		@include font-size(10);
 	}
 	
 }
@@ -119,18 +119,26 @@ fieldset {
 
 ::-webkit-input-placeholder {
    text-transform: uppercase;
+   color: #333333;
+   letter-spacing: 2px;
 }
 
 :-moz-placeholder { /* Firefox 18- */
    text-transform: uppercase;
+   color: #333333;
+   letter-spacing: 2px;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
    text-transform: uppercase;
+   color: #333333;
+   letter-spacing: 2px;
 }
 
 :-ms-input-placeholder {  
    text-transform: uppercase;
+   color: #333333;
+   letter-spacing: 2px;
 }
 /* =============================================================================
    Gravity
@@ -268,7 +276,10 @@ fieldset {
 		vertical-align: middle;
 		border-color: transparent;
 		@include transition(all 0.3s ease);
-		width: 105px;
+		width: 135px;
+		color: #333333;
+		padding: .5em;
+		border: 1px solid transparent;
 
 		&:focus {
 			width: 200px;
@@ -276,14 +287,15 @@ fieldset {
 	}
 
 	.submit-btn {
-		background: #FFF;
 		color: #c0c0c0;
-		border: #FFF;
 		vertical-align: middle;
-		padding: 0.8em;
+		padding: 1.5em 1em;
+		float: left;
+		background: none;
 		
 		&:before {
-			@include font-size(13);
+			@include font-size(15);
+			color: #333333;
 			line-height: 0.9;
 		}
 

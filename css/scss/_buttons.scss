@@ -3,7 +3,6 @@
    ========================================================================== */
 
 button {
-	@extend .primary-btn;
 
 	&:disabled {
 		opacity: 0.5;	
@@ -17,9 +16,21 @@ button {
 
 
 .primary-btn {
-	font-size: 12px;
+	@include font-size(17);
+	color: #FFF;
+	background: #013e7f;
+	@include border-radius(3px);
+	@include box-shadow(0px 5px 2px #d7d7d7);
+	@include goudy;
+	text-transform: uppercase;
+	padding: 0.8em 3.5em;
+	@include inline-block;
+	letter-spacing: 2px;
+	line-height: 1;
 	
 	&:hover {
+		background: #e3e3e3;
+		color: #001a35;
 	}
 }
 

@@ -24,3 +24,13 @@
 .goudy {
 	@include goudy;
 }
+
+@mixin brandon-black {
+	font-family:'Brandon Grot W01 Black';
+	font-weight: normal;
+}
+
+.brandon-black {
+	@include brandon-black;
+}
+

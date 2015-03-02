@@ -1,9 +1,24 @@
 <?php get_header(); ?>
 <section id="front-page">
 	<div class="inner container">
-	<div class="slider">
-		<img src="<?php bloginfo('template_directory' ); ?>/images/misc/the_bank_slide.jpg" alt="">
-	</div>
+	<div class="owl-carousel featured-carousel">
+	    <div class="item">
+	    	<a href="#">
+		    	<div class="title">
+		    		<h1><?php _e('Brave Ideas, Beautifully executed') ?></h1>
+	    		</div>
+		    	<img src="<?php bloginfo('template_directory' ); ?>/images/misc/the_bank_slide.jpg" alt="">	
+	    	</a>
+    	</div>
+	    <div class="item">
+	    	<a href="#">
+		    	<div class="title">
+		    		<h1><?php _e('Brave Ideas, Beautifully executed') ?></h1>
+	    		</div>
+		    	<img src="<?php bloginfo('template_directory' ); ?>/images/misc/the_bank_slide1.jpg" alt="">	
+	    	</a>
+    	</div>    	
+	</div>	
 	<?php
 		$args = array(									
 			'post_type'   => 'post',
@@ -18,7 +33,7 @@
 
 		<?php if ( $query->have_posts() ): ?>
 
-			<h2><?php _e('Latest News') ?></h2>
+			<h2 class="section-title"><?php _e('Latest News') ?></h2>
 
 			<ul class="posts">
 				<?php 

@@ -140,6 +140,7 @@ blockquote {
 
 	ul.menu {
 		@include vertical-align();
+		width: 100%;
 
 		&:before {
 			content: '';
@@ -184,13 +185,39 @@ blockquote {
 }
 
 .posts {
-	padding: 4% 9%;
+	padding: 2% 9%;
 	@extend .clearfix;
 
 	li {
 		float: left;
 		width: 33%;
 		padding: 1%;
+
+		#index & {
+			&:nth-of-type(12n+1), &:nth-of-type(12n+8) {
+				width: 66%;
+
+				@include device-width(9) {
+					width: 100%;
+				}
+			}
+
+			&:nth-of-type(12n+4) {
+				clear: left;
+
+				@include device-width(9) {
+					clear: none;
+				}					
+			}
+
+			&:nth-of-type(12n+9) {
+				margin-top: -380px;
+
+				@include device-width(9) {
+					margin-top: 0px;
+				}				
+			}
+		}
 	}
 
 	@include device-width(9) {
@@ -212,6 +239,7 @@ blockquote {
 .post-item  {
 	position: relative;
 	margin-bottom: 5em;
+	text-align: left;
 
 	.post-image {
 		img {
@@ -245,5 +273,129 @@ blockquote {
 		.post-title {
 			padding: 1.2em 1.7em 3em 0;
 		}
+	}
+}
+
+.featured-carousel {
+	.owl-item {
+		overflow: hidden;
+
+		.item {
+
+			.title {
+				@include translateX(200%);
+				@include vertical-align;
+				width: 100%;
+				padding: 0 5%;
+				z-index: 100;
+				text-align: center;
+				opacity: 0;
+				top: 40%;
+
+				h1 {
+					color: #FFF;
+					text-transform: uppercase;
+					@include font-size(50);
+					letter-spacing: 10px;
+					@include goudy;
+				}
+			}			
+		}
+
+		
+		&.active {
+			.item {
+				.title {
+			 		@include transition(all 1.5s ease);
+					@include translateX ( 0 ) ;
+					opacity: 1;
+				}
+			}
+
+		}
+	}
+}
+
+.section-title {	
+	width: 100%;
+	text-align: center;
+	margin: 1em 0 0;
+}
+
+#index {
+	text-align: center;
+	
+	.index-header {
+		
+		.index-title {
+			background: #e3e3e3;
+			@include font-size(60);
+			text-transform: uppercase;
+			width: 100%;
+			text-align: center;
+			padding: 1.35em 0;
+			@include transition(all 0.3s ease);
+
+			@include device-width(9) {
+				padding: .5em 0;
+				@include font-size(30);
+
+			}
+		}
+	}
+
+	#navbelow {
+		display: none;
+	}	
+
+	#next {
+		margin: 1em auto;
+	}
+}
+
+.filters {
+	padding: 5em 9%;
+
+	@include device-width(9) {
+		padding: 5em 0;
+	}
+
+	.category-selector {
+		@include device-width(6) {
+			width: 50%;
+
+			select {
+				@include font-size(10);
+				width: 140px;
+			}
+		}
+	}
+
+	.search-field {
+		text-align:left;
+		padding: 0;
+
+		.input {
+			@include brandon-black;	
+			@include font-size(18);
+
+		}
+
+		@include device-width(6) {
+			width: 50%;
+
+			.input {
+				@include font-size(10);
+				width: 120px;
+
+				&:focus {
+					width: 120px;
+				}
+			}
+
+			.submit-btn {
+				padding: .7em 1em;
+			}
+		}			
 	}
 }

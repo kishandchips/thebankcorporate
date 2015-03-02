@@ -72,6 +72,8 @@ function custom_init(){
 
 	require( $template_directory . '/inc/classes/custom-post-type.php' );
 
+	require( $template_directory . '/inc/classes/category-dropdown-url-walker.php' );	
+
 	if(function_exists('get_field')) {
 
 			
@@ -135,6 +137,7 @@ function custom_scripts() {
 	//wp_enqueue_script('plugins', $template_directory_uri.'/js/plugins.js', array('jquery', 'modernizr'), '', true);
 	wp_enqueue_script('owlcarousel', $template_directory_uri.'/js/plugins/jquery.owlcarousel.js', array('jquery'), '', true);
 	wp_enqueue_script('imagesloaded', $template_directory_uri.'/js/plugins/jquery.imagesloaded.js', array('jquery'), '', true);
+	wp_enqueue_script( 'infinite_scroll',  get_template_directory_uri() . '/js/plugins/jquery.infinitescroll.min.js', array('jquery'),null,true );
 	wp_enqueue_script('main', $template_directory_uri.'/js/main.js', array('jquery', 'modernizr'), '', true);
 
 	wp_localize_script( 'main', 'url', array(
@@ -248,4 +251,3 @@ function custom_pre_get_posts( $query ) {
 function custom_the_exceprt($content) {
 	return strip_shortcodes( $content );
 }
-

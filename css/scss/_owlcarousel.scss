@@ -199,14 +199,12 @@
 		cursor: pointer;
 		opacity: 1;
 		@include transition(all .3s ease);
-		background: #FFF;
-		color: #000;
+		color: #FFF;
 		padding: 1.7em 2em;
 		line-height: 7em;
 		text-align: center;
 		@include font-size(10);
 		letter-spacing: 2px;
-		@include goudy;
 		vertical-align: middle;
 
 		&:before,

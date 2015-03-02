@@ -351,10 +351,14 @@ table {
   font-family: 'GoudyOldStyleBTW01-Roma';
   font-weight: normal; }
 
+.brandon-black {
+  font-family: 'Brandon Grot W01 Black';
+  font-weight: normal; }
+
 @font-face {
   font-family: 'icons';
-  src: url("fonts/icons.eot?-ih3y5q");
-  src: url("fonts/icons.eot?#iefix-ih3y5q") format("embedded-opentype"), url("fonts/icons.woff?-ih3y5q") format("woff"), url("fonts/icons.ttf?-ih3y5q") format("truetype"), url("fonts/icons.svg?-ih3y5q#icons") format("svg");
+  src: url("fonts/icons.eot?yl2jya");
+  src: url("fonts/icons.eot?#iefixyl2jya") format("embedded-opentype"), url("fonts/icons.woff?yl2jya") format("woff"), url("fonts/icons.ttf?yl2jya") format("truetype"), url("fonts/icons.svg?yl2jya#icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], .facebook-btn:before, .twitter-btn:before, .search-btn:before, [class*=" icon-"] {
@@ -368,6 +372,12 @@ table {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.icon-arrow-left:before {
+  content: "\e60c"; }
+
+.icon-arrow-right:before {
+  content: "\e60d"; }
 
 .icon-caret-down:before {
   content: "\e600"; }
@@ -433,7 +443,8 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   line-height: 1.2;
   color: #000;
-  font-weight: normal; }
+  font-weight: normal;
+  letter-spacing: 10px; }
 
 h1 {
   font-size: 60px;
@@ -865,15 +876,14 @@ select {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  color: #a0a0a0;
+  color: #333;
   border: none;
   letter-spacing: 1px;
-  font-size: 9px;
-  font-size: 0.9rem;
-  font-family: 'GoudyOldStyleBTW01-Roma';
+  font-size: 18px;
+  font-size: 1.8rem;
+  font-family: 'Brandon Grot W01 Black';
   font-weight: normal;
-  border: 1px solid #e3e3e3;
-  padding: 1em;
+  padding: .5em;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0; }
@@ -911,16 +921,18 @@ select {
   -webkit-appearance: none;
   display: inline-block;
   background: #FFF;
-  color: #797979;
-  position: relative; }
+  position: relative;
+  width: 210px;
+  letter-spacing: 2px; }
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
     select {
-      padding-right: 40px;
       background: #FFF url(../images/misc/dropdown.png) no-repeat center right; } }
   select option {
     text-transform: none;
     font-family: sans-serif;
-    padding: 0.5em; }
+    padding: 0.5em;
+    font-size: 10px;
+    font-size: 1rem; }
 
 textarea {
   height: 200px; }
@@ -977,18 +989,26 @@ fieldset {
   padding: 0; }
 
 ::-webkit-input-placeholder {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: #333333;
+  letter-spacing: 2px; }
 
 :-moz-placeholder {
   /* Firefox 18- */
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: #333333;
+  letter-spacing: 2px; }
 
 ::-moz-placeholder {
   /* Firefox 19+ */
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: #333333;
+  letter-spacing: 2px; }
 
 :-ms-input-placeholder {
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  color: #333333;
+  letter-spacing: 2px; }
 
 /* =============================================================================
    Gravity
@@ -1087,18 +1107,22 @@ fieldset {
     -o-transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
-    width: 105px; }
+    width: 135px;
+    color: #333333;
+    padding: .5em;
+    border: 1px solid transparent; }
     .search-form .input:focus {
       width: 200px; }
   .search-form .submit-btn {
-    background: #FFF;
     color: #c0c0c0;
-    border: #FFF;
     vertical-align: middle;
-    padding: 0.8em; }
+    padding: 1.5em 1em;
+    float: left;
+    background: none; }
     .search-form .submit-btn:before {
-      font-size: 13px;
-      font-size: 1.3rem;
+      font-size: 15px;
+      font-size: 1.5rem;
+      color: #333333;
       line-height: 0.9; }
     .search-form .submit-btn:hover {
       color: #000; }
@@ -1158,8 +1182,31 @@ button:disabled {
 button:active, button:focus {
   outline: none; }
 
-.primary-btn, .comment-form .form-submit input[type=submit], button {
-  font-size: 12px; }
+.primary-btn, .comment-form .form-submit input[type=submit] {
+  font-size: 17px;
+  font-size: 1.7rem;
+  color: #FFF;
+  background: #013e7f;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0px 5px 2px #d7d7d7;
+  -webkit-box-shadow: 0px 5px 2px #d7d7d7;
+  box-shadow: 0px 5px 2px #d7d7d7;
+  font-family: 'GoudyOldStyleBTW01-Roma';
+  font-weight: normal;
+  text-transform: uppercase;
+  padding: 0.8em 3.5em;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  letter-spacing: 2px;
+  line-height: 1; }
+  .primary-btn:hover, .comment-form .form-submit input[type=submit]:hover {
+    background: #e3e3e3;
+    color: #001a35; }
 
 .menu-btn {
   position: absolute;
