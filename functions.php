@@ -207,11 +207,25 @@ function custom_gallery( $atts ) {
 				$image_url = get_image($id, $image_size);
 				$image_full = get_image($id, 'full');
 				$image = get_post($id);
-
 			?>
+
+			<?php if ($id === end($ids)): ?>
+				<?php if( $i % 2 == 1): ?>				
+					<a href="<?php echo $image_full; ?>" class="image">
+						<img src="<?php echo $image_url; ?>" data-id="<?php echo $id; ?>" />
+					</a>					
+				<?php else: ?>
+					<?php $image_size = array('width' => 1080, 'height' => 405); ?>
+					<?php $image_url = get_image($id, $image_size); ?>
+					<a href="<?php echo $image_full; ?>" class="image full">
+						<img src="<?php echo $image_url; ?>" data-id="<?php echo $id; ?>" />
+					</a>					
+				<?php endif; ?>
+			<?php else: ?>
 				<a href="<?php echo $image_full; ?>" class="image">
 					<img src="<?php echo $image_url; ?>" data-id="<?php echo $id; ?>" />
-				</a>
+				</a>				
+			<?php endif; ?>	
 		<?php $i++; ?>
 		<?php endforeach; ?>
 	    </div>
