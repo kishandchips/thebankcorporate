@@ -206,3 +206,12 @@ button {
 	}
 }
 
+.overlay-btn-dark {
+	@extend .overlay-btn;
+
+	&:after {
+		background: rgba(#013e7f, 0.8);
+	}
+
+}
+

@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
 	color: #000;
 	font-weight: normal;
-	letter-spacing: 10px;
+	letter-spacing: 15px;
 }
 
 h1 {
@@ -136,26 +136,6 @@ p {
 	margin: 0;
 }
 
-.huge {
-	font-size: 150%;
-}
-
-.big {
-	font-size: 130%;
-}
-
-.small {
-	font-size: 90%;
-}
-
-.tiny {
-	font-size: 70%;
-}
-
-p.tiny {
-	margin: 5px 0;
-}
-
 .bold,
 strong,
 b {
@@ -202,46 +182,11 @@ b {
 	text-transform: uppercase;
 }
 
-.normalcase {
-	text-transform: none;
-}
-
-.black {
-	color: #000;
-}
-
-.white {
-	color: #fff;
-}
-
-a.white:hover {
-	color: #ffbbbb;
-}
-
-.grey {
-	color: #a8a8a8;	
-}
-
-a.grey:hover {
-	color: #878787;	
-}
-
-.dark-grey {
-	color: #333333;
-}
-
-a.dark-grey:hover {
-	color: #141414;
-}
-
-.light-grey {
-	color: #CCC;	
-}
-
-a.light-grey:hover {
-	color: #a8a8a8;	
-}
-
-a.green:hover {
-	color: #c9f400;
+.subtitle {
+	@include goudy;
+	@include font-size(14);
+	text-transform: uppercase;
+	margin-bottom: 3em;
+	@include inline-block;
+	letter-spacing: 5px;
 }

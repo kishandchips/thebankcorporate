@@ -444,7 +444,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   color: #000;
   font-weight: normal;
-  letter-spacing: 10px; }
+  letter-spacing: 15px; }
 
 h1 {
   font-size: 60px;
@@ -563,21 +563,6 @@ h6 {
 p {
   margin: 0; }
 
-.huge {
-  font-size: 150%; }
-
-.big {
-  font-size: 130%; }
-
-.small {
-  font-size: 90%; }
-
-.tiny {
-  font-size: 70%; }
-
-p.tiny {
-  margin: 5px 0; }
-
 .bold,
 strong,
 b {
@@ -614,38 +599,19 @@ b {
 .uppercase {
   text-transform: uppercase; }
 
-.normalcase {
-  text-transform: none; }
-
-.black {
-  color: #000; }
-
-.white {
-  color: #fff; }
-
-a.white:hover {
-  color: #ffbbbb; }
-
-.grey {
-  color: #a8a8a8; }
-
-a.grey:hover {
-  color: #878787; }
-
-.dark-grey {
-  color: #333333; }
-
-a.dark-grey:hover {
-  color: #141414; }
-
-.light-grey {
-  color: #CCC; }
-
-a.light-grey:hover {
-  color: #a8a8a8; }
-
-a.green:hover {
-  color: #c9f400; }
+.subtitle {
+  font-family: 'GoudyOldStyleBTW01-Roma';
+  font-weight: normal;
+  font-size: 14px;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin-bottom: 3em;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline;
+  letter-spacing: 5px; }
 
 /* =============================================================================
    Grid
@@ -1311,10 +1277,10 @@ button:active, button:focus {
     font-size: 1em;
     vertical-align: middle; }
 
-.overlay-btn {
+.overlay-btn, .overlay-btn-dark {
   position: relative;
   display: block; }
-  .overlay-btn:after {
+  .overlay-btn:after, .overlay-btn-dark:after {
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
@@ -1328,7 +1294,7 @@ button:active, button:focus {
     bottom: 0;
     background: rgba(255, 255, 255, 0.5);
     visibility: hidden; }
-  .overlay-btn .overlay {
+  .overlay-btn .overlay, .overlay-btn-dark .overlay {
     visibility: hidden;
     opacity: 0;
     display: block;
@@ -1340,10 +1306,14 @@ button:active, button:focus {
     -o-transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease; }
-  .overlay-btn:hover:after,
-  .overlay-btn:hover .overlay {
+  .overlay-btn:hover:after, .overlay-btn-dark:hover:after,
+  .overlay-btn:hover .overlay,
+  .overlay-btn-dark:hover .overlay {
     opacity: 1;
     visibility: visible; }
+
+.overlay-btn-dark:after {
+  background: rgba(1, 62, 127, 0.8); }
 
 /* =============================================================================
    Misc

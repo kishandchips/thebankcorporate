@@ -37,7 +37,13 @@ add_filter( 'pre_get_posts', 'custom_pre_get_posts');
 
 add_filter( 'the_excerpt', 'custom_the_exceprt');
 
-//add_filter('parse_query', 'custom_parse_query');
+add_filter('mce_buttons_2', 'wpb_mce_buttons_2');
+
+add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' ); 
+
+add_filter( 'embed_oembed_html', 'custom_oembed_filter', 10, 4 ) ;
+
+
 
 //Custom shortcodes
 
@@ -77,33 +83,33 @@ function custom_init(){
 	if(function_exists('get_field')) {
 
 			
-		// $products_uri = get_page_uri(get_field('products_page', 'options'));
+		$work_uri = get_page_uri(get_field('work_page', 'options'));
 
-		// $products = new Custom_Post_Type( 'Product', 
-		// 	array(
-		// 		'rewrite' => array('with_front' => false, 'slug' => $products_uri),
-		// 		'capability_type' => 'post',
-		// 		'publicly_queryable' => true,
-		// 		'has_archive' => true, 
-		// 		'hierarchical' => true,
-		// 		'menu_position' => null,
-		// 		'menu_icon' => 'dashicons-products',
-		// 		'supports' => array('title',  'page-attributes', 'thumbnail'),
-		// 		'plural' => "Products",		
-		// 	)
-		// );
+		$works = new Custom_Post_Type( 'Work', 
+			array(
+				'rewrite' => array('with_front' => false, 'slug' => $work_uri),
+				'capability_type' => 'post',
+				'publicly_queryable' => true,
+				'has_archive' => true, 
+				'hierarchical' => true,
+				'menu_position' => null,
+				'menu_icon' => 'dashicons-admin-generic',
+				'supports' => array('title', 'editor', 'thumbnail'),
+				'plural' => "Works",		
+			)
+		);
 
-		// $products->register_taxonomy("Product Category",
-		// 	array(
-		// 		'name' => 'product_cat',
-		// 		'rewrite' => array( 'slug' => 'product-category' ),
-		// 	),
-		// 	array(
-		// 		'plural' => "Product Categories"
-		// 	)
-		// );
+		$works->register_taxonomy("Work Category",
+			array(
+				'name' => 'work_cat',
+				'rewrite' => array( 'slug' => 'work-category' ),
+			),
+			array(
+				'plural' => "Product Categories"
+			)
+		);
 
-		// $products->register_post_type();
+		$works->register_post_type();
 	}
 }
 
@@ -137,8 +143,13 @@ function custom_scripts() {
 	//wp_enqueue_script('plugins', $template_directory_uri.'/js/plugins.js', array('jquery', 'modernizr'), '', true);
 	wp_enqueue_script('owlcarousel', $template_directory_uri.'/js/plugins/jquery.owlcarousel.js', array('jquery'), '', true);
 	wp_enqueue_script('imagesloaded', $template_directory_uri.'/js/plugins/jquery.imagesloaded.js', array('jquery'), '', true);
+	wp_enqueue_script('magnific', $template_directory_uri.'/js/plugins/jquery.magnific-popup.min.js', array('jquery'), '', true);
 	wp_enqueue_script( 'infinite_scroll',  get_template_directory_uri() . '/js/plugins/jquery.infinitescroll.min.js', array('jquery'),null,true );
 	wp_enqueue_script('main', $template_directory_uri.'/js/main.js', array('jquery', 'modernizr'), '', true);
+
+	if ( 'work' == get_post_type() || is_single()) {
+		wp_enqueue_script( 'parallax',  get_template_directory_uri() . '/js/plugins/parallax.min.js', array('jquery'),null,true );
+	}
 
 	wp_localize_script( 'main', 'url', array(
 		'template' => $template_directory_uri,
@@ -188,40 +199,19 @@ function custom_gallery( $atts ) {
 
    	if( !empty($ids) ){
    		ob_start();
-	    ?>
-	    <div class="post-carousel owl-carousel">
+	    ?>    
+	    <div class="post-gallery">
 		<?php $i = 0; ?>
-		<?php foreach($ids as $id):
-			
-			$image_url = get_image($id, array('height' => 500));
-			$image = get_post($id);
-			?>
-			<div class="item image-slide">
-				<figure class="image">
-					<img src="<?php echo $image_url; ?>" data-id="<?php echo $id; ?>" />
-				</figure>
-				<?php if($image->post_title || $image->post_excerpt ): ?>
-				<header class="header">
-					<figcaption class="caption" >Personal style and vice versa</figcaption>
-					<?php if( $image->post_title ): ?>
-					<h5 class="title"><?php echo $image->post_title; ?></h5>
-					<?php endif; ?>
-					<?php if( $image->post_excerpt ): ?>
-					<div class="description"><?php echo $image->post_excerpt; ?></div>
-					<?php endif; ?>
+		<?php foreach($ids as $id):		
+				$image_size = array('width' => 528, 'height' => 406);
+				$image_url = get_image($id, $image_size);
+				$image_full = get_image($id, 'full');
+				$image = get_post($id);
 
-					<div class="info">
-						<?php include_module('share', array(
-							'title' => $image->post_title,
-							'url' => get_permalink($id),
-							'image_url' => $image_url,
-							'excerpt' => $image->post_excerpt
-						)); ?>
-						<div class="pages"><span class="page"><?php echo ($i + 1) . ' of '.count($ids);?></span></div>
-					</div>
-				</header>
-				<?php endif; ?>
-			</div>
+			?>
+				<a href="<?php echo $image_full; ?>" class="image">
+					<img src="<?php echo $image_url; ?>" data-id="<?php echo $id; ?>" />
+				</a>
 		<?php $i++; ?>
 		<?php endforeach; ?>
 	    </div>
@@ -250,4 +240,37 @@ function custom_pre_get_posts( $query ) {
 
 function custom_the_exceprt($content) {
 	return strip_shortcodes( $content );
+}
+
+
+function wpb_mce_buttons_2($buttons) {
+	array_unshift($buttons, 'styleselect');
+	return $buttons;
+}
+
+/*
+* Callback function to filter the MCE settings
+*/
+
+function my_mce_before_init_insert_formats( $init_array ) {  
+	$style_formats = array(  
+		// Each array child is a format with it's own settings
+		array(  
+			'title' => 'Subtitle',  
+			'block' => 'span',  
+			'classes' => 'subtitle',
+			'wrapper' => true,
+			
+		),  
+	);  
+
+	$init_array['style_formats'] = json_encode( $style_formats );  
+	
+	return $init_array;  
+}
+
+// Custom wrapper around embedded Videos
+function custom_oembed_filter($html, $url, $attr, $post_ID) {
+    $return = '<div class="video-container">'.$html.'</div>';
+    return $return;
 }

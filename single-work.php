@@ -4,26 +4,23 @@
 	<div class="parallax-window" data-parallax="scroll" data-image-src="<?php the_field('header_image'); ?>"></div>
 <?php endif; ?>
 
-<div id="single">
+<div id="single-work">
 
 	<?php while ( have_posts() ) : the_post(); ?>
 
 
 		<div id="content">
-			<div class="inner container">
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-				<?php if(!$post->post_content == ''): ?>
-					<div class="post-header">
-						<h1 class="post-title"><?php the_title(); ?></h1>
-						<span class="subtitle"><?php the_time('d M Y'); ?></span>
-					</div>
-					<?php the_content(); ?>
-				<?php endif; ?>
+			<?php if(!$post->post_content == ''): ?>
+				<?php the_content(); ?>
+			<?php endif; ?>
+			<?php if ( get_field('content')):?>
+				<?php get_template_part('inc/content'); ?>
+			<?php endif; ?>
 
-				</article>
-			</div>
+			</article>
 		</div>
 	<?php 
 		endwhile; 
