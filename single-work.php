@@ -1,8 +1,6 @@
 <?php get_header(); ?>
 
-<?php if(get_field('header_image')): ?>
-	<div class="parallax-window" data-parallax="scroll" data-image-src="<?php the_field('header_image'); ?>"></div>
-<?php endif; ?>
+<?php include_module('parallax-header'); ?>
 
 <div id="single-work">
 

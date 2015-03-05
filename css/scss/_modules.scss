@@ -307,7 +307,7 @@
 }
 
 .parallax-window {
-    min-height: 635px;
+    padding-top: 40%;
     background: transparent;
 }
 
@@ -340,7 +340,6 @@
 		@include font-size(18);
 		line-height: 1.5;
 		margin: 1em 0;
-		padding: 0 10em;
 
 		@include device-width(10) {
 			padding: 0 3em;			

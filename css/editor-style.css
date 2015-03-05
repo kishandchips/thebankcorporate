@@ -628,7 +628,8 @@ b {
   position: relative; }
   @media only screen and (max-width: 1200px) {
     .container {
-      width: auto; } }
+      width: auto;
+      padding: 0 10px; } }
   .container:after {
     content: '';
     display: table;
@@ -1186,11 +1187,13 @@ button:active, button:focus {
   z-index: 8000;
   height: 125px;
   width: 125px; }
+  .header-fixed .menu-btn {
+    padding: 1.5em 2.8em 0em; }
   @media only screen and (max-width: 900px) {
     .menu-btn {
       height: 75px;
       width: 75px;
-      padding: 2.2em 1.2em 0em; } }
+      padding: 3.2em 1.2em 0em; } }
   .menu-btn span, .menu-btn span:before, .menu-btn span:after {
     cursor: pointer;
     border-radius: 1px;

@@ -14,6 +14,10 @@ body {
 
 #tortilla {
 
+	.header-fixed & {
+		padding-top: 115px;
+	}
+
 }
 
 /* =============================================================================
@@ -30,11 +34,16 @@ body {
 
 	.logo-container {
 		text-align: center;
-		padding-top: .3em;
+		padding-top: 35px;
 
 		.logo {
 			color: #000;
 			@include font-size(40);
+			vertical-align: top;
+
+			&:before {
+				vertical-align: top;
+			}
 		}
 	}
 
@@ -42,12 +51,17 @@ body {
 		position: fixed;
 		top: 0;
 		left: 0;
-		height: 90px;
+		height: 56px;
 		@include box-shadow(0 0px 5px #3D3D3D);
 
-		.logo {
-			@include font-size(30);
+		.logo-container {
+			padding-top: 10px;
+
+			.logo {
+				@include font-size(30);
+			}			
 		}
+
 	}
 }
 
@@ -83,7 +97,31 @@ body {
 		float: left;		
 	}
 
-	.contact {
+	@include device-width(9) {
+		.legal, .address, .contact  {
+			width: 33%;
+		}
+	}
 
+	@include device-width(6) {
+		font-size: 7px;
+	}	
+
+	@include device-width(5) {
+		font-size: 8px;
+
+		.legal, .address  {
+			width: 50%;
+		}		
+
+		.address {
+			text-align: right;
+		}
+
+		.contact {
+			width: 100%;
+			margin-top: 1em;
+			text-align: center;
+		}
 	}
 }

@@ -1,5 +1,8 @@
 <?php global $post; ?>
 <?php get_header(); ?>
+
+<?php include_module('parallax-header'); ?>
+
 <div id="page">
 	<?php while ( have_posts() ) : the_post(); ?>
 		<div id="content">

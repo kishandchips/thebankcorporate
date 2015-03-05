@@ -178,9 +178,7 @@ function custom_scripts() {
 	wp_enqueue_script( 'infinite_scroll',  get_template_directory_uri() . '/js/plugins/jquery.infinitescroll.min.js', array('jquery'),null,true );
 	wp_enqueue_script('main', $template_directory_uri.'/js/main.js', array('jquery', 'modernizr'), '', true);
 
-	if ( 'work' == get_post_type() || is_single()) {
-		wp_enqueue_script( 'parallax',  get_template_directory_uri() . '/js/plugins/parallax.min.js', array('jquery'),null,true );
-	}
+	wp_enqueue_script( 'parallax',  get_template_directory_uri() . '/js/plugins/parallax.min.js', array('jquery'),null,true );
 
 	wp_localize_script( 'main', 'url', array(
 		'template' => $template_directory_uri,
