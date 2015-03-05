@@ -339,26 +339,30 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.proxima {
-  font-family: 'Proxima N W01 Reg';
+.avenir-light {
+  font-family: 'Avenir LT W01_35 Light';
   font-weight: normal; }
 
-.proxima-bold {
-  font-family: 'Proxima N W01 At Bold';
+.avenir-book {
+  font-family: 'Avenir LT W01_45 Book';
   font-weight: normal; }
 
-.goudy {
-  font-family: 'GoudyOldStyleBTW01-Roma';
+.avenir-roman {
+  font-family: 'Avenir LT W01_55 Roman';
   font-weight: normal; }
 
-.brandon-black {
-  font-family: 'Brandon Grot W01 Black';
+.avenir-medium {
+  font-family: 'Avenir LT W01_65 Medium';
+  font-weight: normal; }
+
+.avenir-black {
+  font-family: 'Avenir LT W01_95 Black';
   font-weight: normal; }
 
 @font-face {
   font-family: 'icons';
-  src: url("fonts/icons.eot?yl2jya");
-  src: url("fonts/icons.eot?#iefixyl2jya") format("embedded-opentype"), url("fonts/icons.woff?yl2jya") format("woff"), url("fonts/icons.ttf?yl2jya") format("truetype"), url("fonts/icons.svg?yl2jya#icons") format("svg");
+  src: url("fonts/icons.eot?w6op77");
+  src: url("fonts/icons.eot?#iefixw6op77") format("embedded-opentype"), url("fonts/icons.woff?w6op77") format("woff"), url("fonts/icons.ttf?w6op77") format("truetype"), url("fonts/icons.svg?w6op77#icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], .facebook-btn:before, .twitter-btn:before, .search-btn:before, [class*=" icon-"] {
@@ -373,6 +377,12 @@ table {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-right:before {
+  content: "\e604"; }
+
+.icon-logo:before {
+  content: "\e601"; }
+
 .icon-arrow-left:before {
   content: "\e60c"; }
 
@@ -382,9 +392,6 @@ table {
 .icon-caret-down:before {
   content: "\e600"; }
 
-.icon-crest:before {
-  content: "\e601"; }
-
 .icon-facebook .path1:before {
   content: "\e602";
   color: black; }
@@ -393,9 +400,6 @@ table {
   content: "\e603";
   margin-left: -1em;
   color: white; }
-
-.icon-logo:before {
-  content: "\e604"; }
 
 .icon-rss .path1:before {
   content: "\e605";
@@ -443,8 +447,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   line-height: 1.2;
   color: #000;
-  font-weight: normal;
-  letter-spacing: 15px; }
+  font-weight: normal; }
 
 h1 {
   font-size: 60px;
@@ -469,7 +472,6 @@ h1 {
 h2 {
   font-size: 35px;
   font-size: 3.5rem;
-  text-transform: uppercase;
   color: #333333; }
   @media only screen and (max-width: 1200px) {
     h2 {
@@ -600,7 +602,7 @@ b {
   text-transform: uppercase; }
 
 .subtitle {
-  font-family: 'GoudyOldStyleBTW01-Roma';
+  font-family: 'Avenir LT W01_45 Book';
   font-weight: normal;
   font-size: 14px;
   font-size: 1.4rem;
@@ -847,7 +849,7 @@ select {
   letter-spacing: 1px;
   font-size: 18px;
   font-size: 1.8rem;
-  font-family: 'Brandon Grot W01 Black';
+  font-family: 'Avenir LT W01_95 Black';
   font-weight: normal;
   padding: .5em;
   -moz-border-radius: 0;
@@ -918,7 +920,7 @@ button[type=submit] {
   letter-spacing: 3px;
   font-size: 10px;
   font-size: 1rem;
-  font-family: 'GoudyOldStyleBTW01-Roma';
+  font-family: 'Avenir LT W01_35 Light';
   font-weight: normal;
   border: 0; }
   input[type=submit]:hover,
@@ -945,7 +947,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 label {
   font-size: 9px;
   font-size: 0.9rem;
-  font-family: 'GoudyOldStyleBTW01-Roma';
+  font-family: 'Avenir LT W01_35 Light';
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 2px; }
@@ -1045,7 +1047,7 @@ fieldset {
   .newsletter_wrapper .gform_description {
     display: block;
     line-height: 1.4;
-    font-family: 'GoudyOldStyleBTW01-Roma';
+    font-family: 'Avenir LT W01_35 Light';
     font-weight: normal;
     letter-spacing: 2px;
     font-size: 10px;
@@ -1134,7 +1136,7 @@ fieldset {
   float: left;
   font-size: 13px;
   font-size: 1.3rem;
-  font-family: 'GoudyOldStyleBTW01-Roma';
+  font-family: 'Avenir LT W01_35 Light';
   font-weight: normal;
   text-transform: none; }
 .comment-form .form-submit {
@@ -1159,7 +1161,7 @@ button:active, button:focus {
   -moz-box-shadow: 0px 5px 2px #d7d7d7;
   -webkit-box-shadow: 0px 5px 2px #d7d7d7;
   box-shadow: 0px 5px 2px #d7d7d7;
-  font-family: 'GoudyOldStyleBTW01-Roma';
+  font-family: 'Avenir LT W01_35 Light';
   font-weight: normal;
   text-transform: uppercase;
   padding: 0.8em 3.5em;
@@ -1179,8 +1181,8 @@ button:active, button:focus {
   top: 0%;
   right: 0%;
   cursor: pointer;
-  padding: 4em 2.8em 0em;
-  background: #013e7f;
+  padding: 3.5em 2.8em 0em;
+  background: none;
   z-index: 8000;
   height: 125px;
   width: 125px; }
@@ -1193,8 +1195,8 @@ button:active, button:focus {
     cursor: pointer;
     border-radius: 1px;
     height: 3px;
-    width: 40px;
-    background: white;
+    width: 35px;
+    background: black;
     position: absolute;
     display: block;
     content: '';
@@ -1202,10 +1204,12 @@ button:active, button:focus {
     -o-transition: all 0.5s ease-in-out;
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out; }
+    .navigation-open .menu-btn span, .navigation-open .menu-btn span:before, .navigation-open .menu-btn span:after {
+      background: white; }
   .menu-btn span:before {
-    top: -13px; }
+    top: -10px; }
   .menu-btn span:after {
-    bottom: -13px; }
+    bottom: -10px; }
   .menu-btn.active span {
     background-color: transparent; }
     .menu-btn.active span:before, .menu-btn.active span:after {
@@ -1277,10 +1281,10 @@ button:active, button:focus {
     font-size: 1em;
     vertical-align: middle; }
 
-.overlay-btn, .overlay-btn-dark {
+.overlay-btn, .overlay-btn-white {
   position: relative;
   display: block; }
-  .overlay-btn:after, .overlay-btn-dark:after {
+  .overlay-btn:after, .overlay-btn-white:after {
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
@@ -1294,7 +1298,7 @@ button:active, button:focus {
     bottom: 0;
     background: rgba(255, 255, 255, 0.5);
     visibility: hidden; }
-  .overlay-btn .overlay, .overlay-btn-dark .overlay {
+  .overlay-btn .overlay, .overlay-btn-white .overlay {
     visibility: hidden;
     opacity: 0;
     display: block;
@@ -1306,14 +1310,14 @@ button:active, button:focus {
     -o-transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease; }
-  .overlay-btn:hover:after, .overlay-btn-dark:hover:after,
+  .overlay-btn:hover:after, .overlay-btn-white:hover:after,
   .overlay-btn:hover .overlay,
-  .overlay-btn-dark:hover .overlay {
+  .overlay-btn-white:hover .overlay {
     opacity: 1;
     visibility: visible; }
 
-.overlay-btn-dark:after {
-  background: rgba(1, 62, 127, 0.8); }
+.overlay-btn-white:after {
+  background: rgba(255, 255, 255, 0.95); }
 
 /* =============================================================================
    Misc
@@ -1474,7 +1478,7 @@ body {
   margin: 0 1.5em; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'GoudyOldStyleBTW01-Roma';
+  font-family: 'Avenir LT W01_35 Light';
   font-weight: normal;
   letter-spacing: 1px; }
 
@@ -1489,7 +1493,7 @@ ol {
       position: absolute;
       left: 0;
       font-size: 0.9em;
-      font-family: 'GoudyOldStyleBTW01-Roma';
+      font-family: 'Avenir LT W01_35 Light';
       font-weight: normal;
       content: counter(counter);
       counter-increment: counter; }
@@ -1507,7 +1511,7 @@ p {
 
 .wp-caption-text {
   padding-right: 10px;
-  font-family: 'GoudyOldStyleBTW01-Roma';
+  font-family: 'Avenir LT W01_35 Light';
   font-weight: normal;
   text-transform: initial !important; }
 

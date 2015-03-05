@@ -14,7 +14,6 @@ h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
 	color: #000;
 	font-weight: normal;
-	letter-spacing: 15px;
 }
 
 h1 {
@@ -39,7 +38,6 @@ h1 {
 
 h2 {
 	@include font-size(35);
-	text-transform: uppercase;
 	color: #333333;
 
 	@include device-width(12) {
@@ -183,7 +181,7 @@ b {
 }
 
 .subtitle {
-	@include goudy;
+	@include avenir-book;
 	@include font-size(14);
 	text-transform: uppercase;
 	margin-bottom: 3em;

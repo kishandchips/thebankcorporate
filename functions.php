@@ -84,32 +84,63 @@ function custom_init(){
 
 			
 		$work_uri = get_page_uri(get_field('work_page', 'options'));
+		$family_uri = get_page_uri(get_field('family_page', 'options'));
 
-		$works = new Custom_Post_Type( 'Work', 
-			array(
-				'rewrite' => array('with_front' => false, 'slug' => $work_uri),
-				'capability_type' => 'post',
-				'publicly_queryable' => true,
-				'has_archive' => true, 
-				'hierarchical' => true,
-				'menu_position' => null,
-				'menu_icon' => 'dashicons-admin-generic',
-				'supports' => array('title', 'editor', 'thumbnail'),
-				'plural' => "Works",		
-			)
-		);
+		if ($work_uri) {
+			$works = new Custom_Post_Type( 'Work', 
+				array(
+					'rewrite' => array('with_front' => false, 'slug' => $work_uri),
+					'capability_type' => 'post',
+					'publicly_queryable' => true,
+					'has_archive' => true, 
+					'hierarchical' => true,
+					'menu_position' => null,
+					'menu_icon' => 'dashicons-admin-generic',
+					'supports' => array('title', 'editor', 'thumbnail'),
+					'plural' => "Works",		
+				)
+			);
 
-		$works->register_taxonomy("Work Category",
-			array(
-				'name' => 'work_cat',
-				'rewrite' => array( 'slug' => 'work-category' ),
-			),
-			array(
-				'plural' => "Product Categories"
-			)
-		);
+			$works->register_taxonomy("Work Category",
+				array(
+					'name' => 'work_cat',
+					'rewrite' => array( 'slug' => 'work-category' ),
+				),
+				array(
+					'plural' => "Product Categories"
+				)
+			);
 
-		$works->register_post_type();
+			$works->register_post_type();
+		}	
+
+		if ($family_uri) {
+			$family = new Custom_Post_Type( 'Family', 
+				array(
+					'rewrite' => array('with_front' => false, 'slug' => $work_uri),
+					'capability_type' => 'post',
+					'publicly_queryable' => true,
+					'has_archive' => true, 
+					'hierarchical' => true,
+					'menu_position' => null,
+					'menu_icon' => 'dashicons-admin-users',
+					'supports' => array('title', 'editor', 'thumbnail'),
+					'plural' => "Family",		
+				)
+			);
+
+			$family->register_taxonomy("Family Category",
+				array(
+					'name' => 'family_cat',
+					'rewrite' => array( 'slug' => 'family-category' ),
+				),
+				array(
+					'plural' => "Family Categories"
+				)
+			);
+
+			$family->register_post_type();
+		}			
 	}
 }
 

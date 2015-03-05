@@ -1,92 +1,81 @@
 .primary-navigation {
 	position: fixed;
-	width: 0%;
+	width: 300px;
 	height: 100%;
-	right: 0;
+	right: -300px;
 	z-index: 7500;
 	top: 0;
-	background: rgba(0, 26, 53, 0.82);
+	background: #000;
 	@include transition(all 0.3s ease);
 
 	ul.menu {
-		@include vertical-align();
+		margin-top: 8em;
 		width: 100%;
-
-		&:before {
-			content: '';
-			width: 200px;
-			height: 130px;
-			display: block;
-			margin: 1em auto;
-			background: url(../images/logos/nav_logo.png) center center no-repeat;
-
-		}
 	}
 
 	li {
 		width: 100%;
 		text-align: center;
-		margin: 2em 0;
+		margin: 1.6em 0;
 
 		a {
 			@include inline-block;
-			@include font-size(50);
+			@include font-size(20);
 			text-transform: uppercase;
 			color: #FFF;
 			border-bottom: 2px solid transparent;
-			letter-spacing: 10px;
-			line-height: 1.2;
+			letter-spacing: 2px;
+			line-height: 1.4;
 
 			&:hover {
-				border-bottom: 2px solid #FFF;
+				border-bottom: 2px solid #ff4d3b;
 			}
 		}
 
 		&.current-menu-item {
 			a {
-				border-bottom: 2px solid #FFF;
+				border-bottom: 2px solid #ff4d3b;
 			}			
 		}
 	}
 
 	.navigation-open & {
-		width: 100%;
+		right: 0px;
 	}
 }
 
 .posts {
 	padding: 2% 9%;
 	@extend .clearfix;
+	padding-bottom: 4em !important;
 
 	li {
 		float: left;
 		width: 33%;
-		padding: 1%;
+		padding: 0.59em 1%;
 
-		#index & {
-			&:nth-of-type(12n+1), &:nth-of-type(12n+8) {
-				width: 66%;
+		&:nth-of-type(6n+1), &:nth-of-type(6n+5) {
+			width: 66%;
 
-				@include device-width(9) {
-					width: 100%;
-				}
+			@include device-width(9) {
+				width: 100%;
 			}
+		}
 
-			&:nth-of-type(12n+4) {
-				clear: left;
+		&:nth-of-type(6n+4) {
+			clear: left;
 
-				@include device-width(9) {
-					clear: none;
-				}					
-			}
+			@include device-width(9) {
+				clear: none;
+			}					
+		}
 
-			&:nth-of-type(12n+9) {
-				margin-top: -380px;
+		&:nth-of-type(6n+6) {
+			margin-top: -258px;
 
-				@include device-width(9) {
-					margin-top: 0px;
-				}				
-			}
+			@include device-width(9) {
+				margin-top: 0px;
+			}				
 		}
 	}
 
@@ -108,7 +97,6 @@
 
 .post-item  {
 	position: relative;
-	margin-bottom: 5em;
 	text-align: left;
 
 	.post-image {
@@ -119,19 +107,31 @@
 
 	.post-title {
 		position: absolute;
-		bottom: -3em;
-		background: #FFF;
+		bottom: 0em;
+		background: rgba(#FFF, 0.9);
 		z-index: 1;
 		left: 0;
-		width: 80%;
-		padding: 1.2em 1.7em 1.2em 0;
+		width: 100%;
+		padding: 1.5em;
 		@include transition(all 0.3s ease);
 		line-height: 1.5;
+
+		&:after {
+			@include icon(right);
+			position: absolute;
+			background: rgba(#FFF, 0.8);
+			top: 0;
+			right: 0;
+			width: 4em;
+			text-align: center;
+			height: 100%;
+			padding-top: 2em;			
+		}		
 		
 		h2 {
-			@include proxima;
-			@include font-size(20);
-			letter-spacing: 5px;
+			@include avenir-light;
+			@include font-size(18);
+			width: 80%;
 
 			@include device-width(6) {
 				@include font-size(14);
@@ -141,7 +141,7 @@
 
 	&:hover {
 		.post-title {
-			padding: 1.2em 1.7em 3em 0;
+			padding: 1.5em 1.5em 3em;
 		}
 	}
 }
@@ -167,7 +167,7 @@
 					text-transform: uppercase;
 					@include font-size(50);
 					letter-spacing: 10px;
-					@include goudy;
+					@include avenir-light;
 				}
 			}			
 		}
@@ -190,10 +190,14 @@
 	width: 100%;
 	text-align: center;
 	margin: 1em 0 0;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	@include font-size(25);
 }
 
 #index {
 	text-align: center;
+	padding-bottom: 5em;
 	
 	.index-header {
 		
@@ -246,7 +250,7 @@
 		padding: 0;
 
 		.input {
-			@include brandon-black;	
+			@include avenir-black;	
 			@include font-size(18);
 
 		}
@@ -292,8 +296,13 @@
 	background: #f6f6f6;
 	padding-top: 1em;
 
-	.post-item .post-title {
-		background: #f6f6f6;
+	.posts {
+		max-width: 1500px;
+		margin: 0 auto;
+		
+		li {
+			width: 33%;
+		}
 	}
 }
 
@@ -321,8 +330,13 @@
 		}		
 	}
 
+	h1, h2, h3, h4, h5, h6 {
+		@include avenir-book;
+		letter-spacing: 10px;
+	}
+
 	p {
-		@include goudy;
+		@include avenir-light;
 		@include font-size(18);
 		line-height: 1.5;
 		margin: 1em 0;
@@ -353,3 +367,74 @@
 		}
 	}
 }
+
+#content {
+	.row.family {
+	 	background: #f6f6f6;
+
+	 	.section-title {
+	 		padding: 2.9em 0;
+	 		margin: 0;
+ 		  	letter-spacing: 5px;
+	 	}
+
+		ul.family {
+			@extend .clearfix;
+
+			li {
+				width: 20%;
+				float: left;
+				position: relative;
+				padding: .2em;
+
+				@include device-width(10) {
+					width: 25%;
+				}
+
+				@include device-width(8) {
+					width: 33%;
+				}				
+
+				@include device-width(6) {
+					width: 50%;
+				}				
+
+				@include device-width(4) {
+					width: 100%;
+				}				
+
+				img {
+					display: block;
+				}
+
+				.post-title {
+					position: absolute;
+					bottom: 2em;
+					right: .2em;
+					width: 90%;
+					background: rgba(#FFF, 0.9);
+					padding: 15px;
+
+					h2, p {
+						color: #333132;
+						@include font-size(16);
+						text-transform: uppercase;
+						letter-spacing: 1.3px !important;
+					}
+
+					h2 {
+						font-family:'Avenir LT W01_95 Black' !important;
+					}
+
+					p {
+						@include avenir-book;
+						padding: 0;
+						margin: 0;
+						line-height: 1;
+					}
+				}
+			}
+		}
+	}
+}
+	

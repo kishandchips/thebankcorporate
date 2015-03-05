@@ -9,7 +9,7 @@ body {
 	color: #646363;
 	@include font-size(15);
 	line-height: 1.5;
-	@include goudy;
+	@include avenir-light;
 }
 
 #tortilla {
@@ -21,53 +21,69 @@ body {
    ========================================================================== */
 
 #header {
-	background: $dark-blue;
-	height: 125px;
+	background: #FFF;
+	height: 115px;
 	position: relative;
 	width: 100%;
-	z-index: 9900;
+	z-index: 1040;
 	@include transition(all 0.3s ease);
 
 	.logo-container {
+		text-align: center;
+		padding-top: .3em;
+
 		.logo {
-			color: #FFF;
-			@include font-size(18);
+			color: #000;
+			@include font-size(40);
 		}
 	}
 
-	// .header-fixed & {
-	// 	position: fixed;
-	// 	top: 0;
-	// 	left: 0;
-	// 	height: 50px;
-	// }
+	.header-fixed & {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 90px;
+		@include box-shadow(0 0px 5px #3D3D3D);
+
+		.logo {
+			@include font-size(30);
+		}
+	}
 }
 
 #footer {
-	background: $dark-blue;
-	padding: 3.5em 0;
-	text-align: center;
-	color: #FFF;
-	@include proxima;
-	@include font-size(14);
+	background: #f2f2f3;
+	padding: 3.5em 0 6em;
+	color: #58595b;
+	@include avenir-light;
+	@include font-size(8.5);
 	text-transform: uppercase;
-	letter-spacing: 2px;
 
-	.copyright {
-		@include inline-block;
+	span {
+		display: block;
+		letter-spacing: 2px;
+		line-height: 1.6;	
+	}
 
-		@include device-width(5) {
-			display: block;
+	.legal {
+		width: 60%;
+		float: left;
+
+		span {
+			&:first-child {
+				@include avenir-medium;
+				text-decoration: underline;
+				margin-bottom: 1em;
+			}
 		}
 	}
 
-	@include device-width(6) {
-		@include font-size(10);
+	.address, .contact {
+		width: 20%;
+		float: left;		
 	}
 
-	span {
-		@include proxima-bold;
-		letter-spacing: 2px;
-		margin-right: 2em;
+	.contact {
+
 	}
 }

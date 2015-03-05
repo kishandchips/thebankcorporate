@@ -15,7 +15,7 @@ select {
 	border: none;
 	letter-spacing: 1px;
 	@include font-size(18);
-	@include brandon-black;
+	@include avenir-black;
 	padding: .5em;
 	@include border-radius(0);
 	
@@ -79,7 +79,7 @@ button[type=submit] {
 	text-align: center;
 	letter-spacing: 3px;
 	@include font-size(10);
-	@include goudy;
+	@include avenir-light;
 	border: 0;
 
 	&:hover {
@@ -107,7 +107,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 
 label {
 	@include font-size(9);
-	@include goudy;
+	@include avenir-light;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
@@ -242,7 +242,7 @@ fieldset {
 	.gform_description {
 		display: block;
 		line-height: 1.4;
-		@include goudy;
+		@include avenir-light;
 		letter-spacing: 2px;
 		@include font-size(10);
 		margin: 0;
@@ -368,7 +368,7 @@ fieldset {
 		@include box-sizing(border-box);
 		float: left;
 		@include font-size(13);
-		@include goudy;
+		@include avenir-light;
 		text-transform: none;
 	}
 

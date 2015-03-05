@@ -1,13 +1,17 @@
 <?php global $post; ?>
 <?php get_header(); ?>
 <div id="page">
-	<div class="inner container">
-		<?php while ( have_posts() ) : the_post(); ?>
+	<?php while ( have_posts() ) : the_post(); ?>
 		<div id="content">
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	
 				<div class="page-content">
-					<?php the_content(); ?>
+					<?php if(!$post->post_content == ''): ?>
+						<?php the_content(); ?>
+					<?php endif; ?>
+					<?php if ( get_field('content')):?>
+						<?php get_template_part('inc/content'); ?>
+					<?php endif; ?>
 				</div>
 			
 			</article>

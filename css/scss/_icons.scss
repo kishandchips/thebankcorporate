@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icons';
-	src:url('fonts/icons.eot?yl2jya');
-	src:url('fonts/icons.eot?#iefixyl2jya') format('embedded-opentype'),
-		url('fonts/icons.woff?yl2jya') format('woff'),
-		url('fonts/icons.ttf?yl2jya') format('truetype'),
-		url('fonts/icons.svg?yl2jya#icons') format('svg');
+	src:url('fonts/icons.eot?w6op77');
+	src:url('fonts/icons.eot?#iefixw6op77') format('embedded-opentype'),
+		url('fonts/icons.woff?w6op77') format('woff'),
+		url('fonts/icons.ttf?w6op77') format('truetype'),
+		url('fonts/icons.svg?w6op77#icons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,6 +23,14 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-right:before {
+	content: "\e604";
+}
+
+.icon-logo:before {
+	content: "\e601";
+}
+
 .icon-arrow-left:before {
 	content: "\e60c";
 }
@@ -35,10 +43,6 @@
 	content: "\e600";
 }
 
-.icon-crest:before {
-	content: "\e601";
-}
-
 .icon-facebook .path1:before {
 	content: "\e602";
 	color: rgb(0, 0, 0);
@@ -47,10 +51,6 @@
 	content: "\e603";
 	margin-left: -1em;
 	color: rgb(255, 255, 255);
-}
-
-.icon-logo:before {
-	content: "\e604";
 }
 
 .icon-rss .path1:before {

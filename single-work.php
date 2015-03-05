@@ -28,6 +28,6 @@
 		// end of the loop. 
 	?>
 </div><!-- #single -->
-<?php include_module('related-posts'); ?>
+<?php include_module('similar-projects'); ?>
 
 <?php get_footer(); ?>

@@ -21,7 +21,7 @@ button {
 	background: #013e7f;
 	@include border-radius(3px);
 	@include box-shadow(0px 5px 2px #d7d7d7);
-	@include goudy;
+	@include avenir-light;
 	text-transform: uppercase;
 	padding: 0.8em 3.5em;
 	@include inline-block;
@@ -37,6 +37,7 @@ button {
 .secondary-btn {
 
 	&:hover {
+
 	}	
 }
 
@@ -47,8 +48,8 @@ button {
 	top: 0%; 
 	right: 0%; 
 	cursor: pointer; 
-	padding: 4em 2.8em 0em;
-	background: #013e7f;
+	padding: 3.5em 2.8em 0em;
+	background: none;
 	z-index: 8000;
 	height: 125px;
 	width: 125px;
@@ -63,20 +64,24 @@ button {
 		cursor: pointer;
 		border-radius: 1px;
 		height: 3px;
-		width: 40px;
-		background: white;
+		width: 35px;
+		background: black;
 		position: absolute;
 		display: block;
 		content: '';
 		@include transition(all 0.5s ease-in-out);
+
+		.navigation-open & {
+			background: white;
+		}
 	}	
 
 	span:before {
-		top: -13px; 
+		top: -10px; 
 	}	
 
 	span:after {
-		bottom: -13px;
+		bottom: -10px;
 	}
 
 	&.active {
@@ -206,11 +211,11 @@ button {
 	}
 }
 
-.overlay-btn-dark {
+.overlay-btn-white {
 	@extend .overlay-btn;
 
 	&:after {
-		background: rgba(#013e7f, 0.8);
+		background: rgba(#FFF, 0.95);
 	}
 
 }

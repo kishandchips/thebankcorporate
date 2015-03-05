@@ -76,8 +76,6 @@
 					    dots: true,
 					    nav: true,
 					    items: 1,
-						animateOut: 'fadeOut',
-						animateIn: 'fadeIn',
 						navText: ["",""],
 					});
 				}

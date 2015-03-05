@@ -1,24 +1,23 @@
 <?php get_header(); ?>
 <section id="front-page">
-	<div class="inner container">
 	<div class="owl-carousel featured-carousel">
 	    <div class="item">
 	    	<a href="#">
-		    	<div class="title">
-		    		<h1><?php _e('Brave Ideas, Beautifully executed') ?></h1>
-	    		</div>
-		    	<img src="<?php bloginfo('template_directory' ); ?>/images/misc/the_bank_slide.jpg" alt="">	
+		    	<img src="<?php bloginfo('template_directory' ); ?>/images/misc/bankslide.jpg" alt="">	
 	    	</a>
     	</div>
 	    <div class="item">
 	    	<a href="#">
-		    	<div class="title">
-		    		<h1><?php _e('Brave Ideas, Beautifully executed') ?></h1>
-	    		</div>
-		    	<img src="<?php bloginfo('template_directory' ); ?>/images/misc/the_bank_slide1.jpg" alt="">	
+		    	<img src="<?php bloginfo('template_directory' ); ?>/images/misc/bankslide_peroni.jpg" alt="">	
 	    	</a>
-    	</div>    	
+    	</div>   
+	    <div class="item">
+	    	<a href="#">
+		    	<img src="<?php bloginfo('template_directory' ); ?>/images/misc/bankslide_400.jpg" alt="">	
+	    	</a>
+    	</div>     	 	
 	</div>	
+	<div class="inner container">
 	<?php
 		$args = array(									
 			'post_type'   => 'post',
@@ -38,17 +37,19 @@
 			<ul class="posts">
 				<?php 
 				$i = 0;
+				$i = 1;
+				$array = array(1,5);				
 				while ( $query->have_posts() ) : $query->the_post(); ?>
 					<?php 
-						$image_size = array('width' => 370, 'height' => 250);
+						$image_size = (in_array($i % 6 , $array)) ?  array('width' => 804, 'height' => 542) : array('width' => 392, 'height' => 263);
 					?>
-		            <li>
-		                <?php include_module('post-item', array(
-							'title' => get_the_title(),
-							'url' =>  get_permalink(),
-							'image_url' => get_post_thumbnail_src($image_size),
-						)); ?>
-		            </li>								
+	            <li>
+	                <?php include_module('post-item', array(
+						'title' => get_the_title(),
+						'url' =>  get_permalink(),
+						'image_url' => get_post_thumbnail_src($image_size),
+					)); ?>
+	            </li>								
 				<?php 
 				$i++;
 				endwhile; // end of the loop. ?>

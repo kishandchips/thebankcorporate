@@ -478,6 +478,39 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/misc\/bankslide.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 176721,
+		"inputAbbreviatedPath": "\/images\/misc\/bankslide.jpg",
+		"outputAbbreviatedPath": "\/images\/misc\/bankslide.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/misc\/bankslide_400.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 462995,
+		"inputAbbreviatedPath": "\/images\/misc\/bankslide_400.jpg",
+		"outputAbbreviatedPath": "\/images\/misc\/bankslide_400.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/misc\/bankslide_peroni.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 162928,
+		"inputAbbreviatedPath": "\/images\/misc\/bankslide_peroni.jpg",
+		"outputAbbreviatedPath": "\/images\/misc\/bankslide_peroni.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/misc\/dropdown.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -496,28 +529,6 @@
 		"initialSize": 2042,
 		"inputAbbreviatedPath": "\/images\/misc\/favicon.png",
 		"outputAbbreviatedPath": "\/images\/misc\/favicon.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/misc\/the_bank_slide.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 163101,
-		"inputAbbreviatedPath": "\/images\/misc\/the_bank_slide.jpg",
-		"outputAbbreviatedPath": "\/images\/misc\/the_bank_slide.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/misc\/the_bank_slide1.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 143455,
-		"inputAbbreviatedPath": "\/images\/misc\/the_bank_slide1.jpg",
-		"outputAbbreviatedPath": "\/images\/misc\/the_bank_slide1.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -653,6 +664,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/inc\/modules\/share.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/inc\/modules\/similar-projects.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/inc\/modules\/similar-projects.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

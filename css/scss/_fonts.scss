@@ -1,36 +1,50 @@
-@mixin proxima {
-	font-family:'Proxima N W01 Reg';
+@mixin avenir-light {
+	font-family:'Avenir LT W01_35 Light';
 	font-weight: normal;
 }
 
-.proxima {
-	@include proxima;
+.avenir-light {
+	@include avenir-light;
 }
 
-@mixin proxima-bold {
-	font-family:'Proxima N W01 At Bold';
+@mixin avenir-book {
+	font-family:'Avenir LT W01_45 Book';
 	font-weight: normal;
 }
 
-.proxima-bold {
-	@include proxima-bold;
+.avenir-book {
+	@include avenir-book;
 }
 
-@mixin goudy {
-	font-family:'GoudyOldStyleBTW01-Roma';
+@mixin avenir-roman {
+	font-family:'Avenir LT W01_55 Roman';
 	font-weight: normal;
 }
 
-.goudy {
-	@include goudy;
+.avenir-roman {
+	@include avenir-roman;
 }
 
-@mixin brandon-black {
-	font-family:'Brandon Grot W01 Black';
+@mixin avenir-medium {
+	font-family:'Avenir LT W01_65 Medium';
 	font-weight: normal;
 }
 
-.brandon-black {
-	@include brandon-black;
+.avenir-medium {
+	@include avenir-medium;
 }
+
+@mixin avenir-black {
+	font-family:'Avenir LT W01_95 Black';
+	font-weight: normal;
+}
+
+.avenir-black {
+	@include avenir-black;
+}
+
+
+
+
+
 

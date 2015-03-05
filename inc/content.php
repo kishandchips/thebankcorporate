@@ -53,9 +53,36 @@
 				</div>
 			</div>
 		<?php endif; ?>
-		
-		
-	<?php } ?>
+		<?php
+		case 'family':
+
+		if(get_sub_field('choose_family_members')): ?>
+
+			<?php $posts = get_sub_field('choose_family_members'); ?>
+
+			<div class="row family">
+				<div class="container">
+				    <h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>
+				    <ul class="family">
+				    <?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
+				        <?php 
+				            $image_size = array('width' => 278, 'height' => 328);
+				            $image_src = get_image(get_post_thumbnail_id($p->ID), $image_size);
+				        ?>
+				        <li>
+							<img src="<?php echo $image_src; ?>" />
+							<div class="post-title">
+								<h2><?php echo get_the_title( $p->ID); ?></h2>
+								<p><?php the_field('role', $p->ID); ?></p>
+							</div>
+				        </li>           
+				    <?php endforeach; ?>
+				    </ul>
+			    </div>
+			</div>
+			
+		<?php endif; ?>
+		<?php } ?>
 
 <?php $i++; ?>
 <?php endwhile; ?>

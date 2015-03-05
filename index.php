@@ -19,11 +19,11 @@
 			<ul class="posts">
 			<?php 
 			$i = 1;
-			$array = array(1,8);
+			$array = array(1,5);
 			
 			while ( have_posts() ) : the_post(); ?>
 				<?php 
-					$image_size = (in_array($i, $array)) ?  array('width' => 780, 'height' => 635) : array('width' => 370, 'height' => 250);
+					$image_size = (in_array($i % 6 , $array)) ?  array('width' => 804, 'height' => 542) : array('width' => 392, 'height' => 263);
 				?>
 	            <li>
 	                <?php include_module('post-item', array(

@@ -1,12 +1,29 @@
 #works {
-	max-width: 1400px;
-	margin: 0 auto;
+	background: #f7f7f7;
+
+	.inner {
+		max-width: 1400px;
+		margin: 0 auto;		
+	}
 
 	ul.posts {
 		padding: 1%;
 
 		li {
 			padding: .5%;
+			width: 33%;
+
+			&:nth-of-type(6n+6) {
+				margin-top: 0;
+			}
+
+			@include device-width(9) {
+				width: 50%;
+			}
+
+			@include device-width(4) {
+				width: 100%;
+			}			
 		}
 	}	
 
@@ -23,19 +40,14 @@
 			width: -webkit-calc(100% + 50px);
 			width: calc(100% + 50px);
 			opacity: 1;
-			-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-			transition: opacity 0.35s, transform 0.35s;
-			-webkit-transform: translate3d(-40px,0, 0);
-			transform: translate3d(-40px,0,0);
+			@include transition(all 0.35s ease-in-out);
+			@include transform(translate3d(-40px,0, 0));
 		}
 
 		figcaption {
-			text-align: left;
-
+		
 			> div {
-				position: absolute;
-				bottom: 0;
-				left: 0;
+				@include vertical-align;
 				padding: 2em;
 				width: 100%;
 				height: auto;
@@ -44,45 +56,47 @@
 		}
 
 		h2,	p {
-			-webkit-transform: translate3d(0,40px,0);
-			transform: translate3d(0,40px,0);
+			@include transform(translate3d(0,40px, 0));
+			color: #333132;
+			text-align: center;
+			opacity: 0;
 		}	
 
 		h2 {
-			-webkit-transition: -webkit-transform .5s;
-			transition: transform .5s;
-			@include font-size(20);
-			color: #FFF;
-			@include proxima-bold;
-			opacity: 0;
+			@include transition(all 0.5s);
+			@include font-size(18);
+			@include avenir-book;
+			color: #333132;
 			letter-spacing: 2px;
 		}
 
 		p {
 			color: rgba(255,255,255,0.8);
-			opacity: 0;
-			-webkit-transition: opacity 0.2s, -webkit-transform .5s;
-			transition: opacity 0.2s, transform .5s;
-			@include goudy;
+			@include font-size(18);
+			@include transition(all 0.5s);
+			@include avenir-light;
+			color: #333132;
+			margin: .5em 0;
 		}	
 
-		&:hover {
-			img, p {
-				opacity: 1;
-			}	
+		.icon-right {
+			@include font-size(15);
+			color: #ff5948;
+			opacity: 0;
+			@include transition(all 0.5s ease-in-out);
+			@include transform(translate3d(-50px,0, 0));						
+		}		
 
-			img, h2, p {
-				-webkit-transform: translate3d(0,0,0);
-				transform: translate3d(0,0,0);
+		&:hover {
+			img, h2, p, .icon-right {
+				@include transform(translate3d(0,0, 0));
 				opacity: 1;
 			}
 
 			p {
-				-webkit-transition-delay: 0.05s;
-				transition-delay: 0.05s;
-				-webkit-transition-duration: .5s;
-				transition-duration: .5s;
-			}		
+				@include transition-delay(0.05s);
+				@include transition-duration(.5s);
+			}				
 		}
 	}
 }
