@@ -25,8 +25,8 @@
 				<span>W1T 3LN</span>		
 			</div>
 			<div class="contact">
-				<span>T  +44 (0) 207 612 8000</span>
-				<span>E  reception@thebank.co.uk</span>
+				<span>T: +44 (0) 207 612 8000</span>
+				<span>E: reception@thebank.co.uk</span>
 			</div>					
 		</div>
 

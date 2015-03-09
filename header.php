@@ -36,5 +36,7 @@
 			
 			<?php wp_nav_menu( array( 'depth' => 0, 'theme_location' => 'primary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'primary-navigation navigation' )); ?>
 			</div>
+			<?php include_module('subnavigation'); ?>			
 	</header><!-- #header -->
+
 	<div id="main" class="site-main" role="main">

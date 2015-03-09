@@ -468,6 +468,10 @@ h1 {
     h1 {
       font-size: 45px;
       font-size: 4.5rem; } }
+  @media only screen and (max-width: 500px) {
+    h1 {
+      font-size: 35px;
+      font-size: 3.5rem; } }
 
 h2 {
   font-size: 35px;
@@ -1188,7 +1192,7 @@ button:active, button:focus {
   height: 125px;
   width: 125px; }
   .header-fixed .menu-btn {
-    padding: 1.5em 2.8em 0em; }
+    padding: 1.6em 2.8em 0em; }
   @media only screen and (max-width: 900px) {
     .menu-btn {
       height: 75px;

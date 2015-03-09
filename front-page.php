@@ -1,22 +1,38 @@
 <?php get_header(); ?>
 <section id="front-page">
-	<div class="owl-carousel featured-carousel">
-	    <div class="item">
-	    	<a href="#">
-		    	<img src="<?php bloginfo('template_directory' ); ?>/images/misc/bankslide.jpg" alt="">	
-	    	</a>
-    	</div>
-	    <div class="item">
-	    	<a href="#">
-		    	<img src="<?php bloginfo('template_directory' ); ?>/images/misc/bankslide_peroni.jpg" alt="">	
-	    	</a>
-    	</div>   
-	    <div class="item">
-	    	<a href="#">
-		    	<img src="<?php bloginfo('template_directory' ); ?>/images/misc/bankslide_400.jpg" alt="">	
-	    	</a>
-    	</div>     	 	
-	</div>	
+
+	<?php
+		$args = array(									
+			'post_type'   => 'slides',
+			'post_status' => 'publish',	
+			'posts_per_page' => 6,
+			'order'       => 'DESC',
+			'orderby'     => 'date'
+		);
+	
+		$slide_query = new WP_Query( $args ); ?>
+
+		<?php if ( $slide_query->have_posts() ): ?>
+
+			<div class="owl-carousel featured-carousel">
+
+			<?php while ( $slide_query->have_posts() ) : $slide_query->the_post(); ?>
+
+				<?php $post_object = get_field('slide_linkage'); ?>
+
+			    <div class="item">
+			    	<a href="<?php echo get_permalink($post_object->ID); ?>">
+				    	<img src="<?php the_field('slide_image'); ?>" alt="">	
+			    	</a>
+		    	</div>
+	    	<?php endwhile; ?>
+  	 	
+			</div>				
+
+		<?php endif; ?>
+
+
+
 	<div class="inner container">
 	<?php
 		$args = array(									

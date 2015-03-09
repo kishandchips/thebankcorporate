@@ -55,7 +55,7 @@ button {
 	width: 125px;
 
 	.header-fixed & {
-		padding: 1.5em 2.8em 0em;
+		padding: 1.6em 2.8em 0em;
 	}
 
 	@include device-width(9) {

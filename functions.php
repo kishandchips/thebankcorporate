@@ -86,6 +86,7 @@ function custom_init(){
 		$work_uri = get_page_uri(get_field('work_page', 'options'));
 		$family_uri = get_page_uri(get_field('family_page', 'options'));
 
+		//Works custom post type
 		if ($work_uri) {
 			$works = new Custom_Post_Type( 'Work', 
 				array(
@@ -113,7 +114,7 @@ function custom_init(){
 
 			$works->register_post_type();
 		}	
-
+		//Family custom post type
 		if ($family_uri) {
 			$family = new Custom_Post_Type( 'Family', 
 				array(
@@ -140,7 +141,24 @@ function custom_init(){
 			);
 
 			$family->register_post_type();
-		}			
+		}
+
+		//Slides custom post type
+		$slides = new Custom_Post_Type( 'Slides', 
+			array(
+				'rewrite' => array('with_front' => false, 'slug' => 'slides'),
+				'capability_type' => 'post',
+				'publicly_queryable' => true,
+				'has_archive' => true, 
+				'hierarchical' => true,
+				'menu_position' => null,
+				'menu_icon' => 'dashicons-format-gallery',
+				'supports' => array('title', 'editor', 'thumbnail'),
+				'plural' => "Slides",		
+			)
+		);		
+
+		$slides->register_post_type();		
 	}
 }
 
@@ -224,6 +242,8 @@ function custom_gallery( $atts ) {
         'ids'      => array()
     ), $atts));
 
+    $columns = $atts['columns'];
+
     $ids = explode(',', $atts['ids']);
 
    	if( !empty($ids) ){
@@ -305,6 +325,13 @@ function my_mce_before_init_insert_formats( $init_array ) {
 			'wrapper' => true,
 			
 		),  
+		array(  
+			'title' => 'Uppercase',  
+			'block' => 'span',  
+			'classes' => 'uppercase',
+			'wrapper' => true,
+			
+		),  		
 	);  
 
 	$init_array['style_formats'] = json_encode( $style_formats );  

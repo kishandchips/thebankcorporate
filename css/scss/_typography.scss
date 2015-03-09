@@ -34,6 +34,10 @@ h1 {
 	@include device-width(6) {
 		@include font-size(45);	
 	}
+
+	@include device-width(5) {
+		@include font-size(35);	
+	}	
 }
 
 h2 {

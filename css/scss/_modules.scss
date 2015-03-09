@@ -44,6 +44,65 @@
 	}
 }
 
+#subnav {
+	background: #d7d7d7;
+	padding: 0 2.8em;
+	position: absolute;
+	width: 100%;
+	bottom: -54px;
+
+	ul {
+		li {
+			float: right;
+			margin: 0 25px;
+			border-bottom: 4px solid transparent;
+
+			&.current_page_item {
+				border-bottom: 4px solid #000;
+			}
+
+			&:first-child {
+				margin-right: 0;
+			}
+
+			a {
+				@include inline-block;
+				@include avenir-light;
+				@include font-size(16);
+				text-transform: uppercase;
+  				padding: 15px 0 11px;
+  				letter-spacing: 2px;
+			}
+		}
+	}
+
+	@include device-width(8) {
+		bottom: -37px;
+
+		ul {
+			li {
+			  margin: 0 10px;
+
+				a {
+					padding: 11px 0 7px;
+					@include font-size(10);
+
+				}		
+			}
+		}
+	}
+
+	.header-fixed & {
+		bottom: -37px;
+
+		a {
+			padding: 11px 0 7px;
+			@include font-size(10);
+
+		}
+	}
+}
+
 .posts {
 	padding: 2% 9%;
 	@extend .clearfix;
@@ -115,6 +174,7 @@
 		padding: 1.5em;
 		@include transition(all 0.3s ease);
 		line-height: 1.5;
+		text-transform: uppercase;
 
 		&:after {
 			@include icon(right);
@@ -302,6 +362,23 @@
 		
 		li {
 			width: 33%;
+
+			@include device-width(8) {
+				width: 50%;
+
+				&:last-child {
+					float: none;
+					margin: 0 auto;
+				}
+			}
+
+			@include device-width(4) {
+				width: 100%;
+
+				&:last-child {
+					float: left;	
+				}
+			}			
 		}
 	}
 }
@@ -327,7 +404,11 @@
 
 		@include device-width(5) {
 			padding: 4em 1em;
-		}		
+		}	
+
+		@include device-width(4) {
+			padding: 2em 1em;
+		}			
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -347,7 +428,26 @@
 
 		@include device-width(6) {
 			padding: 0 1em;			
+		}			
+	}
+
+	ul {
+		list-style: disc;
+		padding-left: 1.2em;
+	}		
+
+	.textblock {
+		padding: 0px 15%;
+
+		@include device-width(10) {
+			padding: 0;			
 		}		
+	}
+
+	.uppercase {
+		color: #000;
+		letter-spacing: 2px;
+		@include avenir-black;
 	}
 }
 
@@ -370,6 +470,7 @@
 #content {
 	.row.family {
 	 	background: #f6f6f6;
+	 	padding-bottom: 6.5em;
 
 	 	.section-title {
 	 		padding: 2.9em 0;
@@ -379,6 +480,8 @@
 
 		ul.family {
 			@extend .clearfix;
+			list-style-type: none;
+			padding: 0;
 
 			li {
 				width: 20%;
@@ -396,11 +499,7 @@
 
 				@include device-width(6) {
 					width: 50%;
-				}				
-
-				@include device-width(4) {
-					width: 100%;
-				}				
+				}							
 
 				img {
 					display: block;
@@ -419,6 +518,10 @@
 						@include font-size(16);
 						text-transform: uppercase;
 						letter-spacing: 1.3px !important;
+
+						@include device-width(4) {
+							@include font-size(11);
+						}							
 					}
 
 					h2 {
@@ -432,6 +535,42 @@
 						line-height: 1;
 					}
 				}
+			}
+		}
+	}
+
+	.row.thumb-grid {
+
+	 	.section-title {
+	 		padding: 0 0 2.9em;
+	 		margin: 0;
+ 		  	letter-spacing: 5px;
+	 	}		
+
+		ul {
+			list-style-type: none;
+			padding: 0;
+
+			li {
+				width: 20%;
+				float: left;
+				padding: 10px;
+
+				img {
+					display: block;
+				}
+
+				@include device-width(10) {
+					width: 25%;
+				}
+
+				@include device-width(8) {
+					width: 33%;
+				}				
+
+				@include device-width(6) {
+					width: 50%;
+				}								
 			}
 		}
 	}

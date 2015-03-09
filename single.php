@@ -9,8 +9,11 @@
 
 		<div id="content">
 			<div class="inner container">
+				<?php 
+					$classes = 'textblock';
+				 ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+				<article id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
 
 				<?php if(!$post->post_content == ''): ?>
 					<div class="post-header">
