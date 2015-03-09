@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icons';
-	src:url('fonts/icons.eot?w6op77');
-	src:url('fonts/icons.eot?#iefixw6op77') format('embedded-opentype'),
-		url('fonts/icons.woff?w6op77') format('woff'),
-		url('fonts/icons.ttf?w6op77') format('truetype'),
-		url('fonts/icons.svg?w6op77#icons') format('svg');
+	src:url('fonts/icons.eot?v2qqus');
+	src:url('fonts/icons.eot?#iefixv2qqus') format('embedded-opentype'),
+		url('fonts/icons.woff?v2qqus') format('woff'),
+		url('fonts/icons.ttf?v2qqus') format('truetype'),
+		url('fonts/icons.svg?v2qqus#icons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -21,6 +21,18 @@
 	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-facebook:before {
+	content: "\e602";
+}
+
+.icon-rss:before {
+	content: "\e603";
+}
+
+.icon-twitter:before {
+	content: "\e605";
 }
 
 .icon-right:before {
@@ -43,47 +55,7 @@
 	content: "\e600";
 }
 
-.icon-facebook .path1:before {
-	content: "\e602";
-	color: rgb(0, 0, 0);
-}
-.icon-facebook .path2:before {
-	content: "\e603";
-	margin-left: -1em;
-	color: rgb(255, 255, 255);
-}
-
-.icon-rss .path1:before {
-	content: "\e605";
-	color: rgb(0, 0, 0);
-}
-.icon-rss .path2:before {
-	content: "\e606";
-	margin-left: -1em;
-	color: rgb(255, 255, 255);
-}
-.icon-rss .path3:before {
-	content: "\e607";
-	margin-left: -1em;
-	color: rgb(255, 255, 255);
-}
-.icon-rss .path4:before {
-	content: "\e608";
-	margin-left: -1em;
-	color: rgb(255, 255, 255);
-}
-
 .icon-search:before {
 	content: "\e609";
-}
-
-.icon-twitter .path1:before {
-	content: "\e60a";
-	color: rgb(0, 0, 0);
-}
-.icon-twitter .path2:before {
-	content: "\e60b";
-	margin-left: -1em;
-	color: rgb(255, 255, 255);
 }
 
