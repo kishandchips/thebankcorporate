@@ -88,6 +88,7 @@ function custom_init(){
 
 		//Works custom post type
 		if ($work_uri) {
+
 			$works = new Custom_Post_Type( 'Work', 
 				array(
 					'rewrite' => array('with_front' => false, 'slug' => $work_uri),
@@ -102,13 +103,13 @@ function custom_init(){
 				)
 			);
 
-			$works->register_taxonomy("Work Category",
+			$works->register_taxonomy("Client",
 				array(
-					'name' => 'work_cat',
-					'rewrite' => array( 'slug' => 'work-category' ),
+					'name' => 'client',
+					'rewrite' => array( 'slug' => 'clients' ),
 				),
 				array(
-					'plural' => "Product Categories"
+					'plural' => "Clients"
 				)
 			);
 
@@ -118,7 +119,7 @@ function custom_init(){
 		if ($family_uri) {
 			$family = new Custom_Post_Type( 'Family', 
 				array(
-					'rewrite' => array('with_front' => false, 'slug' => $work_uri),
+					'rewrite' => array('with_front' => false, 'slug' => $family_uri),
 					'capability_type' => 'post',
 					'publicly_queryable' => true,
 					'has_archive' => true, 
@@ -260,18 +261,18 @@ function custom_gallery( $atts ) {
 
 			<?php if ($id === end($ids)): ?>
 				<?php if( $i % 2 == 1): ?>				
-					<a href="<?php echo $image_full; ?>" class="image">
+					<a href="<?php echo $image_full; ?>" class="image overlay-btn">
 						<img src="<?php echo $image_url; ?>" data-id="<?php echo $id; ?>" />
 					</a>					
 				<?php else: ?>
 					<?php $image_size = array('width' => 1080, 'height' => 405); ?>
 					<?php $image_url = get_image($id, $image_size); ?>
-					<a href="<?php echo $image_full; ?>" class="image full">
+					<a href="<?php echo $image_full; ?>" class="image full overlay-btn">
 						<img src="<?php echo $image_url; ?>" data-id="<?php echo $id; ?>" />
 					</a>					
 				<?php endif; ?>
 			<?php else: ?>
-				<a href="<?php echo $image_full; ?>" class="image">
+				<a href="<?php echo $image_full; ?>" class="image overlay-btn">
 					<img src="<?php echo $image_url; ?>" data-id="<?php echo $id; ?>" />
 				</a>				
 			<?php endif; ?>	

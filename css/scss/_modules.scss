@@ -174,7 +174,7 @@
 		padding: 1.5em;
 		@include transition(all 0.3s ease);
 		line-height: 1.5;
-		text-transform: uppercase;
+		//text-transform: uppercase;
 
 		&:after {
 			@include icon(right);
@@ -388,6 +388,10 @@
     background: transparent;
 }
 
+#gmaps {
+	@extend .clearfix;
+}
+
 #content {
 
 	a {
@@ -545,11 +549,10 @@
 		}
 	}
 
-	.row.thumb-grid {
+	.row.clients {
 
 	 	.section-title {
-	 		padding: 0 0 2.9em;
-	 		margin: 0;
+	 		padding: 2.9em 0;
  		  	letter-spacing: 5px;
 	 	}		
 

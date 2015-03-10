@@ -2,6 +2,13 @@
 <?php get_header(); ?>
 
 <?php include_module('parallax-header'); ?>
+<?php if(get_field('google_maps_shortcode')): ?>
+	<div id="gmaps">
+		<?php $map = get_field('google_maps_shortcode'); ?>
+
+		<?php echo do_shortcode($map); ?>
+	</div>
+<?php endif; ?>
 
 <div id="page">
 	<?php while ( have_posts() ) : the_post(); ?>

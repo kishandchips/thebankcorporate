@@ -10,6 +10,7 @@
 			this.frontpage.init();
 			this.infiniteScroll();
 			this.magnific.init();
+			this.filters.init();
 		},
 
 
@@ -104,13 +105,25 @@
 		            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
 		          }
 		        });
-
-
-			
 			}
 		},		
 
+		filters: {
+			element: $('.filters'),
+			init: function(){
+				var element = this.element,
+					category = $('.category', element),
+					date = $('.date', element);
 
+				category.on('change', function(){
+					window.location.href = $(this).val();
+				});
+
+				date.on('change', function(){
+					window.location.href = $(this).val();
+				});
+			}
+		},
 
 		infiniteScroll: function() {
 			  var container = $('ul.posts');

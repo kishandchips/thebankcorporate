@@ -84,28 +84,33 @@
 				<?php endif; ?>
 			<?php 
 			break;
-			case 'thumbnail_grid':
-				$images = get_sub_field('gallery'); ?>
+			case 'client_grid': ?>
 
-				<?php if( $images ): ?>
-					<div class="row thumb-grid">
-						<div class="container inner">	
-							<h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>				
-						    <ul>
-						        <?php foreach( $images as $image ): ?>
-						        	<?php 
-							            $image_size = array('width' => 200, 'height' => 125);
-							            $image_src = get_image($image["id"], $image_size);				        	
-						        	 ?>
-						            <li>
-				                     	<img src="<?php echo $image_src; ?>" alt="<?php echo $image['alt']; ?>" />
-						            </li>
-						        <?php endforeach; ?>
-						    </ul>
-					    </div>
+			<?php 
+			$terms = get_sub_field('clients');
+			if( $terms ): ?>
+				<div class="row clients">
+					<div class="container">
+						<h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>
+						<ul>
+							<?php foreach( $terms as $term ): ?>
+								<li>
+								<?php 
+									$taxonomy = $term->taxonomy;
+									$term_id = $term->term_taxonomy_id;  
+									$thumbnail = get_field('client_logo', $taxonomy . '_' . $term_id);
+									$image_size = array('width' => 200);
+									$image_url = get_image($thumbnail, $image_size);
+								?>					
+									<a href="<?php echo get_term_link( $term ); ?>" class="overlay-btn">
+										<img src="<?php echo $image_url; ?>" alt="">
+									</a>
+								</li>
+							<?php endforeach; ?>
+						</ul>
 				    </div>
-				<?php endif; ?>			
-
+				</div>				
+			<?php endif; ?>			
 			<?php } ?>
 
 	<?php $i++; ?>
