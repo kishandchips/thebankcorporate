@@ -430,7 +430,7 @@
 		@include avenir-light;
 		@include font-size(18);
 		line-height: 1.5;
-		margin: 1em 0;
+		margin: 2em 0;
 
 		@include device-width(10) {
 			padding: 0 3em;			
@@ -559,26 +559,69 @@
 		ul {
 			list-style-type: none;
 			padding: 0;
+			@extend .clearfix;
+			margin-bottom: 3em;
 
 			li {
 				width: 20%;
 				float: left;
 				padding: 10px;
+				text-align: center;
+
+				&:nth-child(5n+1) {
+					clear: left;
+				}				
 
 				img {
-					display: block;
+					@include inline-block;
 				}
 
 				@include device-width(10) {
 					width: 25%;
+
+					&:nth-child(5n+1) {
+						clear: none;
+					}	
+
+					&:nth-child(4n+1) {
+						clear: left;
+					}										
 				}
 
 				@include device-width(8) {
 					width: 33%;
+
+					&:nth-child(5n+1) {
+						clear: none;
+					}	
+
+					&:nth-child(4n+1) {
+						clear: none;
+					}	
+
+					&:nth-child(3n+1) {
+						clear: left;
+					}											
 				}				
 
 				@include device-width(6) {
 					width: 50%;
+
+					&:nth-child(5n+1) {
+						clear: none;
+					}	
+
+					&:nth-child(4n+1) {
+						clear: none;
+					}	
+
+					&:nth-child(3n+1) {
+						clear: none;
+					}	
+					
+					&:nth-child(2n+1) {
+						clear: left;
+					}										
 				}								
 			}
 		}
@@ -621,8 +664,9 @@
 	text-align: right;
 	color: #c8c8c8;	
 	@include transition(all 0.3s ease);
+	max-width: 300px;
 
-	@include device-width(6) {
+	@include device-width(11) {
 		display: none;
 	}
 

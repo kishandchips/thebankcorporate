@@ -29,14 +29,15 @@
 	
 	<header id="header" role="banner">
 		<a class="menu-btn" href="#"><span></span></a>
-		<div class="inner container">
-			<h1 class="logo-container">
-				<a class="logo icon icon-logo" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a>
-			</h1>
+		<?php if(!is_front_page()): ?>
 			<div class="currentpage">
 				<?php wp_title(''); ?>
 			</div>
-			
+		<?php endif; ?>			
+		<div class="inner container">
+			<h1 class="logo-container">
+				<a class="logo icon icon-logo" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a>
+			</h1>	
 			<?php wp_nav_menu( array( 'depth' => 0, 'theme_location' => 'primary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'primary-navigation navigation' )); ?>
 			</div>
 			<?php include_module('subnavigation'); ?>			

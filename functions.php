@@ -99,7 +99,7 @@ function custom_init(){
 					'menu_position' => null,
 					'menu_icon' => 'dashicons-admin-generic',
 					'supports' => array('title', 'editor', 'thumbnail'),
-					'plural' => "Works",		
+					'plural' => "Work",		
 				)
 			);
 
@@ -244,8 +244,6 @@ function custom_gallery( $atts ) {
     extract(shortcode_atts(array(
         'ids'      => array()
     ), $atts));
-
-    $columns = $atts['columns'];
 
     $ids = explode(',', $atts['ids']);
 

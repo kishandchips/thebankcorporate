@@ -2,17 +2,17 @@
 <section id="front-page">
 
 	<?php
-		$args = array(									
-			'post_type'   => 'slides',
-			'post_status' => 'publish',	
-			'posts_per_page' => 6,
-			'order'       => 'DESC',
-			'orderby'     => 'date'
-		);
-	
-		$slide_query = new WP_Query( $args ); ?>
+	$args = array(									
+		'post_type'   => 'slides',
+		'post_status' => 'publish',	
+		'posts_per_page' => 6,
+		'order'       => 'DESC',
+		'orderby'     => 'date'
+	);
 
-		<?php if ( $slide_query->have_posts() ): ?>
+	$slide_query = new WP_Query( $args ); ?>
+
+	<?php if ( $slide_query->have_posts() ): ?>
 
 		<div id="wowslider">
 			<div class="ws_images">
@@ -41,11 +41,7 @@
 			</div>
 		</div>		
 		</div>		
-
-
-
-		<?php endif; ?>
-
+	<?php endif; ?>
 
 
 	<div class="inner container">

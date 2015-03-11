@@ -13,9 +13,8 @@ body {
 }
 
 #tortilla {
-
 	.header-fixed & {
-		padding-top: 115px;
+		padding-top: 40px;
 	}
 
 }
@@ -52,7 +51,7 @@ body {
 		top: 0;
 		left: 0;
 		height: 56px;
-		@include box-shadow(0 0px 5px #3D3D3D);
+		@include box-shadow(0 0px 10px #DADADA);
 
 		.logo-container {
 			padding-top: 12px;
