@@ -122,7 +122,7 @@ function custom_init(){
 					'rewrite' => array('with_front' => false, 'slug' => $family_uri),
 					'capability_type' => 'post',
 					'publicly_queryable' => true,
-					'has_archive' => true, 
+					'has_archive' => false, 
 					'hierarchical' => true,
 					'menu_position' => null,
 					'menu_icon' => 'dashicons-admin-users',

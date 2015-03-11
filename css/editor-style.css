@@ -1161,10 +1161,11 @@ button:active, button:focus {
   padding: 3.5em 2.8em 0em;
   background: none;
   z-index: 8000;
-  height: 125px;
+  height: 70px;
   width: 125px; }
   .header-fixed .menu-btn {
-    padding: 1.6em 2.8em 0em; }
+    padding: 1.6em 2.8em 0em;
+    height: 70px; }
   @media only screen and (max-width: 900px) {
     .menu-btn {
       height: 75px;
