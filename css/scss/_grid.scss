@@ -9,7 +9,7 @@
 	margin-right: auto;
 	position: relative;
 
-	@include device-width(12) {
+	@include device-width(14) {
 		width: auto;
 		padding: 0 10px;
 	}

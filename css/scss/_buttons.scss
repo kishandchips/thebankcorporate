@@ -53,6 +53,11 @@ button {
 	z-index: 8000;
 	height: 70px;
 	width: 125px;
+	outline: 0;
+
+	&:hover, &:active, &:focus {
+		outline: 0;
+	}
 
 	.header-fixed & {
 		padding: 1.6em 2.8em 0em;

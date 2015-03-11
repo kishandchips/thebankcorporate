@@ -609,3 +609,24 @@
 		}
 	}
 }
+
+.currentpage {
+	position: absolute;
+	right: 8em;
+	top: 3em;
+	text-transform: uppercase;
+	@include font-size(15);
+	@include avenir-light;
+	letter-spacing: 2px;
+	text-align: right;
+	color: #c8c8c8;	
+	@include transition(all 0.3s ease);
+
+	@include device-width(6) {
+		display: none;
+	}
+
+	.header-fixed & {
+		top: 1.1em;
+	}
+}

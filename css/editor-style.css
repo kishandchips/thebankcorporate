@@ -602,7 +602,7 @@ b {
   margin-left: auto;
   margin-right: auto;
   position: relative; }
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 1400px) {
     .container {
       width: auto;
       padding: 0 10px; } }
@@ -1162,10 +1162,13 @@ button:active, button:focus {
   background: none;
   z-index: 8000;
   height: 70px;
-  width: 125px; }
+  width: 125px;
+  outline: 0; }
+  .menu-btn:hover, .menu-btn:active, .menu-btn:focus {
+    outline: 0; }
   .header-fixed .menu-btn {
     padding: 1.6em 2.8em 0em;
-    height: 70px; }
+    height: 40px; }
   @media only screen and (max-width: 900px) {
     .menu-btn {
       height: 75px;

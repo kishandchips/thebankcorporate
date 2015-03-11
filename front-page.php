@@ -14,20 +14,35 @@
 
 		<?php if ( $slide_query->have_posts() ): ?>
 
-			<div class="owl-carousel featured-carousel">
+		<div id="wowslider">
+			<div class="ws_images">
+				<ul>
+					<?php while ( $slide_query->have_posts() ) : $slide_query->the_post(); ?>
 
-			<?php while ( $slide_query->have_posts() ) : $slide_query->the_post(); ?>
+						<?php $post_object = get_field('slide_linkage'); ?>
 
-				<?php $post_object = get_field('slide_linkage'); ?>
+					    <li>
+					    	<a href="<?php echo get_permalink($post_object->ID); ?>">
+						    	<img src="<?php the_field('slide_image'); ?>" alt="" title="1">	
+					    	</a>
+				    	</li>
+			    	<?php endwhile; ?>
+				</ul>
+			</div>
+			<div class="ws_bullets">
+				<div>
+					<?php while ( $slide_query->have_posts() ) : $slide_query->the_post(); ?>
+						<a href="<?php the_field('slide_image'); ?>" title="'1'">
+							<span>
+							</span>
+						</a>						
+					<?php endwhile; ?>
+				</div>
+			</div>
+		</div>		
+		</div>		
 
-			    <div class="item">
-			    	<a href="<?php echo get_permalink($post_object->ID); ?>">
-				    	<img src="<?php the_field('slide_image'); ?>" alt="">	
-			    	</a>
-		    	</div>
-	    	<?php endwhile; ?>
-  	 	
-			</div>				
+
 
 		<?php endif; ?>
 

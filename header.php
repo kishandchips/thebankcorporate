@@ -33,6 +33,9 @@
 			<h1 class="logo-container">
 				<a class="logo icon icon-logo" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a>
 			</h1>
+			<div class="currentpage">
+				<?php wp_title(''); ?>
+			</div>
 			
 			<?php wp_nav_menu( array( 'depth' => 0, 'theme_location' => 'primary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'primary-navigation navigation' )); ?>
 			</div>

@@ -65,20 +65,35 @@
 				this.carousel.init();
 			},
 			carousel: {
-				element: $('.owl-carousel'),
+				element: $('#wowslider'),
 				init: function(){
 
 					var element = this.element;
 
 					if(!element.length) return false;
 
-					element.owlCarousel({
-						loop: true,
-					    dots: true,
-					    nav: true,
-					    items: 1,
-						navText: ["",""],
-					});
+					element.wowSlider({
+					    effect: "parallax",
+					    prev: "",
+					    next: "",
+					    duration: 20 * 100,
+					    delay: 30 * 100,
+					    width: 1680,
+					    height: 677,
+					    autoPlay: true,
+					    autoPlayVideo: false,
+					    playPause: false,
+					    stopOnHover: true,
+					    loop: false,
+					    bullets: 0,
+					    caption: false,
+					    captionEffect: "parallax",
+					    controls: true,
+					    responsive: 2,
+					    fullScreen: false,
+					    gestures: 2,
+					    onBeforeStep: 0,
+					});			
 				}
 			}
 		},
@@ -155,7 +170,7 @@
 				if(xhr.status==404)
 				  $('a#next').remove();
 			});			  	
-		}		
+		}				
 	};
 
 	window.main = main;
