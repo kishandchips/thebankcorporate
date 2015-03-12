@@ -29,7 +29,7 @@
 	
 	<header id="header" role="banner">
 		<a class="menu-btn" href="#"><span></span></a>
-		<?php if(!is_front_page()): ?>
+		<?php if(!is_front_page() && !is_single() ): ?>
 			<div class="currentpage">
 				<?php wp_title(''); ?>
 			</div>
