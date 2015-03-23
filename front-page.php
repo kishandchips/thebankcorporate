@@ -6,8 +6,8 @@
 		'post_type'   => 'slides',
 		'post_status' => 'publish',	
 		'posts_per_page' => 6,
-		'order'       => 'DESC',
-		'orderby'     => 'date'
+		'order'       => 'ASC',
+		'orderby'     => 'menu_order'
 	);
 
 	$slide_query = new WP_Query( $args ); ?>

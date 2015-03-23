@@ -60,7 +60,10 @@ body {
 				@include font-size(30);
 			}			
 		}
+	}
 
+	.header-fixed.admin-bar &{
+		 top: 32px;
 	}
 }
 

@@ -522,6 +522,7 @@
 					width: 90%;
 					background: rgba(#FFF, 0.9);
 					padding: 15px;
+					min-height: 5.5em;
 
 					h2, p {
 						color: #333132;
@@ -629,6 +630,8 @@
 }
 
 .socials {
+	padding: 0 3em;
+	
 	a {
 		@include font-size(38);
 		margin-right: 20px;
