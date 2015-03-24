@@ -2,13 +2,9 @@
 <section id="index" class="content-area">
 
 	<header class="index-header">
-		<h2 class="index-title"><?php _e('News'); ?></h2>
 		<div class="container">
 			<div class="filters">
-				<div class="span two-thirds category-selector">
-					</select><?php wp_dropdown_categories(array('class' => 'category', 'show_option_all' => __("ALL CATEGORIES", THEME_NAME), 'walker' => new Category_Dropdown_Url_Walker)); ?>					
-				</div>
-				<div class="span one-third search-field">
+				<div class="span ten search-field">
 					<?php get_search_form(); ?>	
 				</div>
 			</div>				

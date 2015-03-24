@@ -1,6 +1,6 @@
 .primary-navigation {
 	position: fixed;
-	width: 300px;
+	width: 200px;
 	height: 100%;
 	right: -300px;
 	z-index: 7500;
@@ -16,11 +16,11 @@
 	li {
 		width: 100%;
 		text-align: center;
-		margin: 1.6em 0;
+		margin: 1em 0;
 
 		a {
 			@include inline-block;
-			@include font-size(20);
+			@include font-size(15);
 			text-transform: uppercase;
 			color: #FFF;
 			border-bottom: 2px solid transparent;
@@ -167,11 +167,11 @@
 	.post-title {
 		position: absolute;
 		bottom: 0em;
-		background: rgba(#FFF, 0.9);
+		//background: rgba(#FFF, 0.9);
 		z-index: 1;
 		left: 0;
 		width: 100%;
-		padding: 1.5em;
+		padding: 1.3em;
 		@include transition(all 0.3s ease);
 		line-height: 1.5;
 		//text-transform: uppercase;
@@ -185,13 +185,18 @@
 			width: 4em;
 			text-align: center;
 			height: 100%;
-			padding-top: 2em;			
+			padding-top: 1.8em;
+			opacity: 0;
+			@include transition(all 0.3s ease);
+			color: #ff5948;
 		}		
 		
 		h2 {
 			@include avenir-light;
 			@include font-size(18);
 			width: 80%;
+			background: rgba(#FFF, 0.9);
+			padding: 5px;
 
 			@include device-width(6) {
 				@include font-size(14);
@@ -201,7 +206,15 @@
 
 	&:hover {
 		.post-title {
-			padding: 1.5em 1.5em 3em;
+			background: rgba(#FFF, 0.9);
+
+			&:after {
+				opacity: 1;
+			}			
+		}
+
+		h2 {
+			background: none;
 		}
 	}
 }
@@ -306,7 +319,7 @@
 	}
 
 	.search-field {
-		text-align:left;
+		text-align: center;
 		padding: 0;
 
 		.input {
@@ -384,7 +397,7 @@
 }
 
 .parallax-window {
-    padding-top: 40%;
+    padding-top: 30%;
     background: transparent;
 }
 
@@ -406,14 +419,14 @@
 
 	.inner {
 		max-width: 1280px;
-		padding: 6.5em;
+		padding: 4.5em 6em;
 
 		@include device-width(7) {
-			padding: 4em 1em;
+			padding: 3em 1em;
 		}
 
 		@include device-width(5) {
-			padding: 4em 1em;
+			padding: 3em 1em;
 		}	
 
 		@include device-width(4) {
@@ -426,11 +439,15 @@
 		letter-spacing: 10px;
 	}
 
+	h1 {
+		@include font-size(50);
+	}
+
 	p {
 		@include avenir-light;
 		@include font-size(18);
 		line-height: 1.5;
-		margin: 2em 0;
+		margin: 1.5em 0;
 
 		@include device-width(10) {
 			padding: 0 3em;			

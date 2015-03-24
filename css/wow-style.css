@@ -216,7 +216,7 @@
 #wowslider .ws_bullets a { 
 	position: relative;
 	display: inline-block;
-	margin: 0 2px;
+	margin: 0 10px;
 	padding: 5px;
 	width: 0;
 	border-radius: 50%;
@@ -226,7 +226,6 @@
 }
 #wowslider .ws_bullets a.ws_selbull {
 	background: #ffffff;
-	padding: 6px;
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }

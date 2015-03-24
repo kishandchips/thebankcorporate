@@ -1044,7 +1044,12 @@ fieldset {
     right: 1em; }
 
 .search-form {
-  position: relative; }
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  *zoom: 1;
+  *display: inline; }
   .search-form .input {
     vertical-align: middle;
     border-color: transparent;
@@ -1188,7 +1193,8 @@ button:active, button:focus {
     -webkit-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out; }
     .navigation-open .menu-btn span, .navigation-open .menu-btn span:before, .navigation-open .menu-btn span:after {
-      background: white; }
+      background: white;
+      width: 20px; }
   .menu-btn span:before {
     top: -10px; }
   .menu-btn span:after {

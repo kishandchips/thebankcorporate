@@ -44,12 +44,20 @@
 			},
 			scroll: function(){
 				var scrollTop = main.w.scrollTop(),
-					body = main.body.element;
+					body = main.body.element,
+					header = main.header.element,
+					btn = $('.menu-btn', header);
+
 
 				if(scrollTop > 10 && !body.hasClass('header-fixed')) {
 					body.addClass('header-fixed');
 				} else if(scrollTop < 10 && body.hasClass('header-fixed')) {
 					body.removeClass('header-fixed');
+				}
+
+				if(main.header.element.hasClass('navigation-open')) {
+					header.removeClass('navigation-open');
+					btn.removeClass('active');
 				}
 			}
 		},
@@ -76,7 +84,7 @@
 					    effect: "parallax",
 					    prev: "",
 					    next: "",
-					    duration: 10 * 100,
+					    duration: 15 * 100,
 					    delay: 30 * 100,
 					    width: 1680,
 					    height: 677,
@@ -93,6 +101,7 @@
 					    fullScreen: false,
 					    gestures: 2,
 					    onBeforeStep: 0,
+					    revers:1
 					});			
 				}
 			}

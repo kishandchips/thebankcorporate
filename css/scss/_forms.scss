@@ -271,6 +271,7 @@ fieldset {
 
 .search-form {
 	position: relative;
+	@include inline-block;
 	
 	.input {
 		vertical-align: middle;
