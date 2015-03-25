@@ -19,7 +19,7 @@
 			
 			while ( have_posts() ) : the_post(); ?>
 				<?php 
-					$image_size = (in_array($i % 6 , $array)) ?  array('width' => 804, 'height' => 542) : array('width' => 392, 'height' => 263);
+					$image_size = (in_array($i % 6 , $array)) ?  array('width' => 804, 'height' => 538) : array('width' => 450, 'height' => 301);
 				?>
 	            <li>
 	                <?php include_module('post-item', array(

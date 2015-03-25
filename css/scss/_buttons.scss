@@ -18,7 +18,7 @@ button {
 .primary-btn {
 	@include font-size(17);
 	color: #FFF;
-	background: #013e7f;
+	background: #000;
 	@include border-radius(3px);
 	@include box-shadow(0px 5px 2px #d7d7d7);
 	@include avenir-light;
@@ -73,8 +73,8 @@ button {
 	span, span:before, span:after {
 		cursor: pointer;
 		border-radius: 1px;
-		height: 3px;
-		width: 35px;
+		height: 2px;
+		width: 20px;
 		background: black;
 		position: absolute;
 		display: block;
@@ -88,11 +88,11 @@ button {
 	}	
 
 	span:before {
-		top: -10px; 
+		top: -6px;
 	}	
 
 	span:after {
-		bottom: -10px;
+		bottom: -6px;
 	}
 
 	&.active {

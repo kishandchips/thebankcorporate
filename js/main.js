@@ -20,6 +20,10 @@
 
 		global: {
 			init: function(){
+
+				setTimeout(function() {
+					$('body').addClass('loaded');
+				}, 3000);
 							
 			}
 		},
@@ -56,9 +60,16 @@
 				}
 
 				if(main.header.element.hasClass('navigation-open')) {
+					console.log('scroll');
 					header.removeClass('navigation-open');
 					btn.removeClass('active');
 				}
+
+				$( ".primary-navigation" ).mouseleave(function() {
+					console.log('mouseleave');
+					header.removeClass('navigation-open');
+					btn.removeClass('active');
+				});
 			}
 		},
 
@@ -84,8 +95,8 @@
 					    effect: "parallax",
 					    prev: "",
 					    next: "",
-					    duration: 15 * 100,
-					    delay: 30 * 100,
+					    duration: 20 * 100,
+					    delay: 50 * 100,
 					    width: 1680,
 					    height: 677,
 					    autoPlay: true,

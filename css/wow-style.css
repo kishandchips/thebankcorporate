@@ -310,7 +310,7 @@
 	content: '\e802';
 }/* bottom center */
 #wowslider  .ws_bullets {
-	bottom:20px;
+	bottom: 6%;
 	left:50%;
 }
 #wowslider  .ws_bullets div{

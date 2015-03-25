@@ -24,15 +24,15 @@
 			text-transform: uppercase;
 			color: #FFF;
 			border-bottom: 2px solid transparent;
-			letter-spacing: 2px;
+			letter-spacing: 4px;
 			line-height: 1.4;
 
 			&:hover {
-				border-bottom: 2px solid #ff4d3b;
+				border-bottom: 2px solid #FFF;
 			}
 		}
 
-		&.current-menu-item {
+		&.current-menu-item, &.current-page-ancestor {
 			a {
 				border-bottom: 2px solid #ff4d3b;
 			}			
@@ -104,50 +104,65 @@
 }
 
 .posts {
-	padding: 2% 9%;
+	padding: 2% 8%;
 	@extend .clearfix;
 	padding-bottom: 4em !important;
 
 	li {
 		float: left;
-		width: 33%;
-		padding: 0.59em 1%;
+		width: 33.33%;
+		padding: 0.48em 1%;
 
 		&:nth-of-type(6n+1), &:nth-of-type(6n+5) {
 			width: 66%;
 
-			@include device-width(9) {
-				width: 100%;
+			@media (max-width: 850px) {
+				width: 50%;
+			}
+
+			@include device-width(5) {
+				width: 100%;	
 			}
 		}
 
 		&:nth-of-type(6n+4) {
 			clear: left;
 
-			@include device-width(9) {
+			@media (max-width: 850px) {
 				clear: none;
 			}					
 		}
 
 		&:nth-of-type(6n+6) {
-			margin-top: -258px;
+			margin-top: -22%;
 
-			@include device-width(9) {
+			@media (max-width: 1250px) {
+				margin-top: -22.1%;
+			}
+
+			@media (max-width: 1168px) {
+				margin-top: -22.3%;
+			}		
+
+			@media (max-width: 1068px) {
+				margin-top: -22.7%;
+			}				
+
+			@media (max-width: 850px) {
 				margin-top: 0px;
 			}				
 		}
 	}
 
-	@include device-width(9) {
+	@media (max-width: 850px) {
 		padding: 4% 2%;
 		
 		li {
 			width: 50%;	
 		}
-		
 	}
 
-	@include device-width(4) {
+	@include device-width(5) {
 		li {
 			width: 100%;	
 		}
@@ -167,36 +182,34 @@
 	.post-title {
 		position: absolute;
 		bottom: 0em;
-		//background: rgba(#FFF, 0.9);
+		background: rgba(#FFF, 0.9);
 		z-index: 1;
 		left: 0;
 		width: 100%;
-		padding: 1.3em;
+		padding: 1.5em;
 		@include transition(all 0.3s ease);
 		line-height: 1.5;
 		//text-transform: uppercase;
+		min-height: 6em;
 
 		&:after {
 			@include icon(right);
 			position: absolute;
-			background: rgba(#FFF, 0.8);
 			top: 0;
 			right: 0;
-			width: 4em;
+			width: 6em;
 			text-align: center;
 			height: 100%;
-			padding-top: 1.8em;
-			opacity: 0;
-			@include transition(all 0.3s ease);
-			color: #ff5948;
+			padding-top: 2.5em;	
+			color: #000;
+			@include transition(all 0.5s ease-in-out);
 		}		
 		
 		h2 {
 			@include avenir-light;
-			@include font-size(18);
+			@include font-size(16);
 			width: 80%;
-			background: rgba(#FFF, 0.9);
-			padding: 5px;
+		  	line-height: 1.4;
 
 			@include device-width(6) {
 				@include font-size(14);
@@ -206,15 +219,11 @@
 
 	&:hover {
 		.post-title {
-			background: rgba(#FFF, 0.9);
-
+			background: rgba(#FFF, 0.97);
+			
 			&:after {
-				opacity: 1;
-			}			
-		}
-
-		h2 {
-			background: none;
+				color: #ff5948;
+			}
 		}
 	}
 }
@@ -262,10 +271,10 @@
 .section-title {	
 	width: 100%;
 	text-align: center;
-	margin: 1em 0 0;
+	margin: 1.5em 0 0;
 	text-transform: uppercase;
 	letter-spacing: 5px;
-	@include font-size(25);
+	@include font-size(22);
 }
 
 #index {
@@ -445,7 +454,7 @@
 
 	p {
 		@include avenir-light;
-		@include font-size(18);
+		@include font-size(15);
 		line-height: 1.5;
 		margin: 1.5em 0;
 
@@ -693,4 +702,28 @@
 	.header-fixed & {
 		top: 1.1em;
 	}
+}
+
+#wowslider {
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background-color: rgba(#000, 0.8);
+		background-image: url(../images/logos/crest.png);
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: 30%;
+		@include transition(all 0.3s ease);
+		opacity: 1;
+
+		.loaded & {
+			opacity: 0;
+		}
+	}
+
+
 }

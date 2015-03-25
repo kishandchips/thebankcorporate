@@ -5,7 +5,7 @@
 <div class="post-item <?php echo ( !empty($class)) ? $class : ''; ?>">
 
 	<div class="post-image image">
-		<a href="<?php echo $url; ?>" class="image-btn overlay-btn btn">
+		<a href="<?php echo $url; ?>" class="image-btn btn">
 			<img src="<?php echo $image_url; ?>" />
 		</a>
 	</div>
