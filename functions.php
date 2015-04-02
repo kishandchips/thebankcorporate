@@ -194,6 +194,7 @@ function custom_scripts() {
 	wp_enqueue_script('wowslider', $template_directory_uri.'/js/plugins/wowslider.js', array('jquery'), '', true);
 	wp_enqueue_script('imagesloaded', $template_directory_uri.'/js/plugins/jquery.imagesloaded.js', array('jquery'), '', true);
 	wp_enqueue_script('magnific', $template_directory_uri.'/js/plugins/jquery.magnific-popup.min.js', array('jquery'), '', true);
+	wp_enqueue_script( 'expander',  get_template_directory_uri() . '/js/plugins/jquery.expander.min.js', array('jquery'),null,true );	
 	wp_enqueue_script( 'infinite_scroll',  get_template_directory_uri() . '/js/plugins/jquery.infinitescroll.min.js', array('jquery'),null,true );
 	wp_enqueue_script( 'wow/script',  get_template_directory_uri() . '/js/script.js', array('jquery'),null,true );
 	wp_enqueue_script('main', $template_directory_uri.'/js/main.js', array('jquery', 'modernizr'), '', true);
@@ -331,8 +332,13 @@ function my_mce_before_init_insert_formats( $init_array ) {
 			'block' => 'span',  
 			'classes' => 'uppercase',
 			'wrapper' => true,
-			
-		),  		
+		), 
+		array(  
+			'title' => 'Read More',  
+			'block' => 'div',  
+			'classes' => 'expander',
+			'wrapper' => true,
+		), 				
 	);  
 
 	$init_array['style_formats'] = json_encode( $style_formats );  

@@ -11,10 +11,25 @@
 			this.infiniteScroll();
 			this.magnific.init();
 			this.filters.init();
+			this.loaded();
 		},
 
 
 		loaded: function(){
+			console.log('loaded');
+
+	        if($.fn.expander){
+	        	console.log('expander');
+	        	$('.expander').expander({
+	        		expandText: 'More',
+	        		userCollapseText: 'Less',
+	        		slicePoint: 230,
+					expandEffect: 'slideDown',
+					expandSpeed: 0,
+					collapseEffect: 'slideUp',
+					collapseSpeed: 0,	        		
+	        	});
+	        }			
 			
 		},
 
@@ -23,7 +38,7 @@
 
 				setTimeout(function() {
 					$('body').addClass('loaded');
-				}, 3000);
+				}, 1500);
 							
 			}
 		},
