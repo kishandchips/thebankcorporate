@@ -79,6 +79,10 @@ body {
 	@include font-size(8.5);
 	text-transform: uppercase;
 
+	.container {
+		padding: 0 3%;
+	}
+
 	span {
 		display: block;
 		letter-spacing: 2px;

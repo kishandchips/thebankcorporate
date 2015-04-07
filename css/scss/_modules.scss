@@ -88,10 +88,6 @@
 				border-bottom: 4px solid #000;
 			}
 
-			&:first-child {
-				margin-right: 0;
-			}
-
 			a {
 				@include inline-block;
 				@include avenir-light;
@@ -613,7 +609,7 @@
 	.row.clients {
 
 	 	.section-title {
-	 		padding: 2.9em 0;
+	 		padding: 0 0 1em;
  		  	letter-spacing: 5px;
 	 	}		
 
@@ -714,8 +710,8 @@
 				color: #55ACEE;
 			}
 
-			&.icon-rss {
-				color: #F97400;
+			&.icon-youtube {
+				color: #cc181e;
 			}						
 		}
 	}

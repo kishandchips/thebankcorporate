@@ -91,7 +91,7 @@
 			if( $terms ): ?>
 				<div <?php if(get_sub_field('anchor_id')): ?>id="<?php the_sub_field('anchor_id'); ?>"<?php endif; ?> <?php if(get_sub_field('anchor_label')): ?>data-label="<?php the_sub_field('anchor_label'); ?>"<?php endif; ?> class="row clients">
 					<div class="container">
-						<h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>
+						<h1 class="section-title"><?php the_sub_field('section_title'); ?></h1>
 						<ul>
 							<?php foreach( $terms as $term ): ?>
 								<li>
