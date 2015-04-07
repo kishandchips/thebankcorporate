@@ -13,20 +13,12 @@
 	<footer id="footer" class="site-footer" role="contentinfo">
 		<div class="inner container">
 			<div class="legal">
-				<span><?php _e('Legal', THEME_NAME); ?></span>
-				<span>&copy; <?php echo date('Y'); ?> <?php bloginfo('name' ); ?> </span> 
-				<span><?php _e('All rights Reserved'); ?></span>
-
+			<?php wp_nav_menu( array( 'depth' => 1, 'theme_location' => 'secondary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'footer-navigation navigation' )); ?>
 			</div>		
-			<div class="address">
-				<span>The Bank</span>
-				<span>16–18 Berners Street</span>
-				<span>London</span>
-				<span>W1T 3LN</span>		
-			</div>
 			<div class="contact">
-				<span>T: +44 (0) 207 612 8000</span>
-				<span>E: reception@thebank.co.uk</span>
+				<span>
+					&copy; <?php the_time('Y'); ?> <?php bloginfo('title'); ?> <?php _e('ALL RIGHTS RESERVED') ?>	
+				</span>
 			</div>					
 		</div>
 

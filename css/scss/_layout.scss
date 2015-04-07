@@ -73,7 +73,7 @@ body {
 
 #footer {
 	background: #f2f2f3;
-	padding: 3.5em 0 6em;
+	padding: 3.5em 0;
 	color: #58595b;
 	@include avenir-light;
 	@include font-size(8.5);
@@ -98,14 +98,15 @@ body {
 		}
 	}
 
-	.address, .contact {
-		width: 20%;
+	.contact {
+		width: 40%;
 		float: left;		
+		text-align: right;
 	}
 
 	@include device-width(9) {
-		.legal, .address, .contact  {
-			width: 33%;
+		.legal, .contact  {
+			width: 50%;
 		}
 	}
 
@@ -113,21 +114,19 @@ body {
 		font-size: 7px;
 	}	
 
-	@include device-width(5) {
+	@include device-width(6) {
 		font-size: 8px;
 
-		.legal, .address  {
-			width: 50%;
-		}		
+		.legal, .contact  {
+			width: 100%;
+		}
 
-		.address {
-			text-align: right;
+		.contact, .legal {
+			text-align: center;
 		}
 
 		.contact {
-			width: 100%;
-			margin-top: 1em;
-			text-align: center;
+			margin-top: 2em;
 		}
 	}
 }

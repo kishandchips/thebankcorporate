@@ -44,16 +44,43 @@
 	}
 }
 
+.footer-navigation {
+	ul {
+		margin: 0;
+		padding: 0;
+
+		li {
+			@include inline-block;
+			margin-right: 35px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+
+			a {
+				@include avenir-light;
+				@include font-size(10);
+				color: #696969;
+
+			}
+		}
+	}
+}
+
 #subnav {
-	background: #d7d7d7;
+	background: #000;
 	padding: 0 2.8em;
 	position: absolute;
 	width: 100%;
 	bottom: -54px;
+	text-align: center;
 
 	ul {
+		@include inline-block;
+
 		li {
-			float: right;
+			float: left;
 			margin: 0 25px;
 			border-bottom: 4px solid transparent;
 
@@ -68,10 +95,11 @@
 			a {
 				@include inline-block;
 				@include avenir-light;
-				@include font-size(16);
+				@include font-size(12);
 				text-transform: uppercase;
   				padding: 15px 0 11px;
   				letter-spacing: 2px;
+  				color: #FFF;
 			}
 		}
 	}
@@ -428,7 +456,7 @@
 
 	.inner {
 		max-width: 1280px;
-		padding: 4.5em 6em;
+		padding: 3.5em 6em;
 
 		@include device-width(7) {
 			padding: 3em 1em;
@@ -450,6 +478,18 @@
 
 	h1 {
 		@include font-size(50);
+
+		@include device-width(9) {
+			@include font-size(35);			
+		}
+
+		@include device-width(9) {
+			@include font-size(35);			
+		}	
+		
+		@include device-width(6) {
+			@include font-size(30);			
+		}				
 	}
 
 	p {
@@ -478,12 +518,6 @@
 		@include device-width(10) {
 			padding: 0;			
 		}		
-	}
-
-	.uppercase {
-		color: #000;
-		letter-spacing: 2px;
-		@include avenir-black;
 	}
 }
 
@@ -657,12 +691,17 @@
 
 .socials {
 	padding: 0 3em;
+	text-align: center;
 	
 	a {
 		@include font-size(38);
 		margin-right: 20px;
 		color: #d7d7d7;
 		@include transition(all 0.3s ease);
+
+		&:last-child {
+			margin: 0;
+		}
 
 		&:hover {
 			text-decoration: none !important;

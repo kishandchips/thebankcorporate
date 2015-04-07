@@ -11,15 +11,14 @@
 			this.infiniteScroll();
 			this.magnific.init();
 			this.filters.init();
+			this.anchors.init();
 			this.loaded();
 		},
 
 
 		loaded: function(){
-			console.log('loaded');
 
 	        if($.fn.expander){
-	        	console.log('expander');
 	        	$('.expander').expander({
 	        		expandText: 'More',
 	        		userCollapseText: 'Less',
@@ -29,7 +28,7 @@
 					collapseEffect: 'slideUp',
 					collapseSpeed: 0,	        		
 	        	});
-	        }			
+	        }	    
 			
 		},
 
@@ -85,6 +84,33 @@
 					header.removeClass('navigation-open');
 					btn.removeClass('active');
 				});
+			}
+		},
+
+		anchors: {
+			init: function() {
+
+			    var anchors = {},
+			    	selector = $('.row[id]');
+
+			    if (selector.length > 0) {
+				   	selector.each(function(index, val) {
+				   		 anchors[$(this).attr('id')] = $(this).data('label');
+				    });
+
+				    var output = '<div id="subnav"><ul>';
+					$.each( anchors, function(key,valueObj) {
+						output += '<li><a class="scroll" href="#' + key + '">' + valueObj + '</a></li>';
+					});	
+					output += '</ul></div>';
+
+					$('#header').append(output);	
+
+				    $(".scroll").click(function(event) {
+				    	event.preventDefault();
+				    	$('html,body').animate( { scrollTop: ($(this.hash).offset().top) - 100 } , 1000);
+				    });				    
+			    }								
 			}
 		},
 

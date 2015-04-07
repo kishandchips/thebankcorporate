@@ -15,7 +15,7 @@
 			case 'row':	
 				if(get_sub_field('columns')): ?>
 							
-					<div class="row" style="<?php if (get_sub_field('background_color')): ?>background-color: <?php the_sub_field('background_color'); ?>; <?php endif; ?><?php if (get_sub_field('background_image')): ?>background-image: url('<?php the_sub_field('background_image'); ?>');<?php endif; ?>
+					<div <?php if(get_sub_field('anchor_id')): ?>id="<?php the_sub_field('anchor_id'); ?>"<?php endif; ?> <?php if(get_sub_field('anchor_label')): ?>data-label="<?php the_sub_field('anchor_label'); ?>"<?php endif; ?> class="row" style="<?php if (get_sub_field('background_color')): ?>background-color: <?php the_sub_field('background_color'); ?>; <?php endif; ?><?php if (get_sub_field('background_image')): ?>background-image: url('<?php the_sub_field('background_image'); ?>');<?php endif; ?>
 						">
 						<div class="inner container" style="<?php if (get_sub_field('custom_css')): ?><?php the_sub_field('custom_css'); ?>; <?php endif; ?>">
 						
@@ -61,7 +61,7 @@
 
 					<?php $posts = get_sub_field('choose_family_members'); ?>
 
-					<div class="row family">
+					<div <?php if(get_sub_field('anchor_id')): ?>id="<?php the_sub_field('anchor_id'); ?>"<?php endif; ?> <?php if(get_sub_field('anchor_label')): ?>data-label="<?php the_sub_field('anchor_label'); ?>"<?php endif; ?> class="row family">
 						<div class="container">
 						    <h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>
 						    <ul class="family">
@@ -89,7 +89,7 @@
 			<?php 
 			$terms = get_sub_field('clients');
 			if( $terms ): ?>
-				<div class="row clients">
+				<div <?php if(get_sub_field('anchor_id')): ?>id="<?php the_sub_field('anchor_id'); ?>"<?php endif; ?> <?php if(get_sub_field('anchor_label')): ?>data-label="<?php the_sub_field('anchor_label'); ?>"<?php endif; ?> class="row clients">
 					<div class="container">
 						<h2 class="section-title"><?php the_sub_field('section_title'); ?></h2>
 						<ul>

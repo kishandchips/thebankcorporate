@@ -65,6 +65,7 @@ function custom_setup_theme() {
 
 	register_nav_menus( array(
 		'primary' => __( 'Primary', THEME_NAME ),
+		'secondary' => __( 'secondary', THEME_NAME ),
 	) );
 
 	add_editor_style('css/editor-style.css');
@@ -329,6 +330,12 @@ function my_mce_before_init_insert_formats( $init_array ) {
 		),  
 		array(  
 			'title' => 'Uppercase',  
+			'block' => 'span',  
+			'classes' => 'uppercase-low',
+			'wrapper' => true,
+		), 		
+		array(  
+			'title' => 'Uppercase - bold',  
 			'block' => 'span',  
 			'classes' => 'uppercase',
 			'wrapper' => true,

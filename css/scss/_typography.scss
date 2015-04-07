@@ -142,6 +142,7 @@ p {
 strong,
 b {
 	font-weight: bold;
+	@include avenir-black;
 }
 
 .normal {
@@ -181,6 +182,16 @@ b {
 }
 
 .uppercase {
+	color: #000;
+	letter-spacing: 2px;
+	@include avenir-black;
+	text-transform: uppercase;
+}
+
+.uppercase-low {
+	color: #000;
+	letter-spacing: 2px;
+	@include avenir-light;
 	text-transform: uppercase;
 }
 

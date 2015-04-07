@@ -1,6 +1,12 @@
 <?php get_header(); ?>
 <section id="works" class="content-area">
 	<div class="inner">
+		<?php 
+		  global $wp_query;
+		  $args = array_merge( $wp_query->query_vars, array( 'orderby' => 'menu_order', 'order' => 'ASC' ) );
+		  query_posts( $args );	
+		 ?>
+	
 		<?php if ( have_posts() ) : ?>
 			<ul class="posts">
 			<?php 
@@ -17,7 +23,7 @@
 					<figcaption>
 						<div>
 							<h2><?php echo get_the_title(); ?></h2>
-							<p><?php echo get_excerpt(50); ?></p>
+							<p><?php the_field('subtitle'); ?></p>
 							<span class="icon icon-right"></span>
 						</div>
 					</figcaption>			
