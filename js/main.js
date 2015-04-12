@@ -136,7 +136,7 @@
 					    effect: "parallax",
 					    prev: "",
 					    next: "",
-					    duration: 20 * 100,
+					    duration: 18 * 100,
 					    delay: 50 * 100,
 					    width: 1680,
 					    height: 677,

@@ -14,7 +14,12 @@ body {
 
 #tortilla {
 	.header-fixed & {
-		padding-top: 40px;
+		padding-top: 115px;
+
+		@include device-width(9) {
+			padding-top: 40px;	
+		}
+		
 	}
 
 }
@@ -39,6 +44,7 @@ body {
 			color: #000;
 			@include font-size(40);
 			vertical-align: top;
+			@include transition(all 0.3s ease);
 
 			&:before {
 				vertical-align: top;
@@ -49,15 +55,18 @@ body {
 	.header-fixed & {
 		position: fixed;
 		top: 0;
-		left: 0;
-		height: 56px;
+		left: 0;		
 		@include box-shadow(0 0px 10px #DADADA);
 
-		.logo-container {
-			padding-top: 12px;
+		@include device-width(9) {
+			height: 56px;
 
-			.logo {
-				@include font-size(30);
+			.logo-container {
+				padding-top: 12px;
+
+				.logo {
+					@include font-size(30);
+				}			
 			}			
 		}
 	}

@@ -60,8 +60,10 @@ button, a {
 	}
 
 	.header-fixed & {
-		padding: 1.6em 2.8em 0em;
-		height: 40px;
+		@include device-width(9) {
+			padding: 1.6em 2.8em 0em;
+			height: 40px;
+		}
 	}
 
 	@include device-width(9) {

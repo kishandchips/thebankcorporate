@@ -1187,9 +1187,10 @@ button:active, button:focus, a:active, a:focus {
   outline: 0; }
   .menu-btn:hover, .menu-btn:active, .menu-btn:focus {
     outline: 0; }
-  .header-fixed .menu-btn {
-    padding: 1.6em 2.8em 0em;
-    height: 40px; }
+  @media only screen and (max-width: 900px) {
+    .header-fixed .menu-btn {
+      padding: 1.6em 2.8em 0em;
+      height: 40px; } }
   @media only screen and (max-width: 900px) {
     .menu-btn {
       height: 75px;
