@@ -57,7 +57,7 @@
 					$(this).toggleClass('active');
 					setTimeout(function() {
 						menuBtn.toggleClass('white');
-					}, 1200);
+					}, 600);
 					header.toggleClass('navigation-open');
 				});
 				
