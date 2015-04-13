@@ -81,10 +81,9 @@ button, a {
 		position: absolute;
 		display: block;
 		content: '';
-		@include transition(all 0.5s ease-in-out);
+		@include transition(all 0.3s ease-in-out);
 
 		.navigation-open & {
-			background: white;
 			width: 20px;
 		}
 	}	
@@ -99,19 +98,28 @@ button, a {
 
 	&.active {
 		span {
-		  background-color: transparent;
+		  	background-color: transparent;
 
 			&:before, &:after {
 			  top: 0;
 			}
 
 			&:before {
-			  @include transform(rotate(45deg));
+			  	@include transform(rotate(225deg));
 			}
 			&:after {
-			  @include transform(rotate(-45deg));
+			  	@include transform(rotate(-225deg));
 			}				  
 		}	
+	}
+
+	&.white {
+
+		span {
+			&:before, &:after {
+				background: white;	
+			}
+		}		
 	}
 }
 

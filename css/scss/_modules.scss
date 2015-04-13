@@ -40,6 +40,7 @@
 	}
 
 	.navigation-open & {
+		@include transition-delay(1s);
 		right: 0px;
 	}
 }

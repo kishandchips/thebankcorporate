@@ -55,6 +55,9 @@
 				menuBtn.on('click', function(e){
 					e.preventDefault();
 					$(this).toggleClass('active');
+					setTimeout(function() {
+						menuBtn.toggleClass('white');
+					}, 1200);
 					header.toggleClass('navigation-open');
 				});
 				
@@ -66,7 +69,6 @@
 					header = main.header.element,
 					btn = $('.menu-btn', header);
 
-
 				if(scrollTop > 10 && !body.hasClass('header-fixed')) {
 					body.addClass('header-fixed');
 				} else if(scrollTop < 10 && body.hasClass('header-fixed')) {
@@ -74,15 +76,13 @@
 				}
 
 				if(main.header.element.hasClass('navigation-open')) {
-					console.log('scroll');
 					header.removeClass('navigation-open');
-					btn.removeClass('active');
+					btn.removeClass('active white');
 				}
 
 				$( ".primary-navigation" ).mouseleave(function() {
-					console.log('mouseleave');
 					header.removeClass('navigation-open');
-					btn.removeClass('active');
+					btn.removeClass('active white');
 				});
 			}
 		},
