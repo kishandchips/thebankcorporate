@@ -142,45 +142,10 @@
 		width: 33.33%;
 		padding: 0.48em 1%;
 
-		&:nth-of-type(6n+1), &:nth-of-type(6n+5) {
-			width: 66%;
-
-			@media (max-width: 850px) {
-				width: 50%;
-			}
-
-			@include device-width(5) {
-				width: 100%;	
-			}
-		}
-
-		&:nth-of-type(6n+4) {
+		&:nth-child(3n+1) {
 			clear: left;
-
-			@media (max-width: 850px) {
-				clear: none;
-			}					
 		}
 
-		&:nth-of-type(6n+6) {
-			margin-top: -22.3%;
-
-			@media (max-width: 1250px) {
-				margin-top: -22.1%;
-			}
-
-			@media (max-width: 1168px) {
-				margin-top: -22.3%;
-			}		
-
-			@media (max-width: 1068px) {
-				margin-top: -22.7%;
-			}				
-
-			@media (max-width: 850px) {
-				margin-top: 0px;
-			}				
-		}
 	}
 
 	@media (max-width: 850px) {
@@ -188,6 +153,14 @@
 		
 		li {
 			width: 50%;	
+
+			&:nth-child(3n+1) {
+				clear: none;
+			}			
+
+			&:nth-child(2n+1) {
+				clear: left;
+			}			
 		}
 	}
 
@@ -211,11 +184,11 @@
 	.post-title {
 		position: absolute;
 		bottom: 0em;
-		background: rgba(#FFF, 0.9);
+		background: #FFF;
 		z-index: 1;
 		left: 0;
 		width: 100%;
-		padding: 1.5em;
+		padding: 1em;
 		@include transition(all 0.3s ease);
 		line-height: 1.5;
 		//text-transform: uppercase;
@@ -224,14 +197,13 @@
 		&:after {
 			@include icon(right);
 			position: absolute;
-			top: 0;
+			bottom: 0;
 			right: 0;
-			width: 6em;
+			width: 5em;
 			text-align: center;
-			height: 100%;
-			padding-top: 2.5em;	
-			color: #000;
+			color: #d3d3d3;
 			@include transition(all 0.5s ease-in-out);
+			height: 30px;
 		}		
 		
 		h2 {
@@ -239,16 +211,26 @@
 			@include font-size(16);
 			width: 80%;
 		  	line-height: 1.4;
+		  	color: #646363;
+		  	min-height: 45px;
 
 			@include device-width(6) {
 				@include font-size(14);
 			}				
 		}
+
+		.date {
+			color: #cccccc;
+			@include font-size(12);
+			float: left;
+			margin-top: 5px;
+		}
 	}
 
 	&:hover {
+		@include box-shadow(0px 0px 3px #eeeeee);
+
 		.post-title {
-			background: rgba(#FFF, 0.97);
 			
 			&:after {
 				color: #ff5948;
@@ -304,9 +286,11 @@
 	text-transform: uppercase;
 	letter-spacing: 5px;
 	@include font-size(22);
+	@extend .clearfix;
 }
 
-#index {
+#index, .front-news {
+	background: #f9f9f9;
 	text-align: center;
 	padding-bottom: 5em;
 	
@@ -338,51 +322,51 @@
 	}
 }
 
-.filters {
-	padding: 5em 9%;
-
-	@include device-width(9) {
-		padding: 5em 0;
-	}
-
-	.category-selector {
-		@include device-width(6) {
-			width: 50%;
-
-			select {
-				@include font-size(10);
-				width: 140px;
-			}
-		}
+#index {
+	.year {
+		display: block;
+		width: 100%;
+		@extend .clearfix;
+		clear: left;
+		@include avenir-medium;
+		@include font-size(16);
+		padding: 40px 0;
 	}
 
 	.search-field {
-		text-align: center;
-		padding: 0;
+		position: absolute;
+		right: 0;
+		top: 69px;
+	}
+}
+
+.search-field {
+	text-align: right;
+	padding: 0;
+
+	.input {
+		@include avenir-light;	
+		@include font-size(12);
+		background: none;
+
+	}
+
+	@include device-width(6) {
+		width: 50%;
 
 		.input {
-			@include avenir-black;	
-			@include font-size(18);
+			@include font-size(10);
+			width: 120px;
 
+			&:focus {
+				width: 120px;
+			}
 		}
 
-		@include device-width(6) {
-			width: 50%;
-
-			.input {
-				@include font-size(10);
-				width: 120px;
-
-				&:focus {
-					width: 120px;
-				}
-			}
-
-			.submit-btn {
-				padding: .7em 1em;
-			}
-		}			
-	}
+		.submit-btn {
+			padding: .8em;
+		}
+	}			
 }
 
 .video-container {
@@ -410,9 +394,15 @@
 	.posts {
 		max-width: 1500px;
 		margin: 0 auto;
+		padding: 2% 1%;
 		
 		li {
-			width: 33%;
+			width: 24.5%;
+			margin: 0 .25%;
+
+			&:nth-child(3n+1) {
+				clear: none;
+			}
 
 			@include device-width(8) {
 				width: 50%;
@@ -429,13 +419,85 @@
 				&:last-child {
 					float: left;	
 				}
-			}			
+			}
+
+			& {
+				position: relative;
+				float: left;
+				overflow: hidden;
+				text-align: center;
+				cursor: pointer;
+				padding: 0;
+
+				img {
+					display: block;
+					max-width: none;
+					width: -webkit-calc(100% + 50px);
+					width: calc(100% + 50px);
+					opacity: 1;
+				}
+
+				figcaption {
+				
+					> div {
+						@include vertical-align;
+						padding: 2em;
+						width: 100%;
+						height: auto;
+						z-index: 100;
+					}
+				}
+
+				h2,	p {
+					color: #333132;
+					text-align: center;
+					opacity: 0;
+				}	
+
+				h2 {
+					@include transition(all 0.5s);
+					@include font-size(18);
+					@include avenir-book;
+					color: #333132;
+					letter-spacing: 2px;
+					text-transform: uppercase;
+				}
+
+				p {
+					color: rgba(255,255,255,0.8);
+					@include font-size(18);
+					@include transition(all 0.5s);
+					@include avenir-light;
+					color: #333132;
+					margin: .5em 0;
+				}	
+
+				.icon-right {
+					@include font-size(15);
+					color: #ff5948;
+					opacity: 0;
+					@include transition(all 0.5s ease-in-out);
+				}		
+
+				&:hover {
+					img, h2, p, .icon-right {
+						@include transform(translate3d(0,0, 0));
+						opacity: 1;
+					}
+
+					p {
+						@include transition-delay(0.05s);
+						@include transition-duration(.5s);
+					}				
+				}
+			}
+
 		}
 	}
 }
 
 .parallax-window {
-    padding-top: 30%;
+    padding-top: 50%;
     background: transparent;
 }
 
@@ -473,16 +535,12 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		@include avenir-book;
+		@include avenir-light;
 		letter-spacing: 10px;
 	}
 
 	h1 {
-		@include font-size(50);
-
-		@include device-width(9) {
-			@include font-size(35);			
-		}
+		@include font-size(35);
 
 		@include device-width(9) {
 			@include font-size(35);			
@@ -496,8 +554,9 @@
 	p {
 		@include avenir-light;
 		@include font-size(15);
-		line-height: 1.5;
+		line-height: 1.9;
 		margin: 1.5em 0;
+		letter-spacing: 1px;
 
 		@include device-width(10) {
 			padding: 0 3em;			
@@ -540,8 +599,13 @@
 
 #content {
 	.row.family {
-	 	background: #f6f6f6;
+	 	background: #FFF;
 	 	padding-bottom: 6.5em;
+	 	border-top: 1px solid #f2f2f2;
+
+	 	&:last-child {
+	 		border-bottom: none;
+	 	}
 
 	 	.section-title {
 	 		padding: 2.9em 0;
@@ -553,58 +617,51 @@
 			@extend .clearfix;
 			list-style-type: none;
 			padding: 0;
+			text-align: center;
 
 			li {
-				width: 20%;
-				float: left;
+				width: 19%;
+				@include inline-block;
 				position: relative;
 				padding: .2em;
+				text-align: center;
 
 				@include device-width(10) {
-					width: 25%;
+					width: 24%;
 				}
 
 				@include device-width(8) {
-					width: 33%;
+					width: 32%;
 				}				
 
 				@include device-width(6) {
-					width: 50%;
+					width: 49%;
 				}							
 
 				img {
 					display: block;
+					margin: 0 auto;
 				}
 
 				.post-title {
-					position: absolute;
-					bottom: 2em;
-					right: .2em;
-					width: 90%;
-					background: rgba(#FFF, 0.9);
-					padding: 15px;
-					min-height: 5.5em;
-
-					h2, p {
-						color: #333132;
-						@include font-size(16);
-						text-transform: uppercase;
-						letter-spacing: 1.3px !important;
-
-						@include device-width(4) {
-							@include font-size(11);
-						}							
-					}
+					width: 100%;
+					padding: 28px 5px;
+					min-height: 12em;
 
 					h2 {
-						font-family:'Avenir LT W01_95 Black' !important;
+						color: #000;
+						@include avenir-light;
+						text-transform: none;
+						@include font-size(18);
+						letter-spacing: 1.3px;
 					}
 
 					p {
-						@include avenir-book;
-						padding: 0;
-						margin: 0;
-						line-height: 1;
+						color: #646363;
+						@include font-size(14);
+						@include avenir-light;
+						line-height: 1.5;
+						margin: 8px;
 					}
 				}
 			}
@@ -745,25 +802,25 @@
 }
 
 #wowslider {
-	&:after {
-		content: '';
-		position: absolute;
-		left: 0;
-		top: 0;
-		height: 100%;
-		width: 100%;
-		background-color: rgba(#000, 0.8);
-		background-image: url(../images/logos/crest.png);
-		background-position: center center;
-		background-repeat: no-repeat;
-		background-size: 30%;
-		@include transition(all 2s ease-in-out);
-		opacity: 1;
+	// &:after {
+	// 	content: '';
+	// 	position: absolute;
+	// 	left: 0;
+	// 	top: 0;
+	// 	height: 100%;
+	// 	width: 100%;
+	// 	background-color: rgba(#000, 0.8);
+	// 	background-image: url(../images/logos/crest.png);
+	// 	background-position: center center;
+	// 	background-repeat: no-repeat;
+	// 	background-size: 30%;
+	// 	@include transition(all 2s ease-in-out);
+	// 	opacity: 1;
 
-		.loaded & {
-			@include transform(translate3d(-100%,0, 0));
-		}
-	}
+	// 	.loaded & {
+	// 		@include transform(translate3d(-100%,0, 0));
+	// 	}
+	// }
 
 
 }
@@ -777,4 +834,12 @@
 	margin-top: 35px;
 
 
+}
+
+#infscr-loading {
+	@extend .clearfix;
+
+	img {
+		margin-top: 2em;		
+	}
 }

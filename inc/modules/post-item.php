@@ -11,5 +11,8 @@
 	</div>
 	<a href="<?php echo $url; ?>" class="post-title">
 		<h2><?php echo $title ?></h2>
+		<span class="date">
+			<?php echo get_the_date( 'd.m.y' ); ?>
+		</span>
 	</a>
 </div>

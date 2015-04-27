@@ -629,8 +629,8 @@ b {
 
 .span {
   min-height: 2px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 2%;
+  padding-right: 2%;
   float: left;
   display: block;
   position: relative;
@@ -856,7 +856,6 @@ select {
   input[type=password]:focus,
   textarea:focus,
   select:focus {
-    border: 1px solid #d7d7d7;
     outline: none; }
 
 input[type=text],
@@ -1082,7 +1081,7 @@ fieldset {
   .search-form .submit-btn {
     color: #c0c0c0;
     vertical-align: middle;
-    padding: 1.5em 1em;
+    padding: .8em;
     float: left;
     background: none; }
     .search-form .submit-btn:before {
@@ -1151,14 +1150,7 @@ button:active, button:focus, a:active, a:focus {
 .primary-btn, .comment-form .form-submit input[type=submit] {
   font-size: 17px;
   font-size: 1.7rem;
-  color: #FFF;
-  background: #000;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
-  -moz-box-shadow: 0px 5px 2px #d7d7d7;
-  -webkit-box-shadow: 0px 5px 2px #d7d7d7;
-  box-shadow: 0px 5px 2px #d7d7d7;
+  color: #000000;
   font-family: 'Avenir LT W01_35 Light';
   font-weight: normal;
   text-transform: uppercase;
@@ -1199,7 +1191,7 @@ button:active, button:focus, a:active, a:focus {
   .menu-btn span, .menu-btn span:before, .menu-btn span:after {
     cursor: pointer;
     border-radius: 1px;
-    height: 2px;
+    height: 1px;
     width: 20px;
     background: black;
     position: absolute;
@@ -1456,15 +1448,29 @@ hr {
 .full-height {
   height: 100%; }
 
-.clear:after,
-.clearfix:after,
-.comment-form .comment-form-author:after,
-.comment-form .comment-form-email:after,
-.comment-form .comment-form-url:after,
-.comment-form .comment-form-comment:after {
-  content: '';
-  display: table;
-  clear: both; }
+.clearfix, .comment-form .comment-form-author,
+.comment-form .comment-form-email,
+.comment-form .comment-form-url,
+.comment-form .comment-form-comment,
+.container {
+  *zoom: 1; }
+  .clearfix:before, .comment-form .comment-form-author:before,
+  .comment-form .comment-form-email:before,
+  .comment-form .comment-form-url:before,
+  .comment-form .comment-form-comment:before, .clearfix:after, .comment-form .comment-form-author:after,
+  .comment-form .comment-form-email:after,
+  .comment-form .comment-form-url:after,
+  .comment-form .comment-form-comment:after,
+  .container:before,
+  .container:after {
+    content: " ";
+    display: table; }
+  .clearfix:after, .comment-form .comment-form-author:after,
+  .comment-form .comment-form-email:after,
+  .comment-form .comment-form-url:after,
+  .comment-form .comment-form-comment:after,
+  .container:after {
+    clear: both; }
 
 .not-found {
   text-align: center;

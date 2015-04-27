@@ -18,15 +18,15 @@
 					$image_size = array('width' => 450, 'height' => 290);
 				?>
 	            <li >
-	            <a href="<?php echo get_permalink(); ?>" class="work-item overlay-btn-white">
-					<img src="<?php echo get_post_thumbnail_src($image_size); ?>" alt="<?php echo get_the_title(); ?>"/>
-					<figcaption>
-						<div>
-							<h2><?php echo get_the_title(); ?></h2>
-							<p><?php the_field('subtitle'); ?></p>
-							<span class="icon icon-right"></span>
-						</div>
-					</figcaption>			
+		            <a href="<?php echo get_permalink(); ?>" class="work-item overlay-btn-white">
+						<img src="<?php echo get_post_thumbnail_src($image_size); ?>" alt="<?php echo get_the_title(); ?>"/>
+						<figcaption>
+							<div>
+								<h2><?php echo get_the_title(); ?></h2>
+								<p><?php the_field('subtitle'); ?></p>
+								<span class="icon icon-right"></span>
+							</div>
+						</figcaption>			
 					</a>		
 	            </li>								
 			<?php 

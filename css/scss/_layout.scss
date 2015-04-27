@@ -10,6 +10,8 @@ body {
 	@include font-size(15);
 	line-height: 1.5;
 	@include avenir-light;
+
+	-webkit-font-smoothing: antialiased;
 }
 
 #tortilla {
@@ -81,9 +83,9 @@ body {
 }
 
 #footer {
-	background: #f2f2f3;
+	background: #FFF;
 	padding: 3.5em 0;
-	color: #58595b;
+	color: #696969;
 	@include avenir-light;
 	@include font-size(8.5);
 	text-transform: uppercase;

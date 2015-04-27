@@ -26,7 +26,8 @@
 					expandEffect: 'slideDown',
 					expandSpeed: 0,
 					collapseEffect: 'slideUp',
-					collapseSpeed: 0,	        		
+					collapseSpeed: 0,
+					expandPrefix: ''
 	        	});
 	        }	    
 			
@@ -217,15 +218,19 @@
 				var newElems = $( newElements ).hide();
 					newElems.imagesLoaded(function(){
 					newElems.fadeIn(); // fade in when ready
-				});			  	
+				});
+				$( "#infscr-loading" ).remove();
 			});
 
-			$(window).unbind('.infscr');
-			$('a#next').click(function(e){
-				e.preventDefault();
-			    container.infinitescroll('retrieve');
-			 	return false;
-			});
+			if ($('body').hasClass('home')) {
+				$(window).unbind('.infscr');
+				$('a#next').click(function(e){
+					e.preventDefault();
+				    container.infinitescroll('retrieve');
+				 	return false;
+				});
+			};
+
 
 			$(document).ajaxError(function(e,xhr,opt) {
 				if(xhr.status==404)

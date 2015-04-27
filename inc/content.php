@@ -45,7 +45,7 @@
 									break;
 							} ?>
 							<div class="break-on-tablet span <?php if (get_sub_field('column_width')):?><?php the_sub_field('column_width'); ?><?php else: ?><?php echo $class; ?><?php endif; ?><?php if(get_sub_field('textbox_only')): ?> textblock<?php endif; ?>" style="
-							<?php if (get_sub_field('text_color')):?>color: <?php the_sub_field('text_color'); ?>;<?php endif; ?>
+							<?php if (get_sub_field('text_color')):?>color: <?php the_sub_field('text_color'); ?>;<?php endif; ?><?php if (get_sub_field('css')):?><?php the_sub_field('css'); ?>;<?php endif; ?>
 							">
 								<?php the_sub_field('column_content'); ?>
 							</div>
@@ -67,7 +67,7 @@
 						    <ul class="family">
 						    <?php foreach( $posts as $p ): // variable must NOT be called $post (IMPORTANT) ?>
 						        <?php 
-						            $image_size = array('width' => 278, 'height' => 328);
+						            $image_size = array('width' => 239, 'height' => 301);
 						            $image_src = get_image(get_post_thumbnail_id($p->ID), $image_size);
 						        ?>
 						        <li>

@@ -19,11 +19,16 @@
 				<ul>
 					<?php while ( $slide_query->have_posts() ) : $slide_query->the_post(); ?>
 
-						<?php $post_object = get_field('slide_linkage'); ?>
+						<?php 
+							$post_object = get_field('slide_linkage'); 
+							$image_size = array('width' => 1670, 'height' => 650);
+							$image_full = get_field('slide_image');
+							$image = bfi_thumb($image_full, $image_size);
+						?>
 
 					    <li>
 					    	<a href="<?php echo get_permalink($post_object->ID); ?>">
-						    	<img src="<?php the_field('slide_image'); ?>" alt="" title="1">	
+						    	<img src="<?php echo $image; ?>" alt="" title="1">	
 					    	</a>
 				    	</li>
 			    	<?php endwhile; ?>
@@ -43,50 +48,57 @@
 		</div>		
 	<?php endif; ?>
 
+	<div class="front-news">
+		<div class="inner container">
+			<?php
 
-	<div class="inner container">
-	<?php
-		$args = array(									
-			'post_type'   => 'post',
-			'post_status' => 'publish',	
-			'posts_per_page' => 6,
-			'order'       => 'DESC',
-			'orderby'     => 'date',	
-			'ignore_sticky_posts' => true		
-		);
-	
-		$query = new WP_Query( $args ); ?>
+				if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
+				elseif ( get_query_var('page') ) { $paged = get_query_var('page'); }
+				else { $paged = 1; }		
+				
+				query_posts(array(									
+					'post_type'   		=> 'post',
+					'post_status' 		=> 'publish',	
+					'posts_per_page' 	=> 6,
+					'order'       		=> 'DESC',
+					'orderby'     		=> 'date',	
+					'ignore_sticky_posts' => true,
+					'paged'		  		=> $paged	
+				));
+			
+				$query = new WP_Query( $args ); 
+			?>
 
-		<?php if ( $query->have_posts() ): ?>
+			
 
-			<h2 class="section-title"><?php _e('Latest News') ?></h2>
+				<h2 class="section-title"><?php _e('Latest News') ?></h2>
 
-			<ul class="posts">
-				<?php 
-				$i = 0;
-				$i = 1;
-				$array = array(1,5);				
-				while ( $query->have_posts() ) : $query->the_post(); ?>
+				<ul class="posts">
 					<?php 
-						$image_size = (in_array($i % 6 , $array)) ?  array('width' => 804, 'height' => 538) : array('width' => 450, 'height' => 301);
-					?>
-	            <li>
-	                <?php include_module('post-item', array(
-						'title' => get_the_title(),
-						'url' =>  get_permalink(),
-						'image_url' => get_post_thumbnail_src($image_size),
-					)); ?>
-	            </li>								
-				<?php 
-				$i++;
-				endwhile; // end of the loop. ?>
-			</ul>
+					$i = 0;
+					$i = 1;				
+					while ( have_posts() ) : the_post(); ?>
+						<?php 
+							$image_size = array('width' => 400, 'height' => 375);
+						?>
+		            <li>
+		                <?php include_module('post-item', array(
+							'title' => get_the_title(),
+							'url' =>  get_permalink(),
+							'image_url' => get_post_thumbnail_src($image_size),
+						)); ?>
+		            </li>								
+					<?php 
+					$i++;
+					endwhile; // end of the loop. ?>
+				</ul>
 
-		<?php else: ?>
-			<div class="not-found">
-				<h3 class="title"><?php _e("No posts found", THEME_NAME); ?></h3>
-			</div>
-		<?php endif; ?>
+		</div>
+		<div id="navbelow">
+			<?php next_posts_link('Next &raquo;'); ?>			
+		</div>
+		<a class="primary-btn" id="next"><?php _e('More News'); ?></a>		
+		<?php wp_reset_postdata(); ?>
 	</div>
 </section>
 <?php get_footer(); ?>

@@ -2,25 +2,29 @@
 <section id="index" class="content-area">
 
 	<header class="index-header">
-		<div class="container">
-			<div class="filters">
-				<div class="span ten search-field">
-					<?php get_search_form(); ?>	
-				</div>
-			</div>				
-		</div>
 	</header>
 	<div class="container">	
+		<div class="span ten search-field">
+			<?php get_search_form(); ?>	
+		</div>
+
 		<?php if ( have_posts() ) : ?>
 			<ul class="posts">
 			<?php 
 			$i = 1;
-			$array = array(1,5);
+			$year = date('Y', strtotime('+1 year'));
 			
 			while ( have_posts() ) : the_post(); ?>
 				<?php 
-					$image_size = (in_array($i % 6 , $array)) ?  array('width' => 804, 'height' => 538) : array('width' => 450, 'height' => 301);
+					$image_size = array('width' => 400, 'height' => 375);
+					$post_year =get_the_date('Y');
 				?>
+				<?php if($year != $post_year ): ?>
+					<div class="year">
+						<?php the_date('Y'); ?>
+					</div>
+					<?php  $year = $post_year ?>
+				<?php endif; ?>
 	            <li>
 	                <?php include_module('post-item', array(
 						'title' => get_the_title(),
@@ -41,7 +45,6 @@
 		<div id="navbelow">
 			<?php next_posts_link('Next &raquo;'); ?>			
 		</div>
-		<a class="primary-btn" id="next"><?php _e('Load More'); ?></a>
 	</div>
 </section>
 <?php get_footer(); ?>

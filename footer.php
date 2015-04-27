@@ -17,7 +17,7 @@
 			</div>		
 			<div class="contact">
 				<span>
-					&copy; <?php the_time('Y'); ?> <?php bloginfo('title'); ?> <?php _e('ALL RIGHTS RESERVED') ?>	
+					<?php _e('Copyright ') ?>&copy; <?php the_time('Y'); ?> <?php bloginfo('title'); ?>. <?php _e(' ALL RIGHTS RESERVED') ?>	
 				</span>
 			</div>					
 		</div>
