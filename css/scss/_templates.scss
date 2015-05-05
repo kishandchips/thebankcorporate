@@ -109,11 +109,36 @@
 		.post-title {
 			text-transform: uppercase;
 		}
+
+		.subtitle {
+			margin-top: -2.5em;
+
+			@include device-width(7) {
+				margin-top: -1.5em;
+			}			
+
+
+		}
+	}
+}
+
+#single-work {
+
+	.subtitle {
+		line-height: 1;
 	}
 }
 
 .page-contact {
 	.page-content {
+		.row:nth-child(1) {
+			.uppercase-low {
+				@include device-width(5) {
+					@include font-size(15);
+				}
+			}
+		}
+
 		.row:nth-child(2) {
 
 			.span {

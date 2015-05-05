@@ -19,11 +19,10 @@ body {
 		padding-top: 115px;
 
 		@include device-width(9) {
-			padding-top: 40px;	
+			padding-top: 65px;	
 		}
 		
 	}
-
 }
 
 /* =============================================================================
@@ -89,6 +88,20 @@ body {
 
 #main {
 	//margin-top: 3.5em;
+
+	.subnav & {
+		@include device-width(9) {
+			padding-top: 48px;
+		}
+	}
+
+	.subnav.header-fixed & {
+
+		@include device-width(7) {
+			padding-top: 43px;	
+		}
+		
+	}
 }
 
 #footer {

@@ -40,6 +40,13 @@ button, a {
 
 .back-btn {
 	margin: 1em auto;
+	padding: 0.5em 0;
+	border-bottom: 1px solid transparent;
+
+	&:hover {
+		background: none;
+		border-bottom: 1px solid #000;
+	}
 }
 
 
@@ -67,7 +74,7 @@ button, a {
 	}
 
 	@include device-width(9) {
-		right: -3%; 
+		right: -5%; 
 		height: 75px;
 		width: 75px;
 		padding: 3.2em 1.2em 0em;
