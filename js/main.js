@@ -64,7 +64,7 @@
 				
 				main.w.on('scroll', this.scroll).trigger('scroll');
 			},
-			scroll: function(){
+			scroll: function() {
 				var scrollTop = main.w.scrollTop(),
 					body = main.body.element,
 					header = main.header.element,
@@ -82,8 +82,10 @@
 				}
 
 				$( ".primary-navigation" ).mouseleave(function() {
-					header.removeClass('navigation-open');
-					btn.removeClass('active white');
+					setTimeout(function() {
+						header.removeClass('navigation-open');
+						btn.removeClass('active white');
+					}, 1000);					
 				});
 			}
 		},
@@ -109,7 +111,7 @@
 
 				    $(".scroll").click(function(event) {
 				    	event.preventDefault();
-				    	$('html,body').animate( { scrollTop: ($(this.hash).offset().top) - 100 } , 1000);
+				    	$('html,body').animate( { scrollTop: ($(this.hash).offset().top) - 160 } , 1000);
 				    });				    
 			    }								
 			}
@@ -212,7 +214,7 @@
 				extraScrollPx: 150,
 			loading: {
 				finishedMsg: 'No more items to load.',
-					img: 'http://i.imgur.com/qkKy8.gif'
+					img: site_url +'/wp-content/themes/thebank/images/misc/loader.gif'
 				}
 			}, function (newElements) {
 				var newElems = $( newElements ).hide();

@@ -32,24 +32,27 @@ body {
 
 #header {
 	background: #FFF;
-	height: 115px;
 	position: relative;
 	width: 100%;
 	z-index: 1040;
 	@include transition(all 0.3s ease);
+	padding: 2.5em 0;
 
 	.logo-container {
 		text-align: center;
-		padding-top: 35px;
+		font-size: 0;
 
 		.logo {
 			color: #000;
 			@include font-size(40);
 			vertical-align: top;
 			@include transition(all 0.3s ease);
+			
 
 			&:before {
-				vertical-align: top;
+				display: block;
+				@include icon(logo);
+				vertical-align: middle;
 			}
 		}
 	}
@@ -61,13 +64,19 @@ body {
 		@include box-shadow(0 0px 10px #DADADA);
 
 		@include device-width(9) {
-			height: 56px;
+			padding: 1em;
 
 			.logo-container {
-				padding-top: 12px;
+				@include transition(none);
 
 				.logo {
-					@include font-size(30);
+					@include font-size(18);
+					@include transition(none);
+
+					&:before {
+						@include transition(none);
+						content: "\e606";
+					}
 				}			
 			}			
 		}

@@ -36,7 +36,7 @@ h1 {
 	}
 
 	@include device-width(5) {
-		@include font-size(35);	
+		@include font-size(22);	
 	}	
 }
 

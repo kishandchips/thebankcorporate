@@ -361,8 +361,8 @@ table {
 
 @font-face {
   font-family: 'icons';
-  src: url("fonts/icons.eot?-o0lnvm");
-  src: url("fonts/icons.eot?#iefix-o0lnvm") format("embedded-opentype"), url("fonts/icons.woff?-o0lnvm") format("woff"), url("fonts/icons.ttf?-o0lnvm") format("truetype"), url("fonts/icons.svg?-o0lnvm#icons") format("svg");
+  src: url("fonts/icons.eot?fs4c2v");
+  src: url("fonts/icons.eot?#iefixfs4c2v") format("embedded-opentype"), url("fonts/icons.woff?fs4c2v") format("woff"), url("fonts/icons.ttf?fs4c2v") format("truetype"), url("fonts/icons.svg?fs4c2v#icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], .facebook-btn:before, .twitter-btn:before, .search-btn:before, [class*=" icon-"] {
@@ -379,6 +379,9 @@ table {
 
 .icon-right:before {
   content: "\e604"; }
+
+.icon-logo-nude:before {
+  content: "\e606"; }
 
 .icon-facebook:before, .facebook-btn:before {
   content: "\e602"; }
@@ -398,11 +401,11 @@ table {
 .icon-arrow-right:before {
   content: "\e60d"; }
 
+.icon-search:before, .search-btn:before {
+  content: "\e607"; }
+
 .icon-caret-down:before {
   content: "\e600"; }
-
-.icon-search:before, .search-btn:before {
-  content: "\e609"; }
 
 a {
   text-decoration: none;
@@ -442,8 +445,8 @@ h1 {
       font-size: 4.5rem; } }
   @media only screen and (max-width: 500px) {
     h1 {
-      font-size: 35px;
-      font-size: 3.5rem; } }
+      font-size: 22px;
+      font-size: 2.2rem; } }
 
 h2 {
   font-size: 35px;
@@ -1163,9 +1166,12 @@ button:active, button:focus, a:active, a:focus {
     background: #e3e3e3;
     color: #001a35; }
 
+.back-btn {
+  margin: 1em auto; }
+
 .menu-btn {
   position: absolute;
-  top: 0%;
+  top: 4%;
   right: 0%;
   cursor: pointer;
   padding: 3.5em 2.8em 0em;
@@ -1178,10 +1184,10 @@ button:active, button:focus, a:active, a:focus {
     outline: 0; }
   @media only screen and (max-width: 900px) {
     .header-fixed .menu-btn {
-      padding: 1.6em 2.8em 0em;
-      height: 40px; } }
+      top: -25px; } }
   @media only screen and (max-width: 900px) {
     .menu-btn {
+      right: -3%;
       height: 75px;
       width: 75px;
       padding: 3.2em 1.2em 0em; } }

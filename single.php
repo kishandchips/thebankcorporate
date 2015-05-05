@@ -31,6 +31,9 @@
 		wp_reset_postdata();
 		// end of the loop. 
 	?>
+	<div id="back">
+		<a class="primary-btn back-btn" onclick="window.history.back();">Back to News</a>
+	</div>	
 </div><!-- #single -->
 <?php include_module('related-posts'); ?>
 

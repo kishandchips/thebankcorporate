@@ -111,3 +111,27 @@
 		}
 	}
 }
+
+.page-contact {
+	.page-content {
+		.row:nth-child(2) {
+
+			.span {
+				border-right: 1px solid #bfbfbf;
+
+				&:last-child {
+					border-right: none;					
+				}
+
+				@include device-width(8) {
+					border-right: none;
+					border-bottom: 1px solid #bfbfbf;
+
+					&:last-child {
+						border-bottom: none;					
+					}
+				}
+			}
+		}
+	}
+}

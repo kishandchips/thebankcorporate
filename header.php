@@ -23,6 +23,10 @@
 
     <?php wp_head(); ?>
 
+	<script type="text/javascript">
+	   var site_url = '<?php bloginfo('url'); ?>';
+	</script>    
+
 </head>
 <body <?php body_class(); ?>>
 <div id="tortilla">
@@ -31,7 +35,7 @@
 		<a class="menu-btn" href="#"><span></span></a>	
 		<div class="inner container">
 			<h1 class="logo-container">
-				<a class="logo icon icon-logo" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a>
+				<a class="logo icon" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a>
 			</h1>	
 			<?php wp_nav_menu( array( 'depth' => 0, 'theme_location' => 'primary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'primary-navigation navigation' )); ?>
 			</div>

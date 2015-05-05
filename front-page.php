@@ -49,6 +49,7 @@
 	<?php endif; ?>
 
 	<div class="front-news">
+		<h2 class="section-title"><?php _e('Latest News') ?></h2>
 		<div class="inner container">
 			<?php
 
@@ -68,10 +69,6 @@
 			
 				$query = new WP_Query( $args ); 
 			?>
-
-			
-
-				<h2 class="section-title"><?php _e('Latest News') ?></h2>
 
 				<ul class="posts">
 					<?php 

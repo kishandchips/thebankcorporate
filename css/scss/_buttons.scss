@@ -38,11 +38,15 @@ button, a {
 	}	
 }
 
+.back-btn {
+	margin: 1em auto;
+}
+
 
 
 .menu-btn { 
 	position: absolute; 
-	top: 0%; 
+	top: 4%; 
 	right: 0%; 
 	cursor: pointer; 
 	padding: 3.5em 2.8em 0em;
@@ -58,12 +62,12 @@ button, a {
 
 	.header-fixed & {
 		@include device-width(9) {
-			padding: 1.6em 2.8em 0em;
-			height: 40px;
+			top: -25px;
 		}
 	}
 
 	@include device-width(9) {
+		right: -3%; 
 		height: 75px;
 		width: 75px;
 		padding: 3.2em 1.2em 0em;
