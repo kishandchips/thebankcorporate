@@ -3,9 +3,9 @@
 	var main = {
 		w: $(window),
 		d: $(document),
-		init: function(){
-			
+		init: function(){			
 			this.global.init();
+			this.lettering.init();
 			this.header.init();
 			this.frontpage.init();
 			this.infiniteScroll();
@@ -29,8 +29,7 @@
 					collapseSpeed: 0,
 					expandPrefix: ''
 	        	});
-	        }	    
-			
+	        }	    		
 		},
 
 		global: {
@@ -47,6 +46,15 @@
 			element: $('body')
 		},
 
+		lettering: {
+			element: $('.menu-item a'),
+			init: function() {
+				elements = main.lettering.element;
+				elements.lettering();
+				elements.addClass('lettering');
+			}
+		},		
+
 		header: {
 			element: $('#header'),
 			init: function(){
@@ -57,10 +65,24 @@
 					e.preventDefault();
 					$(this).toggleClass('active');
 					setTimeout(function() {
-						menuBtn.toggleClass('white');
+						if (menuBtn.hasClass('white')){
+							menuBtn.removeClass('white');
+						} else {
+							if (menuBtn.hasClass('active')) {
+								menuBtn.addClass('white');	
+							}
+						}
 					}, 600);
 					header.toggleClass('navigation-open');
 				});
+
+				$( ".primary-navigation" ).mouseleave(function() {
+					console.log('leave');
+					setTimeout(function() {
+						menuBtn.removeClass('active white');
+						header.removeClass('navigation-open');
+					}, 1000);					
+				});				
 				
 				main.w.on('scroll', this.scroll).trigger('scroll');
 			},
@@ -70,9 +92,9 @@
 					header = main.header.element,
 					btn = $('.menu-btn', header);
 
-				if(scrollTop > 10 && !body.hasClass('header-fixed')) {
+				if(scrollTop > 1 && !body.hasClass('header-fixed')) {
 					body.addClass('header-fixed');
-				} else if(scrollTop < 10 && body.hasClass('header-fixed')) {
+				} else if(scrollTop < 1 && body.hasClass('header-fixed')) {
 					body.removeClass('header-fixed');
 				}
 
@@ -80,13 +102,6 @@
 					header.removeClass('navigation-open');
 					btn.removeClass('active white');
 				}
-
-				$( ".primary-navigation" ).mouseleave(function() {
-					setTimeout(function() {
-						header.removeClass('navigation-open');
-						btn.removeClass('active white');
-					}, 1000);					
-				});
 			}
 		},
 

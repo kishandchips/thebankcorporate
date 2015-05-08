@@ -23,18 +23,18 @@
 			@include font-size(15);
 			text-transform: uppercase;
 			color: #FFF;
-			border-bottom: 2px solid transparent;
+			border-bottom: 1px solid transparent;
 			letter-spacing: 4px;
 			line-height: 1.4;
 
 			&:hover {
-				border-bottom: 2px solid #FFF;
+				border-bottom: 1px solid #FFF;
 			}
 		}
 
 		&.current-menu-item, &.current-page-ancestor {
 			a {
-				border-bottom: 2px solid #FFF;
+				border-bottom: 1px solid #FFF;
 			}						
 		}
 	}
@@ -80,7 +80,7 @@
 	width: 100%;
 	bottom: -54px;
 	text-align: center;
-	bottom: -37px;
+	bottom: -48px;
 	left: 0;
 
 
@@ -138,7 +138,7 @@
 	li {
 		float: left;
 		width: 33.33%;
-		padding: 0 1% 1%;
+		padding: 0 1% 2%;
 
 		&:nth-child(3n+1) {
 			clear: left;
@@ -285,7 +285,7 @@
 	text-transform: uppercase;
 	line-height: 1;
 	letter-spacing: 5px;
-	@include font-size(22);
+	@include font-size(20);
 	@extend .clearfix;
 }
 
@@ -406,6 +406,8 @@
     padding-top: 30px; 
     height: 0;
     overflow: hidden;
+    margin-bottom: 1.5em;
+
 	iframe,
 	object,
 	embed {
@@ -562,8 +564,8 @@
 	}
 
 	h1 {
-		@include font-size(35);
-		line-height: 1.5;
+		@include font-size(33);
+		line-height: 1.4;
 		padding: 1.5em 0;
 
 		@include device-width(9) {
@@ -777,14 +779,18 @@
 
 	
 	a {
-		@include font-size(23);
+		@include font-size(20);
 		margin-right: 30px;
-		color: #000002;
+		color: #a5a5a5;
 		@include transition(all 0.3s ease);
 
 		&:last-child {
 			margin: 0;
 		}
+
+		&.icon-youtube {
+			@include font-size(22);
+		}		
 
 		&:hover {
 			text-decoration: none !important;

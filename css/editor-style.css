@@ -449,8 +449,8 @@ h1 {
       font-size: 2.2rem; } }
 
 h2 {
-  font-size: 35px;
-  font-size: 3.5rem;
+  font-size: 20px;
+  font-size: 2rem;
   color: #333333; }
   @media only screen and (max-width: 1200px) {
     h2 {
@@ -606,6 +606,9 @@ b {
   *zoom: 1;
   *display: inline;
   letter-spacing: 5px; }
+
+.lettering span:last-child {
+  letter-spacing: 0; }
 
 /* =============================================================================
    Grid
@@ -1154,24 +1157,19 @@ button:active, button:focus, a:active, a:focus {
   font-family: 'Avenir LT W01_35 Light';
   font-weight: normal;
   text-transform: uppercase;
-  padding: 0.8em 3.5em;
+  padding: 0.5em 0;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
   *zoom: 1;
   *display: inline;
   letter-spacing: 2px;
-  line-height: 1; }
-  .primary-btn:hover, .comment-form .form-submit input[type=submit]:hover {
-    background: #e3e3e3;
-    color: #001a35; }
-
-.back-btn {
+  line-height: 1;
   margin: 1em auto;
-  padding: 0.5em 0;
   border-bottom: 1px solid transparent; }
-  .back-btn:hover {
+  .primary-btn:hover, .comment-form .form-submit input[type=submit]:hover {
     background: none;
+    color: #000000;
     border-bottom: 1px solid #000; }
 
 .menu-btn {
@@ -1183,19 +1181,18 @@ button:active, button:focus, a:active, a:focus {
   background: none;
   z-index: 8000;
   height: 70px;
-  width: 125px;
+  width: 105px;
   outline: 0; }
   .menu-btn:hover, .menu-btn:active, .menu-btn:focus {
     outline: 0; }
   @media only screen and (max-width: 900px) {
+    .menu-btn {
+      height: 75px;
+      width: 56px;
+      padding: 3.2em 1.2em 0em; } }
+  @media only screen and (max-width: 900px) {
     .header-fixed .menu-btn {
       top: -25px; } }
-  @media only screen and (max-width: 900px) {
-    .menu-btn {
-      right: -5%;
-      height: 75px;
-      width: 75px;
-      padding: 3.2em 1.2em 0em; } }
   .menu-btn span, .menu-btn span:before, .menu-btn span:after {
     cursor: pointer;
     border-radius: 1px;

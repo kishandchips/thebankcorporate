@@ -41,7 +41,7 @@ h1 {
 }
 
 h2 {
-	@include font-size(35);
+	@include font-size(20);
 	color: #333333;
 
 	@include device-width(12) {
@@ -202,4 +202,10 @@ b {
 	margin-bottom: 3em;
 	@include inline-block;
 	letter-spacing: 5px;
+}
+
+.lettering {
+	span:last-child {
+		letter-spacing: 0;
+	}
 }
