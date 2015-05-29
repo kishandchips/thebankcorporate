@@ -415,8 +415,6 @@ a {
   -o-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease; }
-  a:hover {
-    color: #001a35; }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -1314,11 +1312,13 @@ button:active, button:focus, a:active, a:focus {
     -o-transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease; }
-  .overlay-btn:hover:after, .overlay-btn-white:hover:after,
-  .overlay-btn:hover .overlay,
-  .overlay-btn-white:hover .overlay {
-    opacity: 1;
-    visibility: visible; }
+  .overlay-btn:hover, .overlay-btn-white:hover {
+    -webkit-backface-visibility: hidden; }
+    .overlay-btn:hover:after, .overlay-btn-white:hover:after,
+    .overlay-btn:hover .overlay,
+    .overlay-btn-white:hover .overlay {
+      opacity: 1;
+      visibility: visible; }
 
 .overlay-btn-white:after {
   background: rgba(255, 255, 255, 0.95); }
@@ -1407,11 +1407,7 @@ img {
   text-shadow: 0px 2px 2px white; }
 
 hr {
-  background-color: #dddddd;
-  border: 0;
-  height: 3px;
-  margin: 1em auto;
-  width: 50px; }
+  border: 0; }
 
 .circle {
   -moz-border-radius: 999px;

@@ -36,9 +36,7 @@
 
 		img {
 			display: block;
-			max-width: none;
-			width: -webkit-calc(100% + 50px);
-			width: calc(100% + 50px);
+			max-width: 100%;
 			opacity: 1;
 		}
 
@@ -85,7 +83,7 @@
 		}		
 
 		&:hover {
-			img, h2, p, .icon-right {
+			h2, p, .icon-right {
 				@include transform(translate3d(0,0, 0));
 				opacity: 1;
 			}

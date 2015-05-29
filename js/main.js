@@ -22,14 +22,22 @@
 	        	$('.expander').expander({
 	        		expandText: 'More',
 	        		userCollapseText: 'Less',
-	        		slicePoint: 230,
+	        		slicePoint: 1000,
+	        		sliceOn: '<hr',
 					expandEffect: 'slideDown',
 					expandSpeed: 0,
 					collapseEffect: 'slideUp',
 					collapseSpeed: 0,
 					expandPrefix: ''
 	        	});
-	        }	    		
+	        }	 
+
+	        console.log('init');
+			$('#content a').filter(function() {
+			    return $(this).attr('href').match(/\.(jpg|png|gif)/i);
+			}).addClass('majom');	
+
+			$('.majom').magnificPopup({type:'image'});	           		
 		},
 
 		global: {
@@ -47,7 +55,7 @@
 		},
 
 		lettering: {
-			element: $('.menu-item a'),
+			element: $('.primary-navigation .menu-item a'),
 			init: function() {
 				elements = main.lettering.element;
 				elements.lettering();
@@ -92,7 +100,7 @@
 					header = main.header.element,
 					btn = $('.menu-btn', header);
 
-				if(scrollTop > 1 && !body.hasClass('header-fixed')) {
+				if(scrollTop > 0 && !body.hasClass('header-fixed')) {
 					body.addClass('header-fixed');
 				} else if(scrollTop < 1 && body.hasClass('header-fixed')) {
 					body.removeClass('header-fixed');
@@ -200,7 +208,7 @@
 		          image: {
 		            tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
 		          }
-		        });
+		        });        
 			}
 		},		
 
@@ -230,7 +238,8 @@
 				itemSelector: ".posts li",
 				extraScrollPx: 150,
 			loading: {
-				finishedMsg: 'No more items to load.',
+					finishedMsg: 'No more items to load.',
+					msgText: ' ',
 					img: site_url +'/wp-content/themes/thebank/images/misc/loader.gif'
 				}
 			}, function (newElements) {

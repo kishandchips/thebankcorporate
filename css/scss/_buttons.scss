@@ -229,6 +229,8 @@ button, a {
 	}
 
 	&:hover {
+		-webkit-backface-visibility: hidden;
+		
 		&:after,
 		.overlay {
 			opacity: 1;

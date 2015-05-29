@@ -16,7 +16,7 @@
 			
 			while ( have_posts() ) : the_post(); ?>
 				<?php 
-					$image_size = array('width' => 400, 'height' => 375);
+					$image_size = array('width' => 400, 'height' => 260);
 					$post_year =get_the_date('Y');
 				?>
 				<?php if($year != $post_year ): ?>
@@ -25,7 +25,7 @@
 					</div>
 					<?php  $year = $post_year ?>
 				<?php endif; ?>
-	            <li>
+	            <li class="item">
 	                <?php include_module('post-item', array(
 						'title' => get_the_title(),
 						'url' =>  get_permalink(),

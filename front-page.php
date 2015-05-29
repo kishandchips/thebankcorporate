@@ -76,7 +76,7 @@
 					$i = 1;				
 					while ( have_posts() ) : the_post(); ?>
 						<?php 
-							$image_size = array('width' => 400, 'height' => 375);
+							$image_size = array('width' => 400, 'height' => 260);
 						?>
 		            <li>
 		                <?php include_module('post-item', array(

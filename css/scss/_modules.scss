@@ -139,11 +139,6 @@
 		float: left;
 		width: 33.33%;
 		padding: 0 1% 2%;
-
-		&:nth-child(3n+1) {
-			clear: left;
-		}
-
 	}
 
 	@media (max-width: 850px) {
@@ -152,11 +147,11 @@
 		li {
 			width: 50%;	
 
-			&:nth-child(3n+1) {
+			&:nth-of-type(3n+1) {
 				clear: none;
 			}			
 
-			&:nth-child(2n+1) {
+			&:nth-of-type(2n+1) {
 				clear: left;
 			}			
 		}
@@ -176,6 +171,7 @@
 	.post-image {
 		img {
 			display: block;
+			padding-bottom: 6.5em;
 		}
 	}
 
@@ -407,6 +403,7 @@
     height: 0;
     overflow: hidden;
     margin-bottom: 1.5em;
+    margin: 2em;
 
 	iframe,
 	object,
@@ -455,7 +452,7 @@
 
 				img {
 					display: block;
-					max-width: none;
+					max-width: 100%;
 					width: -webkit-calc(100% + 50px);
 					width: calc(100% + 50px);
 					opacity: 1;
@@ -521,8 +518,14 @@
 }
 
 .parallax-window {
-    padding-top: 50%;
+    padding-top: 40%;
     background: transparent;
+}
+
+.parallax-mirror {
+	img {
+		margin-top: 30px;
+	}
 }
 
 #gmaps {
