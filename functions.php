@@ -294,6 +294,7 @@ function custom_body_classes( $wp_classes, $extra_classes )
     $blacklist = array( 'author' );
 
     $wp_classes = array_diff( $wp_classes, $blacklist );
+    $wp_classes[] = 'header-fixed';
 	return array_merge( $wp_classes, (array) $extra_classes );
 }
 

@@ -12,10 +12,10 @@ if( $posts ): ?>
             $id = $p->ID;
             $image_size = array('width' => 370, 'height' => 250);
             $image_src = get_image(get_post_thumbnail_id($id), $image_size);
-        ?>  
+        ?>
 
         <li >
-            <a href="<?php echo get_permalink(); ?>" class="work-item overlay-btn-white">
+            <a href="<?php echo get_permalink($id); ?>" class="work-item overlay-btn-white">
                 <img src="<?php echo $image_src; ?>" alt="<?php echo get_the_title(); ?>"/>
                 <figcaption>
                     <div>

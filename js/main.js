@@ -100,11 +100,11 @@
 					header = main.header.element,
 					btn = $('.menu-btn', header);
 
-				if(scrollTop > 0 && !body.hasClass('header-fixed')) {
-					body.addClass('header-fixed');
-				} else if(scrollTop < 1 && body.hasClass('header-fixed')) {
-					body.removeClass('header-fixed');
-				}
+				// if(scrollTop > 0 && !body.hasClass('header-fixed')) {
+				// 	body.addClass('header-fixed');
+				// } else if(scrollTop < 1 && body.hasClass('header-fixed')) {
+				// 	body.removeClass('header-fixed');
+				// }
 
 				if(main.header.element.hasClass('navigation-open')) {
 					header.removeClass('navigation-open');

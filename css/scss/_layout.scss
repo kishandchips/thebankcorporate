@@ -19,7 +19,7 @@ body {
 		padding-top: 115px;
 
 		@include device-width(9) {
-			padding-top: 65px;	
+			padding-top: 48px;	
 		}
 		
 	}
@@ -56,6 +56,13 @@ body {
 		}
 	}
 
+	@include device-width(9) {
+		@include transition(none);
+			.logo {
+				@include transition(none);
+			}
+	}
+
 	.header-fixed & {
 		position: fixed;
 		top: 0;
@@ -64,6 +71,7 @@ body {
 
 		@include device-width(9) {
 			padding: 1em;
+			@include transition(none);
 
 			.logo-container {
 				@include transition(none);
