@@ -56,7 +56,7 @@ body {
 		}
 	}
 
-	@include device-width(9) {
+	@include device-width(7) {
 		@include transition(none);
 			.logo {
 				@include transition(none);
@@ -69,7 +69,7 @@ body {
 		left: 0;		
 		@include box-shadow(0 0px 10px #DADADA);
 
-		@include device-width(9) {
+		@include device-width(7) {
 			padding: 1em;
 			@include transition(none);
 

@@ -121,6 +121,20 @@
 		}
 	}
 
+	@include device-width(5) {
+		padding: 0 .5em;
+
+		ul {
+			li {
+				margin: 0 5px;
+				a {
+					@include font-size(5);
+					letter-spacing: 1px;
+				}
+			}			
+		}
+	}	
+
 	.header-fixed & {
 		bottom: -48px;
 

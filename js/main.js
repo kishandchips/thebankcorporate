@@ -38,6 +38,13 @@
 			}).addClass('majom');	
 
 			$('.majom').magnificPopup({type:'image'});	           		
+
+			$('.search-form').submit(function() {
+			    if ($.trim($(".search-form .input").val()) === "") {
+			        alert('You did not fill out the search field!');
+			        return false;
+			    }
+			});			
 		},
 
 		global: {

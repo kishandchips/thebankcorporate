@@ -340,23 +340,23 @@ table {
   border-spacing: 0; }
 
 .avenir-light {
-  font-family: 'Avenir LT W01_35 Light';
+  font-family: 'Avenir LT W01_35 Light1475496';
   font-weight: normal; }
 
 .avenir-book {
-  font-family: 'Avenir LT W01_45 Book';
+  font-family: 'Avenir LT W01_45 Book1475508';
   font-weight: normal; }
 
 .avenir-roman {
-  font-family: 'Avenir LT W01_55 Roman';
+  font-family: 'Avenir LT W01_55 Roman1475520';
   font-weight: normal; }
 
 .avenir-medium {
-  font-family: 'Avenir LT W01_65 Medium';
+  font-family: 'Avenir LT W01_65 Medium1475532';
   font-weight: normal; }
 
 .avenir-black {
-  font-family: 'Avenir LT W01_95 Black';
+  font-family: 'Avenir LT W01_95 Black1475556';
   font-weight: normal; }
 
 @font-face {
@@ -546,7 +546,7 @@ p {
 strong,
 b {
   font-weight: bold;
-  font-family: 'Avenir LT W01_95 Black';
+  font-family: 'Avenir LT W01_95 Black1475556';
   font-weight: normal; }
 
 .normal {
@@ -580,19 +580,19 @@ b {
 .uppercase {
   color: #000;
   letter-spacing: 2px;
-  font-family: 'Avenir LT W01_95 Black';
+  font-family: 'Avenir LT W01_95 Black1475556';
   font-weight: normal;
   text-transform: uppercase; }
 
 .uppercase-low {
   color: #000;
   letter-spacing: 2px;
-  font-family: 'Avenir LT W01_35 Light';
+  font-family: 'Avenir LT W01_35 Light1475496';
   font-weight: normal;
   text-transform: uppercase; }
 
 .subtitle {
-  font-family: 'Avenir LT W01_45 Book';
+  font-family: 'Avenir LT W01_45 Book1475508';
   font-weight: normal;
   font-size: 14px;
   font-size: 1.4rem;
@@ -843,7 +843,7 @@ select {
   letter-spacing: 1px;
   font-size: 18px;
   font-size: 1.8rem;
-  font-family: 'Avenir LT W01_95 Black';
+  font-family: 'Avenir LT W01_95 Black1475556';
   font-weight: normal;
   padding: .5em;
   -moz-border-radius: 0;
@@ -913,7 +913,7 @@ button[type=submit] {
   letter-spacing: 3px;
   font-size: 10px;
   font-size: 1rem;
-  font-family: 'Avenir LT W01_35 Light';
+  font-family: 'Avenir LT W01_35 Light1475496';
   font-weight: normal;
   border: 0; }
   input[type=submit]:hover,
@@ -940,7 +940,7 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 label {
   font-size: 9px;
   font-size: 0.9rem;
-  font-family: 'Avenir LT W01_35 Light';
+  font-family: 'Avenir LT W01_35 Light1475496';
   font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 2px; }
@@ -1040,7 +1040,7 @@ fieldset {
   .newsletter_wrapper .gform_description {
     display: block;
     line-height: 1.4;
-    font-family: 'Avenir LT W01_35 Light';
+    font-family: 'Avenir LT W01_35 Light1475496';
     font-weight: normal;
     letter-spacing: 2px;
     font-size: 10px;
@@ -1134,7 +1134,7 @@ fieldset {
   float: left;
   font-size: 13px;
   font-size: 1.3rem;
-  font-family: 'Avenir LT W01_35 Light';
+  font-family: 'Avenir LT W01_35 Light1475496';
   font-weight: normal;
   text-transform: none; }
 .comment-form .form-submit {
@@ -1152,7 +1152,7 @@ button:active, button:focus, a:active, a:focus {
   font-size: 17px;
   font-size: 1.7rem;
   color: #000000;
-  font-family: 'Avenir LT W01_35 Light';
+  font-family: 'Avenir LT W01_35 Light1475496';
   font-weight: normal;
   text-transform: uppercase;
   padding: 0.5em 0;
@@ -1492,7 +1492,7 @@ body {
   margin: 0 1.5em; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Avenir LT W01_35 Light';
+  font-family: 'Avenir LT W01_35 Light1475496';
   font-weight: normal;
   letter-spacing: 1px; }
 
@@ -1507,7 +1507,7 @@ ol {
       position: absolute;
       left: 0;
       font-size: 0.9em;
-      font-family: 'Avenir LT W01_35 Light';
+      font-family: 'Avenir LT W01_35 Light1475496';
       font-weight: normal;
       content: counter(counter);
       counter-increment: counter; }
@@ -1525,7 +1525,7 @@ p {
 
 .wp-caption-text {
   padding-right: 10px;
-  font-family: 'Avenir LT W01_35 Light';
+  font-family: 'Avenir LT W01_35 Light1475496';
   font-weight: normal;
   text-transform: initial !important; }
 

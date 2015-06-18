@@ -26,7 +26,10 @@
 		// end of the loop. 
 	?>
 	<div id="back">
-		<a class="primary-btn back-btn" onclick="window.history.back();">Back to Work</a>
+		<?php
+			$work_id = get_field('work_page', 'options')->ID; 
+		?>
+		<a class="primary-btn back-btn" href="<?php echo get_permalink($work_id); ?>">Back to Work</a>
 	</div>
 </div><!-- #single -->
 <?php include_module('related-posts'); ?>

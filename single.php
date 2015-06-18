@@ -32,7 +32,11 @@
 		// end of the loop. 
 	?>
 	<div id="back">
-		<a class="primary-btn back-btn" onclick="window.history.back();">Back to News</a>
+		<?php
+			$news_id = get_field('news_page', 'options')->ID; 
+		?>
+
+		<a class="primary-btn back-btn" href="<?php echo get_permalink( $news_id ); ?>">Back to News</a>
 	</div>	
 </div><!-- #single -->
 <?php include_module('related-posts'); ?>
