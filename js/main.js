@@ -247,7 +247,7 @@
 			loading: {
 					finishedMsg: 'No more items to load.',
 					msgText: ' ',
-					img: site_url +'/wp-content/themes/thebank/images/misc/loader.gif'
+					img: site_url +'/thebankdigital/wp-content/themes/thebank/images/misc/loader.gif'
 				}
 			}, function (newElements) {
 				var newElems = $( newElements ).hide();
