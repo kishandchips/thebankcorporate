@@ -38,8 +38,9 @@
 				<a class="logo icon" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a>
 			</h1>	
 			<?php wp_nav_menu( array( 'depth' => 0, 'theme_location' => 'primary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'primary-navigation navigation' )); ?>
-			</div>
-			<?php include_module('subnavigation'); ?>			
+			<a href="http://thebank.co.uk" class="icon icon-logo2-bank"></a>
+		</div>
+		<?php include_module('subnavigation'); ?>			
 	</header><!-- #header -->
 
 	<div id="main" class="site-main" role="main">

@@ -63,16 +63,12 @@ button, a {
 		outline: 0;
 	}
 
-	@include device-width(9) {
-		height: 75px;
-		width: 56px;
-		padding: 3.2em 1.2em 0em;
-	}
-
-
 	.header-fixed & {
-		@include device-width(9) {
+		@include device-width(7) {
+			padding: 3.2em 1.2em 0em;
 			top: -25px;
+			height: 75px;
+			width: 56px;			
 		}
 	}
 

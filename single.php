@@ -18,7 +18,7 @@
 				<?php if(!$post->post_content == ''): ?>
 					<div class="post-header">
 						<h1 class="post-title"><?php the_title(); ?></h1>
-						<span class="subtitle"><?php the_time('d M Y'); ?></span>
+						<span class="subtitle"></span>
 					</div>
 					<?php the_content(); ?>
 				<?php endif; ?>

@@ -37,6 +37,25 @@
 				border-bottom: 1px solid #FFF;
 			}						
 		}
+
+		&.side-reference {
+		    margin-top: 6em;
+
+			a {
+				color: #FFF;
+				@include font-size(27);
+
+				&:before {
+					@include icon('logo2');
+					color: #FFF;
+				}
+
+				&:hover {
+					text-decoration: none;
+					border-bottom: none;
+				}
+			}
+		}
 	}
 
 	.navigation-open & {
@@ -86,9 +105,10 @@
 
 	ul {
 		@include inline-block;
+		text-align: center;
 
 		li {
-			float: left;
+			@include inline-block;
 			margin: 0 25px;
 			border-bottom: 4px solid transparent;
 
@@ -108,7 +128,7 @@
 		}
 	}
 
-	@include device-width(7) {
+	@include device-width(10) {
 		padding: 0 .5em;
 
 		ul {
@@ -121,7 +141,7 @@
 		}
 	}
 
-	@include device-width(5) {
+	@include device-width(6) {
 		padding: 0 .5em;
 
 		ul {
@@ -133,13 +153,29 @@
 				}
 			}			
 		}
-	}	
+	}
+
+	@include device-width(5) {
+
+		ul {
+			li {
+				a {
+					padding: 15px 0 0px;
+				}
+			}			
+		}
+	}
+	    
 
 	.header-fixed & {
 		bottom: -48px;
 
-		@include device-width(9) {
+		@include device-width(7) {
 			bottom: -44px;			
+		}
+
+		@include device-width(5) {
+			bottom: -65px;			
 		}
 	}
 }
@@ -228,7 +264,7 @@
 		}
 
 		.date {
-			color: #cccccc;
+			color: #fff;
 			@include font-size(12);
 			float: left;
 			margin-top: 5px;
@@ -340,6 +376,13 @@
 .front-news {
 	.posts {
 		  padding: 30px 8%;
+
+		@include device-width(5) {
+			
+			li {
+				margin-bottom: 1.5em;
+			}
+		}
 	}
 }
 
@@ -412,7 +455,7 @@
 
 .video-container {
     position: relative;
-    padding-bottom: 56.25%;
+    padding-bottom: 50.25%;
     padding-top: 30px; 
     height: 0;
     overflow: hidden;
@@ -737,6 +780,10 @@
 					@include inline-block;
 				}
 
+				a {
+					cursor: default;
+				}
+
 				@include device-width(10) {
 					width: 25%;
 
@@ -823,6 +870,11 @@
 			&.icon-youtube {
 				color: #cc181e;
 			}						
+
+			&.icon-vimeo {
+				color: #17B3E8;
+			}						
+
 		}
 	}
 }

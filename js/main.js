@@ -167,8 +167,12 @@
 
 					if(!element.length) return false;
 
+						if ($(window).width() > 500) {
+							var effect = "parallax"	
+						}					
+
 					element.wowSlider({
-					    effect: "parallax",
+						effect: effect,	
 					    prev: "",
 					    next: "",
 					    duration: 18 * 100,
@@ -247,7 +251,7 @@
 			loading: {
 					finishedMsg: 'No more items to load.',
 					msgText: ' ',
-					img: site_url +'/thebankdigital/wp-content/themes/thebank/images/misc/loader.gif'
+					img: site_url +'/wp-content/themes/thebankbusiness/images/misc/loader.gif'
 				}
 			}, function (newElements) {
 				var newElems = $( newElements ).hide();

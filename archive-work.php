@@ -1,11 +1,6 @@
 <?php get_header(); ?>
 <section id="works" class="content-area">
 	<div class="inner">
-		<?php 
-		  global $wp_query;
-		  $args = array_merge( $wp_query->query_vars, array( 'orderby' => 'menu_order', 'order' => 'ASC' ) );
-		  query_posts( $args );	
-		 ?>
 	
 		<?php if ( have_posts() ) : ?>
 			<ul class="posts">

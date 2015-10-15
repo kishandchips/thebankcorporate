@@ -361,8 +361,8 @@ table {
 
 @font-face {
   font-family: 'icons';
-  src: url("fonts/icons.eot?fs4c2v");
-  src: url("fonts/icons.eot?#iefixfs4c2v") format("embedded-opentype"), url("fonts/icons.woff?fs4c2v") format("woff"), url("fonts/icons.ttf?fs4c2v") format("truetype"), url("fonts/icons.svg?fs4c2v#icons") format("svg");
+  src: url("fonts/icons.eot?xqxnep");
+  src: url("fonts/icons.eot?xqxnep#iefix") format("embedded-opentype"), url("fonts/icons.woff2?xqxnep") format("woff2"), url("fonts/icons.ttf?xqxnep") format("truetype"), url("fonts/icons.woff?xqxnep") format("woff"), url("fonts/icons.svg?xqxnep#icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], .facebook-btn:before, .twitter-btn:before, .search-btn:before, [class*=" icon-"] {
@@ -380,6 +380,15 @@ table {
 .icon-right:before {
   content: "\e604"; }
 
+.icon-vimeo:before {
+  content: "\e800"; }
+
+.icon-logo2:before {
+  content: "\e608"; }
+
+.icon-logo:before {
+  content: "\e601"; }
+
 .icon-logo-nude:before {
   content: "\e606"; }
 
@@ -391,9 +400,6 @@ table {
 
 .icon-youtube:before {
   content: "\e605"; }
-
-.icon-logo:before {
-  content: "\e601"; }
 
 .icon-arrow-left:before {
   content: "\e60c"; }
@@ -1183,14 +1189,12 @@ button:active, button:focus, a:active, a:focus {
   outline: 0; }
   .menu-btn:hover, .menu-btn:active, .menu-btn:focus {
     outline: 0; }
-  @media only screen and (max-width: 900px) {
-    .menu-btn {
-      height: 75px;
-      width: 56px;
-      padding: 3.2em 1.2em 0em; } }
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 700px) {
     .header-fixed .menu-btn {
-      top: -25px; } }
+      padding: 3.2em 1.2em 0em;
+      top: -25px;
+      height: 75px;
+      width: 56px; } }
   .menu-btn span, .menu-btn span:before, .menu-btn span:after {
     cursor: pointer;
     border-radius: 1px;
