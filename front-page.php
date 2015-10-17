@@ -54,7 +54,7 @@
 	<?php endif; ?>
 
 	<div class="front-news">
-		<h2 class="section-title"><?php _e('Latest News') ?></h2>
+		<h2 class="section-title"><?php _e('Bank Note') ?></h2>
 		<div class="inner container">
 			<?php
 
@@ -98,7 +98,7 @@
 			<div id="navbelow">
 				<?php next_posts_link('Next &raquo;'); ?>			
 			</div>			
-		<a class="primary-btn" id="next"><?php _e('More News'); ?></a>		
+		<a class="primary-btn" id="next"><?php _e('More'); ?></a>		
 		<?php wp_reset_postdata(); ?>
 	</div>
 </section>
